@@ -3950,13 +3950,31 @@ th.hide-for-touch {
   }
 }
 body {
-  max-width: 960px;
-  background: url("../img/background.jpg") #cbcbcb no-repeat;
-  background-position: top;
   font-size: 16px;
   font-family: 'Open Sans';
   margin: 0 auto;
-  margin-top: 195px;
+  background: #ccc;
+  background: -webkit-linear-gradient(#ccc 0%, #e0e0e0 21%, #ededed 41%, #ededed 60%, #ededed 78%, #ebecf2 100%);
+  background: -moz-linear-gradient(#ccc 0%, #e0e0e0 21%, #ededed 41%, #ededed 60%, #ededed 78%, #ebecf2 100%);
+  background: -o-linear-gradient(#ccc 0%, #e0e0e0 21%, #ededed 41%, #ededed 60%, #ededed 78%, #ebecf2 100%);
+  background: -ms-linear-gradient(#ccc 0%, #e0e0e0 21%, #ededed 41%, #ededed 60%, #ededed 78%, #ebecf2 100%);
+  background: linear-gradient(#ccc 0%, #e0e0e0 21%, #ededed 41%, #ededed 60%, #ededed 78%, #ebecf2 100%);
+  background-attachment: fixed;
+}
+header {
+  padding-top: 195px;
+  background: url("../img/background.jpg") no-repeat;
+  background-position: top;
+}
+.main-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  background: -webkit-linear-gradient(#ccc 0%, #e0e0e0 21%, #ededed 41%, #ededed 60%, #ededed 78%, #ebecf2 100%);
+  background: -moz-linear-gradient(#ccc 0%, #e0e0e0 21%, #ededed 41%, #ededed 60%, #ededed 78%, #ebecf2 100%);
+  background: -o-linear-gradient(#ccc 0%, #e0e0e0 21%, #ededed 41%, #ededed 60%, #ededed 78%, #ebecf2 100%);
+  background: -ms-linear-gradient(#ccc 0%, #e0e0e0 21%, #ededed 41%, #ededed 60%, #ededed 78%, #ebecf2 100%);
+  background: linear-gradient(#ccc 0%, #e0e0e0 21%, #ededed 41%, #ededed 60%, #ededed 78%, #ebecf2 100%);
+  background-attachment: fixed;
 }
 figure {
   padding: 0;
@@ -3965,29 +3983,30 @@ figure {
 img {
   max-width: 100%;
 }
-nav {
+.menu {
   background: #000;
   padding: 5px;
 }
-nav ul {
+.menu ul {
   padding: 0;
 }
-nav ul li {
+.menu ul li {
   display: inline-block;
 }
-nav ul li a {
+.menu ul li a {
   padding: 10px 15px;
   color: #707070;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   text-decoration: none;
 }
-nav ul li a:hover {
+.menu ul li a:hover {
   background: #05a9ac;
   color: #fff;
 }
 h1,
-h2 {
+h2,
+h3 {
   font-family: 'Oswald';
   font-weight: 300;
   color: #333;
@@ -4016,6 +4035,9 @@ label {
 button {
   border: 0;
 }
+footer {
+  background: url("../img/footer-background.jpg");
+}
 .btn {
   background: #ededed;
   color: #666;
@@ -4035,7 +4057,7 @@ button {
   padding: 30px 20px;
   margin: 30px 0;
 }
-.header-number {
+.header-number h2 {
   font-family: 'TypewriterForMe';
   text-align: right;
 }
@@ -4069,9 +4091,10 @@ button {
   font-family: 'Oswald';
   text-align: center;
 }
-.post-title .gaceta-numero {
+.gaceta-numero {
   font-size: 2em;
   font-weight: bold;
+  font-family: 'Oswald';
   display: block;
   padding: 5px 0 0 0;
   margin-bottom: 10px;
@@ -4108,14 +4131,17 @@ button {
   color: #fff;
   background: #000;
 }
+.pleca-sombra-276 {
+  background: url("../img/pleca-sombra-276.png") no-repeat top center;
+}
 .list-masleidos {
   padding: 0;
-  background: url("../img/pleca-sombra-276.png") no-repeat top center;
 }
 .list-masleidos li {
   padding: 20px 0;
   list-style: none;
   border-bottom: 1px solid #d3d3d3;
+  overflow: hidden;
 }
 .list-masleidos .title-post {
   font-weight: bold;
@@ -4124,4 +4150,64 @@ button {
   color: #a9a9a9;
   font-size: 0.7em;
   text-transform: uppercase;
+}
+.gacetas-anteriores {
+  font-size: 0.8em;
+}
+.gacetas-anteriores a {
+  font-size: 0.9em;
+}
+.title-section {
+  padding: 10px;
+  margin: 20px 0 0 5px;
+}
+.title-section:first-child {
+  margin-top: 10px;
+}
+.title-section .box-section {
+  border: 13px solid;
+  display: inline-block;
+  margin-right: 15px;
+}
+.title-section .box-section.aqua {
+  border-color: #0ba59e;
+}
+.title-section .box-section.green {
+  border-color: #993;
+}
+.title-section .box-section.mora {
+  border-color: #76697d;
+}
+.title-post-section {
+  background: #0ba59e;
+  color: #fff;
+  padding: 20px;
+  margin: 0;
+}
+.title-post-section.aqua {
+  background: #0ba59e;
+}
+.title-post-section.green {
+  background: #993;
+}
+.title-post-section.mora {
+  background: #76697d;
+}
+.fecha-post {
+  background: #333;
+  color: #fff;
+  padding: 8px;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+.post-description {
+  color: #6f6f6f;
+  font-size: 0.8em;
+}
+.footer-post {
+  background: #333;
+  color: #fff;
+  padding: 8px;
+  text-transform: uppercase;
+  font-size: 0.8em;
 }

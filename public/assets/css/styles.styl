@@ -3,23 +3,33 @@
 @import 'fonts'
 @import 'foundation'
 
- 
 body
-  max-width 960px
-  background url('../img/background.jpg') #cbcbcb no-repeat
-  background-position top
   font-size 16px
   font-family 'Open Sans'
   margin 0 auto 
-  margin-top 195px
+  background rgba(204,204,204,1)
+  background linear-gradient(rgba(204,204,204,1) 0%, rgba(224,224,224,1) 21%, rgba(237,237,237,1) 41%, rgba(237,237,237,1) 60%, rgba(237,237,237,1) 78%, rgba(235,236,242,1) 100%)
+  background-attachment:fixed
   
-  
+header
+  padding-top 195px
+  background url('../img/background.jpg') no-repeat
+  background-position top
+
+.main-wrapper
+  max-width 960px
+  margin 0 auto
+  background linear-gradient(rgba(204,204,204,1) 0%, rgba(224,224,224,1) 21%, rgba(237,237,237,1) 41%, rgba(237,237,237,1) 60%, rgba(237,237,237,1) 78%, rgba(235,236,242,1) 100%)
+  background-attachment:fixed
+
 figure
   padding 0
   margin 0
+
 img
   max-width 100%
-nav
+
+.menu
   background black
   padding 5px 
   ul
@@ -35,7 +45,7 @@ nav
           background #05a9ac
           color white
         
-h1,h2
+h1,h2,h3
   font-family 'Oswald'
   font-weight 300
   color #333333
@@ -61,6 +71,9 @@ label
 button
   border 0
   
+footer
+  background url('../img/footer-background.jpg')
+
 .btn
   background #ededed
   color #666666
@@ -79,8 +92,9 @@ button
   margin 30px 0
   
 .header-number
-  font-family 'TypewriterForMe'
-  text-align right
+  h2
+    font-family 'TypewriterForMe'
+    text-align right
  
 .text-columns
   columns 3
@@ -111,13 +125,14 @@ button
     font-family 'Oswald'
     text-align center
     
-  .gaceta-numero
-    font-size 2em
-    font-weight bold
-    display block
-    padding 5px 0 0 0
-    margin-bottom 10px
-    border-bottom 1px solid #adadad
+.gaceta-numero
+  font-size 2em
+  font-weight bold
+  font-family 'Oswald'
+  display block
+  padding 5px 0 0 0
+  margin-bottom 10px
+  border-bottom 1px solid #adadad
   
 .post-author
   color #a38ca3
@@ -147,13 +162,16 @@ button
   color white
   background black
   
+.pleca-sombra-276
+    background url('../img/pleca-sombra-276.png') no-repeat top center
+
 .list-masleidos
   padding 0
-  background url('../img/pleca-sombra-276.png') no-repeat top center
   li
     padding 20px 0
     list-style none
     border-bottom 1px solid #d3d3d3
+    overflow hidden
   .title-post
     font-weight bold
   .author 
@@ -161,5 +179,54 @@ button
     font-size .7em
     text-transform uppercase 
 
+.gacetas-anteriores
+  font-size .8em
+  a
+    font-size .9em
     
+.title-section
+  padding 10px 
+  margin 20px 0 0 5px
+  &:first-child
+    margin-top 10px
+  .box-section
+    border 13px solid 
+    display inline-block
+    margin-right 15px
+    &.aqua
+      border-color #0ba59e
+    &.green
+      border-color #999933
+    &.mora
+      border-color #76697d
+
+.title-post-section
+  background #0ba59e
+  color white
+  padding 20px
+  margin 0
+  &.aqua
+    background #0ba59e
+  &.green
+    background #999933
+  &.mora
+    background #76697d
+
+.fecha-post
+  background #333333
+  color white
+  padding 8px
+  text-transform uppercase
+  font-size .8em
+  
+.post-description
+  color #6f6f6f
+  font-size .8em
+
+.footer-post 
+  background #333333
+  color white
+  padding 8px
+  text-transform uppercase
+  font-size .8em
     
