@@ -1,0 +1,7 @@
+.headermenu > li {
+    display: inline-block;
+    float: left;
+    border-left: 0px ;
+    position: relative;
+    margin: 10px 5px 10px 5px;
+}

@@ -1,0 +1,233 @@
+.stretchtofit {
+  width:100%;
+}
+
+#buscador::-webkit-input-placeholder { color:#fff; }
+#buscador::-moz-placeholder { color:#fff; }
+#buscador:-moz-placeholder { color:#fff; }
+#buscador:-ms-input-placeholder { color:#fff; }
+
+.centrar {
+	text-align: center;
+}
+
+/*Fondo login*/
+.gris{
+	background-color: #E4E7EA;
+  /* background: url("../images/fondo.JPG") no-repeat fixed center;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.clogo{
+	height:25px;
+}
+
+.clogin{
+	max-width: 300px;
+}
+
+.rightalign{
+	text-align:right;
+}
+
+
+
+.pageheader h2{
+	color: #55698c;
+}
+
+.pageheader .glyphicon,
+.pageheader .fa {
+    border: 2px solid #55698c;
+
+}
+
+#buscador{
+	color: #ccc;
+}
+
+.panel-title{
+	color: #333;
+}
+
+.panel-btns a{
+	color: #666;
+}
+
+
+
+.badge-success{
+	background-color: #F11718;
+}
+
+/*paginación sin margen */
+.pagination {
+	margin: 0px 0px 0px 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	display: inline;
+
+}
+
+/* Panel color verde  */
+.logopanel, .headerbar {
+	background: none repeat scroll 0% 0% white;
+}
+
+/* Borde de imagen   */
+.leftpanel .userlogged .media-object{
+	border: 2px solid #5F9B33;
+}
+
+/* input de búsqueda color gris  */
+.leftpanelinner .searchform input {
+	background: none repeat scroll 0% 0% #666;
+}
+
+
+
+/* Elemento de menú desplegable de usuario color verde en hover */
+.headermenu .dropdown-menu li a:active,
+.headermenu .dropdown-menu li a:focus,
+.headermenu .dropdown-menu li a:hover {
+	background-color: #00601F;
+}
+
+.leftpanel-collapsed .nav-bracket > li.nav-hover > a {
+  color: #00601F;
+}
+
+
+/* color de paginación */
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+	background-color: #F73C3C;
+	border-color: #F73C3C;
+}
+
+/*boton primario rojo*/
+.btn-primary {
+	background-color: #F73C3C;
+	border-color: #F73C3C;
+	color: #FFF;
+}
+
+.btn-primary:focus,
+.btn-primary:hover {
+	background-color: #B9282B;
+	border-color: #B9282B;
+	color: #FFF;
+}
+
+/*boton final verde*/
+.btn-final {
+	background-color:#344655;
+	border-color: #00601F;
+	color: #FFF;
+}
+
+.btn-final:focus,
+.btn-final:hover {
+	background-color:#365f6f;
+	border-color: #004215;
+	color: #FFF;
+}
+
+
+
+/*boton paginacion magicwizard verde*/
+.basic-wizard .pager li a {
+  border-radius: 2px;
+  background-color:#00601F;
+	border-color: #00601F;
+	color: #FFF;
+}
+
+.basic-wizard .pager li a:focus,
+.basic-wizard .pager li a:active,
+.basic-wizard .pager li a:hover {
+  border-radius: 2px;
+  background-color: #004215;
+	border-color: #004215;
+	color: #FFF;
+}
+
+/*Panel color verde*/
+.panel-primary > .panel-heading {
+    color: #FFF;
+    background-color: #00601F;
+    border-color: #00601F;
+}
+
+.progress-bar {
+	background-color: #00601F;
+}
+
+/* Colores datepicker */
+.ui-datepicker{
+	background: none repeat scroll 0% 0% #444;
+}
+
+.ui-datepicker-title{
+	color: #FFF;
+}
+
+.ui-datepicker td a {
+	color: #AAA;
+}
+
+.ui-datepicker td a:focus,
+.ui-datepicker td a:active,
+.ui-datepicker td a:hover {
+	background-color: #F73C3C;
+}
+
+
+
+
+
+/*Estilo Panel inicio de sesión*/
+.signinpanel .form-control {
+    display: block;
+    margin-top: 0px;
+}
+
+.iconsuccess{
+  background: #fff url(../images/success.png) no-repeat 95% center;
+}
+
+.iconfail{
+  background: #fff url(../images/error.png) no-repeat 95% center;
+}
+
+
+.headermenu .dropdown-menu-head li a:active,
+.headermenu .dropdown-menu-head li a:focus,
+.headermenu .dropdown-menu-head li a:hover {
+    background: none;
+    color:black;
+    text-decoration:none;
+    color:red;
+
+}
+
+.pointer{
+  cursor:  pointer;
+}
+
+
+
+/*FOOTER*/
+
+#footer {
+  position: relative;
+  margin-top: -20px;
+  margin-right: 20px;
+  clear: both;
+  background: transparent;
+  text-align: right;
+  color: gray;
+
+}
