@@ -1,35 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head lang="es">
-    <meta charset="UTF-8">
+@extends('layout')
+
+@section('headers')
     <title>Gaceta Universitaria</title>
-    <meta name="description" content="Gaceta universitaria">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300,700|Open+Sans"/>
+    <meta name="description" value="descripción"/>
+@endsection
 
-    <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}"/>
-</head>
-<body>
-<header>
-    <section class="main-wrapper">
-        <figure>
-            <img src="{{ asset('assets/img/banner.jpg') }}" alt="Gaceta Universitaria"/>
-        </figure>
+@section('headers')
 
-    </section>
-</header>
-<section class="main-wrapper">
-    <nav class="menu">
-        <ul>
-            <li><a href="#" title="Home">Home</a></li>
-            <li><a href="#" title="Gestión">Gestión</a></li>
-            <li><a href="#" title="Docencia">Docencia</a></li>
-            <li><a href="#" title="Investigación">Investigación</a></li>
-            <li><a href="#" title="Extensión">Extensión</a></li>
-            <li><a href="#" title="Extensión">Extensión</a></li>
-            <li><a href="#" title="Anuncios">Anuncios</a></li>
-        </ul>
-    </nav>
+@endsection
 
+@section('banner')
+    <figure>
+        <img src="{{ asset('assets/img/banner.jpg') }}" alt="Gaceta Universitaria"/>
+    </figure>
+@endsection
+
+@section('header-text')
     <section class="header-text">
         <h1>Gaceta Universitaria</h1>
         <p class="text-columns">
@@ -37,9 +23,18 @@
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, quas, similique. Ipsum necessitatibus, nobis odit porro ratione vero. Hic incidunt ipsa iusto maiores minima obcaecati placeat quas suscipit tempora totam?
         </p>
     </section>
+
     <section class="header-number">
         <h2 class="text-left">Gaceta No <span class="text-big"> 434 | Feb 2015</span></h2>
     </section>
+@endsection
+
+@section('breadcrumb')
+
+@endsection
+
+
+@section('content')
     <section class="main-content">
 
         <div class="fondo-index">
@@ -79,7 +74,7 @@
         <div class="searchbox large-6 columns">
             <h3 class="section-pleca">Búsqueda</h3>
 
-             <form action="busqueda-de-gaceta" class="busqueda-de-gaceta">
+            <form action="busqueda-de-gaceta" class="busqueda-de-gaceta">
                 <div class="large-16 columns control">
                     <label for="numero_gaceta">No Gaceta</label>
                     <input type="text" name="numero_gaceta"/>
@@ -97,7 +92,7 @@
                     <input type="text" name="categoria"/>
                 </div>
                 <button class="btn" type="submit"> Buscar</button>
-             </form>
+            </form>
 
             <div >
                 <h2>Más leidos</h2>
@@ -221,50 +216,8 @@
             </div>
         </div>
     </section>
-</section>
-<footer>
-    <div class="row">
-        <div class="large-4 columns">
-            <h4>lorem ipsum</h4>
-            <ul>
-                <li>Primer piedra del claustro universitario en Miacatlán</li>
-                <li>Primer piedra del claustro universitario en Miacatlá</li>
-                <li>Primer piedra del claustro universitario en Miacatlá</li>
-                <li>Primer piedra del claustro universitario en Miacatlá</li>
-                <li>Primer piedra del claustro universitario en Miacatlá</li>
-            </ul>
-        </div>
-        <div class="large-4 columns">
-            <h4>lorem ipsum</h4>
-            <ul>
-                <li>Primer piedra del claustro universitario en Miacatlán</li>
-                <li>Primer piedra del claustro universitario en Miacatlá</li>
-                <li>Primer piedra del claustro universitario en Miacatlá</li>
-                <li>Primer piedra del claustro universitario en Miacatlá</li>
-                <li>Primer piedra del claustro universitario en Miacatlá</li>
-            </ul>
-        </div>
-        <div class="large-4 columns">
-            <h4>lorem ipsum</h4>
-            <ul>
-                <li>Primer piedra del claustro universitario en Miacatlán</li>
-                <li>Primer piedra del claustro universitario en Miacatlá</li>
-                <li>Primer piedra del claustro universitario en Miacatlá</li>
-                <li>Primer piedra del claustro universitario en Miacatlá</li>
-                <li>Primer piedra del claustro universitario en Miacatlá</li>
-            </ul>
-        </div>
-        <div class="large-4 columns">
-            <h4>lorem ipsum</h4>
-            <ul>
-                <li>Primer piedra del claustro universitario en Miacatlán</li>
-                <li>Primer piedra del claustro universitario en Miacatlá</li>
-                <li>Primer piedra del claustro universitario en Miacatlá</li>
-                <li>Primer piedra del claustro universitario en Miacatlá</li>
-                <li>Primer piedra del claustro universitario en Miacatlá</li>
-            </ul>
-        </div>
-    </div>
-</footer>
-</body>
-</html>
+@endsection
+
+@section('scripts')
+
+@endsection

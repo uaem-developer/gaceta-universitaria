@@ -7,20 +7,16 @@ body
   font-size 16px
   font-family 'Open Sans'
   margin 0 auto 
-  background rgba(204,204,204,1)
-  background linear-gradient(rgba(204,204,204,1) 0%, rgba(224,224,224,1) 21%, rgba(237,237,237,1) 41%, rgba(237,237,237,1) 60%, rgba(237,237,237,1) 78%, rgba(235,236,242,1) 100%)
-  background-attachment:fixed
-  
+  background linear-gradient(rgba(199,200,200,1) 0%, rgba(199,200,200,1) 21%, rgba(225,225,225,1) 41%, rgba(237,237,237,1) 60%, rgba(237,237,237,1) 78%, rgba(232,236,241,1) 100%)
+  background-attachment:fixed  
 header
   padding-top 195px
-  background url('../img/background.jpg') no-repeat
+  background url('../img/background.jpg') #ccc no-repeat
   background-position top
 
 .main-wrapper
   max-width 960px
   margin 0 auto
-  background linear-gradient(rgba(204,204,204,1) 0%, rgba(224,224,224,1) 21%, rgba(237,237,237,1) 41%, rgba(237,237,237,1) 60%, rgba(237,237,237,1) 78%, rgba(235,236,242,1) 100%)
-  background-attachment:fixed
 
 figure
   padding 0
@@ -50,6 +46,9 @@ h1,h2,h3
   font-weight 300
   color #333333
   
+h4
+  margin 5px
+  
 a
   text-decoration none
   color #333
@@ -72,7 +71,11 @@ button
   border 0
   
 footer
-  background url('../img/footer-background.jpg')
+  background url('../img/footer-background.png') bottom no-repeat
+  overflow hidden
+  h4
+    font-size 14px
+    font-weight bold
 
 .btn
   background #ededed
@@ -82,6 +85,11 @@ footer
   font-size .8em
   text-decoration none  
   
+.breadcrumb
+  padding 0
+  li
+    display inline-block
+    font-size .8em
 .img-box
   border 4px solid white
   box-shadow 0px 3px 5px rgba(0,0,0,0.7)
@@ -106,7 +114,9 @@ footer
   padding 10px
   background white  
   overflow hidden
+  margin-bottom 20px
   
+    
 .fondo-index
   background url('../img/pleca-cita.png') no-repeat
   height 320px
@@ -137,6 +147,7 @@ footer
 .post-author
   color #a38ca3
   text-transform uppercase
+  font-size .8em
 
 .notas-home-destacadas
   padding 0
@@ -229,4 +240,50 @@ footer
   padding 8px
   text-transform uppercase
   font-size .8em
+
+.footer-links
+  margin-bottom 250px
+  padding-bottom 20px
+  border-bottom 1px solid #d3d3d3
+  box-shadow 0px 1px 1px rgba(0,0,0,.3) 
+
+.footer-list
+  padding 0
+  li
+    padding 5px
+    border-bottom 1px solid #d3d3d3
+    font-size .8em
+    list-style none    
     
+.padding-0
+  padding 0
+  
+.investigacion
+  background #8d0060
+  color white
+  h1
+    color white
+  
+.txt-center
+  text-align center
+  
+.form-inline
+  .control  
+    display inline-block
+    padding 10px
+    label
+      display block
+      font-weight bold
+      
+.detail-post
+  color #8d0060
+  font-size .8em
+  text-transform uppercase
+  margin 5px 0 10px 0
+
+.post-section  
+  h3
+    margin 15px 0 5px 0
+  p
+    font-size .8em
+    margin 0

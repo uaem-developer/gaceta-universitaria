@@ -15,3 +15,14 @@ Route::get('/', function()
 {
 	return View::make('home');
 });
+
+Route::get('post', function()
+{
+	return View::make('post');
+});
+
+
+Route::get('seccion', function()
+{
+	return View::make('section');
+});
