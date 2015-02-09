@@ -40,7 +40,7 @@
 
                 {{ Field::file('attach_file ') }}
 
-                {{ Field::checkbox('published ') }}
+                {{ Field::checkbox('published ',['checked'=> 'true', 'class' => 'success']) }}
 
                 {{ Field::checkbox('featured ') }}
 

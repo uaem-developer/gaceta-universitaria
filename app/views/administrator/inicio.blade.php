@@ -9,15 +9,15 @@
         <link rel="shortcut icon" href="http://www.uaem.mx/favicon.ico" type="image/vnd.microsoft.icon" />
         <title>UNIVERSIDAD AUTONOMA DEL ESTADO DE MORELOS</title>
 
-        <link href="{{ asset('assets/css/style.default.css') }}" rel="stylesheet">
-        <link href="{{ asset('assets/css/style.inverse.css') }}" rel="stylesheet">
-        <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/admin/css/style.default.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/admin/css/style.inverse.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/admin/css/custom.css') }}" rel="stylesheet">
 
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
-        <script src="js/html5shiv.js"></script>
-        <script src="js/respond.min.js"></script>
+        <script src="{{ asset('assets/admin/js/html5shiv.js')}}"></script>
+        <script src="{{ asset('assets/admin/js/respond.min.js')}}"></script>
         <![endif]-->
     </head>
 
@@ -111,26 +111,22 @@
 
 
 
-<script src="{{ asset('assets/js/jquery-1.10.2.min.js') }}"></script>
-<script src="{{ asset('assets/js/jquery-migrate-1.2.1.min.js') }}"></script>
-<script src="{{ asset('assets/js/jquery-ui-1.10.3.min.js') }}"></script>
-<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.sparkline.min.js') }}"></script>
-<script src="{{ asset('assets/js/toggles.min.js') }}"></script>
-<script src="{{ asset('assets/js/retina.min.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.cookies.js') }}"></script>
+<script src="{{ asset('assets/admin/js/jquery-1.10.2.min.js') }}"></script>
+<script src="{{ asset('assets/admin/js/jquery-migrate-1.2.1.min.js') }}"></script>
+<script src="{{ asset('assets/admin/js/jquery-ui-1.10.3.min.js') }}"></script>
+<script src="{{ asset('assets/admin/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/admin/js/modernizr.min.js') }}"></script>
+<script src="{{ asset('assets/admin/js/jquery.sparkline.min.js') }}"></script>
+<script src="{{ asset('assets/admin/js/toggles.min.js') }}"></script>
+<script src="{{ asset('assets/admin/js/retina.min.js') }}"></script>
+<script src="{{ asset('assets/admin/js/jquery.cookies.js') }}"></script>
 
-<script src="{{ asset('assets/js/jquery.maskedinput.min.js') }}"></script>
+<script src="{{ asset('assets/admin/js/jquery.maskedinput.min.js') }}"></script>
 
-<script src="{{ asset('assets/js/chosen.jquery.min.js') }}"></script>
-<script src="{{ asset('assets/js/custom.js') }}"></script>
-<script src="{{ asset('assets/js/bootstrap-wizard.min.js') }}"></script>
-<script src="{{ asset('assets/js/contrasenialogin.js') }}"></script>
-
-
-
-
+<script src="{{ asset('assets/admin/js/chosen.jquery.min.js') }}"></script>
+<script src="{{ asset('assets/admin/js/custom.js') }}"></script>
+<script src="{{ asset('assets/admin/js/bootstrap-wizard.min.js') }}"></script>
+<script src="{{ asset('assets/admin/js/contrasenialogin.js') }}"></script>
 
 
 

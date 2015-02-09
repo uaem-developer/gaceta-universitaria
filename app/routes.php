@@ -26,3 +26,6 @@ Route::get('seccion', function()
 {
 	return View::make('section');
 });
+
+
+require(__DIR__ . '/routes/administrator.php');

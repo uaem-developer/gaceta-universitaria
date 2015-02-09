@@ -9,17 +9,17 @@
 
       <title>UAEM</title>
 
-      <link href="{{ asset('assets/css/style.default.css') }}" rel="stylesheet">
-      <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
-      <link href="{{ asset('assets/css/bootstrap-fileupload.min.css') }}" rel="stylesheet">
+      <link href="{{ asset('assets/admin/css/style.default.css') }}" rel="stylesheet">
+      <link href="{{ asset('assets/admin/css/custom.css') }}" rel="stylesheet">
+      <link href="{{ asset('assets/admin/css/bootstrap-fileupload.min.css') }}" rel="stylesheet">
       @yield('css')
 
 
 
       <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!--[if lt IE 9]>
-      <script src="{{ asset('assets/js/html5shiv.js') }}  "></script>
-      <script src="{{ asset('assets/js/respond.min.js') }}"></script>
+      <script src="{{ asset('assets/admin/js/html5shiv.js') }}  "></script>
+      <script src="{{ asset('assets/admin/js/respond.min.js') }}"></script>
       <![endif]-->
   </head>
 
@@ -43,7 +43,7 @@
             <!-- This is only visible to small devices -->
             <div class="visible-xs hidden-sm hidden-md hidden-lg">
                 <div class="media userlogged">
-                    <img alt="" src="{{ asset('assets/images/photos/loggeduser.png') }}" class="media-object">
+                    <img alt="" src="{{ asset('assets/admin/images/photos/loggeduser.png') }}" class="media-object">
                     <div class="media-body">
                         <h4>Usuario</h4>
                         <span>Cuautitlán</span>
@@ -52,7 +52,7 @@
 
                 <h5 class="sidebartitle actitle">Cuenta</h5>
                 <ul class="nav nav-pills nav-stacked nav-bracket mb30">
-                    <li><a href="{{ route('profile') }}"><i class="fa fa-user"></i> <span>Perfil</span></a></li>
+                    <li><a href="{{ route('admin_profile') }}"><i class="fa fa-user"></i> <span>Perfil</span></a></li>
                     <li><a href=""><i class="fa fa-question-circle"></i> <span>Ayuda</span></a></li>
                     <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> <span>Cerrar Sesión</span></a></li>
                 </ul>
@@ -60,8 +60,7 @@
 
             <h5 class="sidebartitle">Navegación</h5>
             <ul class="nav nav-pills nav-stacked nav-bracket">
-                <li><a href="{{ route('profile') }}"><i class="fa fa-user"></i> <span>Perfil</span></a></li>
-                <li><a data-toggle="modal" data-target=".modaltramites"><i class="fa fa-list-alt"></i> <span>Contenidos</span></a></li>
+                <li><a href="{{ route('admin_profile') }}"><i class="fa fa-user"></i> <span>Perfil</span></a></li>
                 <li><a href="{{ route('admin_posts') }}"> <i class="fa fa-check-square-o"></i> <span>Posts</span></a></li>
                 <li><a href="{{ route('admin_sections')}}"> <i class="fa fa-home"></i> <span>Secciones</span></a></li>
 
@@ -79,28 +78,12 @@
 
 					<div class="header-right">
 						<ul class="headermenu">
-							<li>
-								<div class="btn-group">
-									<button class="btn btn-default dropdown-toggle tp-icon" data-toggle="dropdown">
-										<i class="glyphicon glyphicon-bell"></i>
-										<span class="badge">1</span>
-									</button>
-									<div class="dropdown-menu dropdown-menu-head pull-right">
-										<h5 class="title">1 Nuevo Mensaje</h5>
-										<ul class="dropdown-list user-list">
-
-
-											<li class="new"><a href="">Administrador: <i>Trámite #3434: Credencial INE no válida. Favor de volver a subir.</i></a></li>
-										</ul>
-									</div>
-								</div>
-							</li>
 
 
 							<li>
 								<div class="btn-group">
 									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-										<img src="{{ asset('fassets/images/photos/loggeduser.png') }}" alt="" />
+										<img src="{{ asset('assets/admin/images/photos/loggeduser.png') }}" alt="" />
 										Usuario
 										<span class="caret"></span>
 									</button>
@@ -126,26 +109,26 @@
 				</div>
 
 
-        <footer id="footer">
-          <a>Términos y Condiciones</a> | <a>Aviso de Privacidad.</a>
-        </footer>
+                <footer id="footer">
+                Gaceta UAEM {{ date('Yºqq   ') }}
+                </footer>
 
 			</div><!-- mainpanel -->
-    </section>
+        </section>
 
 
     <!--MODALS-->
 
-	<script src="{{ asset('assets/js/jquery-1.10.2.min.js') }}"></script>
-	<script src="{{ asset('assets/js/jquery-migrate-1.2.1.min.js') }}"></script>
-	<script src="{{ asset('assets/js/jquery-ui-1.10.3.min.js') }}"></script>
-	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-	<script src="{{ asset('assets/js/jquery.cookies.js') }}"></script>
-	<script src="{{ asset('assets/js/retina.min.js') }}"></script>
-	<script src="{{ asset('assets/js/custom.js') }}"></script>
-	<script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
-	<script src="{{ asset('assets/js/jquery.sparkline.min.js') }}"></script>
-	<script src="{{ asset('assets/js/chosen.jquery.min.js') }}"></script>
+	<script src="{{ asset('assets/admin/js/jquery-1.10.2.min.js') }}"></script>
+	<script src="{{ asset('assets/admin/js/jquery-migrate-1.2.1.min.js') }}"></script>
+	<script src="{{ asset('assets/admin/js/jquery-ui-1.10.3.min.js') }}"></script>
+	<script src="{{ asset('assets/admin/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('assets/admin/js/jquery.cookies.js') }}"></script>
+	<script src="{{ asset('assets/admin/js/retina.min.js') }}"></script>
+	<script src="{{ asset('assets/admin/js/custom.js') }}"></script>
+	<script src="{{ asset('assets/admin/js/modernizr.min.js') }}"></script>
+	<script src="{{ asset('assets/admin/js/jquery.sparkline.min.js') }}"></script>
+	<script src="{{ asset('assets/admin/js/chosen.jquery.min.js') }}"></script>
 
     <script type="text/javascript">
         $("select").chosen();

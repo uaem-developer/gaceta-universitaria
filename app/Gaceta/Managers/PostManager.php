@@ -5,13 +5,8 @@ class PostManager extends BaseManager {
     public function getRules()
     {
         $rules = [
-            'type'              => 'required',
-            'section'           => 'required',
-            'tipo_unidad'       => 'required',
-            'unidad_academica'  => 'required',
+            'section_id'           => 'required',
             'title'             => 'required',
-            'banner'            => 'required',
-            'banner_url'        => 'required',
             'order_num'         => '',
             'slug_url'          => '',
             'meta_description'  => '',

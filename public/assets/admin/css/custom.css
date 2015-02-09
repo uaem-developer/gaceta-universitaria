@@ -231,3 +231,9 @@
   color: gray;
 
 }
+.error_message{
+	background: #f2dede;
+	color: #a94442;
+	padding: 2px 0 2px 10px;
+	border-radius: 0 0 5px 5px;
+}

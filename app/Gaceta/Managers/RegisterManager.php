@@ -14,5 +14,4 @@ class RegisterManager extends BaseManager {
         return $rules;
     }
 
-
 }

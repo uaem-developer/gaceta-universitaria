@@ -71,7 +71,7 @@ class FieldBuilder {
             case 'password':
                 return $this->form->password($name, $attributes);
             case 'checkbox':
-                return $this->form->checkbox($name);
+                return $this->form->checkbox($name, $value);
             case 'textarea':
                 return $this->form->textarea($name, $value, $attributes);
             default:
@@ -124,6 +124,8 @@ class FieldBuilder {
     {
         return $this->input('select', $name, $value, $attributes, $options);
     }
+
+
 
     public function __call($method, $params)
     {

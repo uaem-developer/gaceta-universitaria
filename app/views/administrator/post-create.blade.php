@@ -11,8 +11,8 @@
         <div class="breadcrumb-wrapper">
             <span class="label">Usted se encuentra en:</span>
             <ol class="breadcrumb">
-                <li><a href="{{ URL::to('frontend/rontend/perfil') }}">Inicio</a></li>
-                <li class="active">Actividades y convocatorias</li>
+                <li><a href="{{ route('admin_posts') }}">Inicio</a></li>
+                <li class="active">Crear un post</li>
             </ol>
         </div>
 @stop
@@ -28,6 +28,8 @@
 
                     {{ Field::text('title') }}
 
+                    {{ Field::select('section_id', $sections) }}
+
 					{{ Field::number('order_num') }}
 
                     {{ Field::textarea('meta_description','',['rows' => '5']); }}
@@ -37,6 +39,7 @@
                     {{ Field::file('attach_file') }}
 
 					{{ Field::checkbox('published')  }}
+
 					{{ Field::checkbox('featured')  }}
 
                     <br />
@@ -56,6 +59,6 @@
 
 @section('script')
 
-    <script type="text/javascript" src="{{ asset('assets/js/ckeditor/ckeditor.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/admin/js/ckeditor/ckeditor.js') }}"></script>
 
 @stop
