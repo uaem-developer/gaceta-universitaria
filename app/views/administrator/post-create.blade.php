@@ -7,7 +7,7 @@
 @stop
 
 @section('pageheader')
-        <h2><i class="fa fa-list-alt"></i>Actividades y Convocatorias</h2>
+        <h2><i class="fa fa-list-alt"></i>Crear Post</h2>
         <div class="breadcrumb-wrapper">
             <span class="label">Usted se encuentra en:</span>
             <ol class="breadcrumb">
@@ -24,7 +24,7 @@
             <div class="panel-body">
                 <h2>Alta</h2>
 
-                {{ Form::open(['route' => 'admin_post_store', 'method' => 'POST', 'role' => 'form']) }}
+                {{ Form::open(['route' => 'admin_post_store', 'method' => 'POST', 'role' => 'form','files' => true]) }}
 
                     {{ Field::text('title') }}
 
@@ -40,7 +40,7 @@
 
 					{{ Field::checkbox('published')  }}
 
-					{{ Field::checkbox('featured')  }}
+					{{ Field::checkbox('promoted_front')  }}
 
                     <br />
 
@@ -61,4 +61,9 @@
 
     <script type="text/javascript" src="{{ asset('assets/admin/js/ckeditor/ckeditor.js') }}"></script>
 
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            $( "#menu-posts" ).addClass( "active" );
+        });
+    </script>
 @stop

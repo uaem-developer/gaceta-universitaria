@@ -6,15 +6,13 @@ class SectionManager extends BaseManager {
     {
         $rules = [
             'title'             => 'required',
-            'slug_url'          => 'required',
-            'section_id'        => '',
-            'tipo_unidad'       => '',
+            'slug_url'          => '',
             'banner'            => '',
             'banner_url'        => '',
-            'type'              => '',
             'body'              => '',
             'meta_description'  => '',
-            'published'         => ''
+            'published'         => '',
+            'authored_by'       => ''
         ];
 
         return $rules;

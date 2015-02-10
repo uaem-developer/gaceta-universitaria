@@ -1,24 +1,24 @@
 <?php
-use Gaceta\Repositories\PostRepo;
+use Gaceta\Repositories\PublicationRepo;
 use Gaceta\Repositories\SectionRepo;
-use Gaceta\Managers\PostManager;
+use Gaceta\Managers\PublicationManager;
 
 
-class PostsController extends \BaseController {
+class PublicationsController extends \BaseController {
 
-    protected $postRepo, $sectionRepo;
+    protected $publicationRepo, $sectionRepo;
 
 
-    public function __construct(PostRepo $postRepo, SectionRepo $sectionRepo)
+    public function __construct(PublicationRepo $publicationRepo, SectionRepo $sectionRepo)
     {
-        $this->postRepo 		= $postRepo;
+        $this->publicationRepo  = $publicationRepo;
         $this->sectionRepo 		= $sectionRepo;
     }
 
     public function index()
     {
-        $posts = $this->postRepo->getList();
-        return View::make('administrator.posts', compact('posts'));
+        $publications = $this->publicationRepo->getList();
+        return View::make('administrator.publications', compact('publications'));
     }
 
     /**
@@ -28,10 +28,7 @@ class PostsController extends \BaseController {
      */
     public function create()
     {
-        $sections  = $this->sectionRepo->getList();
-
-
-        return View::make('administrator.post-create', compact('sections'));
+        return View::make('administrator.publication-create');
     }
 
     /**
@@ -41,17 +38,17 @@ class PostsController extends \BaseController {
      */
     public function store()
     {
-        $post = $this->postRepo->newPost();
+        $publication = $this->publicationRepo->newPost();
 
         $data = Input::all();
 
-        $manager = new PostManager($post, $data);
+        $manager = new PublicationManager($publication, $data);
 
         $manager->save();
 
         $status = 'Success';
 
-        return Redirect::route('posts');
+        return Redirect::back();
     }
 
     /**
@@ -62,7 +59,7 @@ class PostsController extends \BaseController {
      */
     public function show($id)
     {
-        $post = $this->postRepo->find($id);
+        $post = $this->publicationRepo->find($id);
 
         return Response::json(compact('post'));
     }
@@ -75,11 +72,9 @@ class PostsController extends \BaseController {
      */
     public function edit($id)
     {
-        $post = $this->postRepo->find($id);
-       // $post_types = \Lang::get('utils.type_posts');
-        $sections  = $this->sectionRepo->getList();
+        $publication = $this->publicationRepo->find($id);
 
-        return View::make('administrator/post-update', compact('post','sections'));
+        return View::make('administrator/publication-update', compact('publication'));
     }
 
     /**
@@ -90,16 +85,16 @@ class PostsController extends \BaseController {
      */
     public function update($id)
     {
-        $post = $this->postRepo->find($id);
+        $publication = $this->publicationRepo->find($id);
 
         $data = Input::all();
 
-        $manager = new PostManager($post, $data);
+        $manager = new PublicationManager($publication, $data);
 
         $manager->save();
 
         //$message = \Lang::success;
-        return Redirect::route('posts');
+        return Redirect::route('admin_publications');
     }
 
     /**
@@ -110,11 +105,10 @@ class PostsController extends \BaseController {
      */
     public function destroy($id)
     {
-        $post = $this->postRepo->find($id);
-        $post->delete();
+        $publication = $this->publicationRepo->find($id);
+        $publication->delete();
 
         return Redirect::back();
-
     }
 
 }

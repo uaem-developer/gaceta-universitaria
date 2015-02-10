@@ -1,23 +1,20 @@
 <?php namespace Gaceta\Managers;
 
-class PostManager extends BaseManager {
+class PublicationManager extends BaseManager {
 
     public function getRules()
     {
         $rules = [
-            'section_id'           => 'required',
             'title'             => 'required',
-            'order_num'         => '',
+            'number'            => '',
             'slug_url'          => '',
             'meta_description'  => '',
             'body'              => '',
-            'icon'              => '',
-            'image'             => '',
-            'image2'            => '',
-            'attach_file'       => '',
+            'image_front'       => '',
+            'pdf_file'          => '',
             'published'         => '',
             'promoted_front'    => '',
-            'authored_by'    => ''
+            'authored_by'       => ''
         ];
 
         return $rules;

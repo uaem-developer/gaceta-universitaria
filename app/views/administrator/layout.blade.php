@@ -12,6 +12,8 @@
       <link href="{{ asset('assets/admin/css/style.default.css') }}" rel="stylesheet">
       <link href="{{ asset('assets/admin/css/custom.css') }}" rel="stylesheet">
       <link href="{{ asset('assets/admin/css/bootstrap-fileupload.min.css') }}" rel="stylesheet">
+      <link href="{{ asset('assets/admin/css/jquery.datatables.css') }}"rel="stylesheet">
+
       @yield('css')
 
 
@@ -46,7 +48,6 @@
                     <img alt="" src="{{ asset('assets/admin/images/photos/loggeduser.png') }}" class="media-object">
                     <div class="media-body">
                         <h4>Usuario</h4>
-                        <span>Cuautitlán</span>
                     </div>
                 </div>
 
@@ -60,9 +61,9 @@
 
             <h5 class="sidebartitle">Navegación</h5>
             <ul class="nav nav-pills nav-stacked nav-bracket">
-                <li><a href="{{ route('admin_profile') }}"><i class="fa fa-user"></i> <span>Perfil</span></a></li>
-                <li><a href="{{ route('admin_posts') }}"> <i class="fa fa-check-square-o"></i> <span>Posts</span></a></li>
-                <li><a href="{{ route('admin_sections')}}"> <i class="fa fa-home"></i> <span>Secciones</span></a></li>
+                <li id="menu-profile"><a href="{{ route('admin_profile') }}"><i class="fa fa-user"></i> <span>Perfil</span></a></li>
+                <li id="menu-posts"><a href="{{ route('admin_posts') }}"> <i class="fa fa-check-square-o"></i> <span>Posts</span></a></li>
+                <li id="menu-secciones"><a href="{{ route('admin_sections')}}"> <i class="fa fa-home"></i> <span>Secciones</span></a></li>
 
               </li>
 	          </ul>
@@ -110,7 +111,7 @@
 
 
                 <footer id="footer">
-                Gaceta UAEM {{ date('Yºqq   ') }}
+                Gaceta UAEM {{ date('Y') }}
                 </footer>
 
 			</div><!-- mainpanel -->
@@ -120,7 +121,8 @@
     <!--MODALS-->
 
 	<script src="{{ asset('assets/admin/js/jquery-1.10.2.min.js') }}"></script>
-	<script src="{{ asset('assets/admin/js/jquery-migrate-1.2.1.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/toggles.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/jquery-migrate-1.2.1.min.js') }}"></script>
 	<script src="{{ asset('assets/admin/js/jquery-ui-1.10.3.min.js') }}"></script>
 	<script src="{{ asset('assets/admin/js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('assets/admin/js/jquery.cookies.js') }}"></script>
@@ -129,6 +131,7 @@
 	<script src="{{ asset('assets/admin/js/modernizr.min.js') }}"></script>
 	<script src="{{ asset('assets/admin/js/jquery.sparkline.min.js') }}"></script>
 	<script src="{{ asset('assets/admin/js/chosen.jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/jquery.datatables.min.js') }}"></script>
 
     <script type="text/javascript">
         $("select").chosen();

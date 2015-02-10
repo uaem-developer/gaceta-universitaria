@@ -4,6 +4,7 @@ use Gaceta\Managers\SectionManager;
 
 class SectionsController extends \BaseController {
 
+    protected $sectionRepo;
 
     public function __construct(SectionRepo $sectionRepo)
     {
@@ -18,7 +19,7 @@ class SectionsController extends \BaseController {
      */
     public function index()
     {
-        $sections = $this->$sectionRepo->getList();
+        $sections = $this->sectionRepo->all();
         return View::make('administrator.sections', compact('sections'));
     }
 
@@ -30,7 +31,8 @@ class SectionsController extends \BaseController {
      */
     public function create()
     {
-        //
+
+        return View::make('administrator.section-create');
     }
 
     /**
@@ -41,7 +43,26 @@ class SectionsController extends \BaseController {
      */
     public function store()
     {
-        //
+        $section = $this->sectionRepo->newSection();
+
+        $data = Input::all();
+        $manager = new SectionManager($section, $data);
+
+        $date = date('Ymd-hm');
+
+        if(Input::file('banner')){
+            $file = Input::file('banner');
+            $path = $date."_secciones_".$file->getClientOriginalName();
+            $file->move("uploads/",$path);
+
+            $section->banner = $path;
+        }
+
+        $manager->save();
+
+        $status = 'Success';
+
+        return Redirect::route('admin_sections');
     }
 
     /**
@@ -65,7 +86,9 @@ class SectionsController extends \BaseController {
      */
     public function edit($id)
     {
-        //
+        $section = $this->sectionRepo->find($id);
+
+        return View::make('administrator/section-update', compact('section'));
     }
 
     /**
@@ -77,7 +100,27 @@ class SectionsController extends \BaseController {
      */
     public function update($id)
     {
-        //
+        $section = $this->sectionRepo->find($id);
+
+        $data = Input::all();
+
+        $date = date('Ymd-hm');
+
+        if(Input::file('banner')){
+            $file = Input::file('banner');
+            $path = $date."_secciones_".$file->getClientOriginalName();
+            $file->move("uploads/",$path);
+            $data['banner'] = $path;
+        }else{
+            $data['banner'] = $data["banner_document"];
+        }
+
+        $manager = new SectionManager($section, $data);
+
+        $manager->save();
+
+        //$message = \Lang::success;
+        return Redirect::route('admin_sections');
     }
 
     /**
@@ -89,7 +132,10 @@ class SectionsController extends \BaseController {
      */
     public function destroy($id)
     {
-        //
+        $section = $this->sectionRepo->find($id);
+        $section->delete();
+
+        return Redirect::back();
     }
 
 }

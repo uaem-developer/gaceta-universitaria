@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateSectionsTable extends Migration {
+class CreatePublicationsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,24 +12,24 @@ class CreateSectionsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('sections', function(Blueprint $table)
+		Schema::create('publications', function(Blueprint $table)
 		{
 			$table->increments('id');
 
 			$table->string('title');
+			$table->string('number');
 			$table->string('slug_url');
-
-			$table->string('banner');
-			$table->string('banner_url');
-			$table->text('body');
 			$table->string('meta_description')->nullable;
+			$table->text('body');
 
-			$table->boolean('published')->default(false);
+			$table->string('image_front');
+			$table->string('pdf_file');
 
-			$table->timestamps();
-			$table->timestamp('published_at');
+			$table->boolean('published')->default(true);
+			$table->boolean('promoted_front')->default(false);
+
 			$table->string('authored_by');
-
+			$table->timestamps();
 			$table->softDeletes();
 		});
 	}
@@ -42,7 +42,7 @@ class CreateSectionsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('sections');
+		Schema::drop('publications');
 	}
 
 }

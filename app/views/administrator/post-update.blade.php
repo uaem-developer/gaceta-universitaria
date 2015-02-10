@@ -23,26 +23,24 @@
             <div class="panel-body">
 
 
-                {{ Form::model($post, ['route' => ['admin_post_update',$post->id], 'method' => 'PUT', 'role' => 'form','novalidate']) }}
+                {{ Form::model($post, ['route' => ['admin_post_update',$post->id], 'method' => 'PUT', 'role' => 'form','novalidate','files' => true]) }}
 
 
-                {{ Field::select('type', $post_types) }}
+                {{ Field::text('title') }}
 
-                {{ Field::text('title', '' , ['id' => 'title', 'placeholder' => 'Titulo']) }}
+                {{ Field::select('section_id', $sections) }}
 
-                {{ Field::text('order_num', '' , ['id' => 'title']) }}
+                {{ Field::number('order_num') }}
 
-                {{ Field::text('meta_description', '', ['id' => 'meta_description']) }}
-
-                {{ Field::textarea('body',$post->body, ['class' => 'ckeditor']); }}
+                {{ Field::textarea('meta_description','',['rows' => '5']); }}
+                {{ Field::textarea('body','', ['class' => 'ckeditor']); }}
 
                 {{ Field::file('image') }}
+                {{ Field::file('attach_file') }}
 
-                {{ Field::file('attach_file ') }}
+                {{ Field::checkbox('published')  }}
 
-                {{ Field::checkbox('published ',['checked'=> 'true', 'class' => 'success']) }}
-
-                {{ Field::checkbox('featured ') }}
+                {{ Field::checkbox('promoted_front')  }}
 
                  <button type="submit" class="btn btn-success btn-block">Actualizar</button>
 
@@ -62,5 +60,10 @@
 
     <script type="text/javascript" src="{{ asset('assets/js/ckeditor/ckeditor.js') }}"></script>
 
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            $( "#menu-posts" ).addClass( "active" );
+        });
+    </script>
 
 @stop

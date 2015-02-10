@@ -11,7 +11,7 @@ class SectionRepo extends BaseRepo {
         return new Section;
     }
 
-    public function newPanelist()
+    public function newSection()
     {
         $section = new Section();
         return $section;
@@ -21,5 +21,10 @@ class SectionRepo extends BaseRepo {
     {
         $sections = Section::lists('title','id');
         return $sections;
+    }
+
+    public function all()
+    {
+        return Section::all();
     }
 }

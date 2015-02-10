@@ -60,5 +60,15 @@
 
 @section('script')
 
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery('.table').dataTable({
 
+            });
+
+            $( "#menu-posts" ).addClass( "active" );
+
+        });
+
+    </script>
 @stop

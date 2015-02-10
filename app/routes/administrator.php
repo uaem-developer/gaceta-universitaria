@@ -24,8 +24,8 @@ Route::put('admin/posts/edit/{post_id}',   ['as' => 'admin_post_update', 'uses' 
 /**
  * Sections
  */
-Route::get('admin/sections',         ['as' => 'admin_sections', 'uses' => 'SectionsController@index']);
-Route::get('admin/sections/add',     ['as' => 'admin_section_create', 'uses' => 'SectionsController@create']);
-Route::post('admin/sections/add',    ['as' => 'admin_section', 'uses' => 'SectionsController@store']);
-Route::get('admin/sections/edit/{section_id}',    ['as' => 'admin_section_edit', 'uses' => 'SectionsController@edit']);
-Route::put('admin/sections/edit/{section_id}',   ['as' => 'admin_section_update', 'uses' => 'SectionsController@update']);
+Route::get('admin/secciones',         ['as' => 'admin_sections', 'uses' => 'SectionsController@index']);
+Route::get('admin/secciones/add',     ['as' => 'admin_section_create', 'uses' => 'SectionsController@create']);
+Route::post('admin/secciones/add',    ['as' => 'admin_section_store', 'uses' => 'SectionsController@store']);
+Route::get('admin/secciones/edit/{section_id}',    ['as' => 'admin_section_edit', 'uses' => 'SectionsController@edit']);
+Route::put('admin/secciones/edit/{section_id}',   ['as' => 'admin_section_update', 'uses' => 'SectionsController@update']);
