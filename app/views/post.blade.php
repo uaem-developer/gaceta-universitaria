@@ -103,7 +103,7 @@
                 </figure>
                 @endif
                 <div class="large-10 columns padding-0">
-                    <h4>{{$last_post->title}}</h4>
+                    <a href="{{ route('post', [$section->slug_url, $post->slug_url, $last_post->id] ) }}"><h4>{{$last_post->title}}</h4></a>
                     <div class="post-author">
                         @if(! empty($last_post->authored_by))
                          {{ $last_post->authored_by }} <br/>
@@ -111,12 +111,12 @@
 
                         {{$last_post->created_at }} | {{ $section->title }}
                         <br/>
-                        <a href="{{ route('post', $section->slug_url, $post->slug_url, $last_post->id) }}" class="btn">ver noticia</a>
+                        <a href="{{ route('post', [$section->slug_url, $post->slug_url, $last_post->id] ) }}" class="btn">ver noticia</a>
                     </div>
                 </div>
             </div>
         @endforeach
-        
+
     </section>
 
     @endsection
