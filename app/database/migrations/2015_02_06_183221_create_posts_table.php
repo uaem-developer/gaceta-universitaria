@@ -24,9 +24,12 @@ class CreatePostsTable extends Migration {
 			$table->string('meta_description')->nullable;
 			$table->text('body');
 
-			$table->string('icon');
+			$table->string('gaceta_number');
 			$table->string('image');
 			$table->string('image2');
+			$table->string('image3');
+			$table->string('image4');
+			$table->string('image5');
 			$table->string('attach_file');
 
 			$table->boolean('published')->default(true);

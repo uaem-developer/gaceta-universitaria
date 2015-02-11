@@ -11,9 +11,12 @@ class PostManager extends BaseManager {
             'slug_url'          => '',
             'meta_description'  => '',
             'body'              => '',
-            'icon'              => '',
+            'gaceta_number'     => '',
             'image'             => '',
             'image2'            => '',
+            'image3'            => '',
+            'image4'            => '',
+            'image5'            => '',
             'attach_file'       => '',
             'published'         => '',
             'promoted_front'    => '',
@@ -21,6 +24,22 @@ class PostManager extends BaseManager {
         ];
 
         return $rules;
+    }
+
+    public function prepareData($data)
+    {
+        $data['title'] = strip_tags($data['title']);
+
+        $data['slug_url'] = \Str::slug($data['title']);
+
+        if ( empty($data['meta_description']) && ! empty($data['meta_description']))
+        {
+            $meta_description = strip_tags($this->entity->body);
+
+            $data['meta_description'] = substr($meta_description, 0, 160) . '...';
+        }
+
+        return $data;
     }
 
 }

@@ -21,5 +21,10 @@ class PostRepo extends BaseRepo {
     {
         return Post::all();
     }
+
+    public function lastestPostBySection($section_id)
+    {
+        return Post::where('section_id', '=', $section_id)->get();
+    }
 }
 

@@ -31,6 +31,8 @@
             {{ Field::textarea('meta_description',$section->meta_description, ['rows' => '5']); }}
             {{ Field::textarea('body',$section->body, ['class' => 'ckeditor']); }}
 
+            {{--
+
 
             <div class="form-group">
                 <label class="col-sm-2">Banner</label>
@@ -55,13 +57,11 @@
             </div>
             {{ Form::text('banner_document', $section->banner, ['hidden']) }}
 
-
             {{ Field::text('banner_url') }}
-
-
 
             {{ Field::checkbox('published')  }}
 
+            --}}
             <br />
 
             <button type="submit" class="btn btn-success btn-block">Guardar</button>

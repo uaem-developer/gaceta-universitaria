@@ -1,6 +1,9 @@
 <?php
+use Gaceta\Repositories\PostRepo;
+use Gaceta\Repositories\SectionRepo;
 
-class HomeController extends BaseController {
+
+class HomeController extends \BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -15,10 +18,20 @@ class HomeController extends BaseController {
 	|
 	*/
 
+	protected $postRepo, $sectionRepo;
+
+
+	public function __construct(PostRepo $postRepo, SectionRepo $sectionRepo)
+	{
+		$this->postRepo 		= $postRepo;
+		$this->sectionRepo 		= $sectionRepo;
+	}
+
 	public function index()
 	{
 
-		return View::make('administrator.inicio');
+
+		return View::make('home');
 
 	}
 

@@ -27,4 +27,10 @@ class SectionRepo extends BaseRepo {
     {
         return Section::all();
     }
+
+    public function findBySlug($slug)
+    {
+        return Section::where('slug_url', '=', $slug)->first();
+    }
+
 }

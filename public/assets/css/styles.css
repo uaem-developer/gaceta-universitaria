@@ -3953,16 +3953,13 @@ body {
   font-size: 16px;
   font-family: 'Open Sans';
   margin: 0 auto;
-  background: -webkit-linear-gradient(#c7c8c8 0%, #c7c8c8 21%, #e1e1e1 41%, #ededed 60%, #ededed 78%, #e8ecf1 100%);
-  background: -moz-linear-gradient(#c7c8c8 0%, #c7c8c8 21%, #e1e1e1 41%, #ededed 60%, #ededed 78%, #e8ecf1 100%);
-  background: -o-linear-gradient(#c7c8c8 0%, #c7c8c8 21%, #e1e1e1 41%, #ededed 60%, #ededed 78%, #e8ecf1 100%);
-  background: -ms-linear-gradient(#c7c8c8 0%, #c7c8c8 21%, #e1e1e1 41%, #ededed 60%, #ededed 78%, #e8ecf1 100%);
-  background: linear-gradient(#c7c8c8 0%, #c7c8c8 21%, #e1e1e1 41%, #ededed 60%, #ededed 78%, #e8ecf1 100%);
+/*background linear-gradient(rgba(199,200,200,1) 0%, rgba(199,200,200,1) 21%, rgba(225,225,225,1) 41%, rgba(237,237,237,1) 60%, rgba(237,237,237,1) 78%, rgba(232,236,241,1) 100%)*/
+  background: #ededed;
   background-attachment: fixed;
 }
 header {
-  padding-top: 195px;
-  background: url("../img/background.jpg") #ccc no-repeat;
+  padding-top: 198px;
+  background: url("../img/background.jpg") #ededed no-repeat;
   background-position: top;
 }
 .main-wrapper {

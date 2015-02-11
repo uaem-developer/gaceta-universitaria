@@ -17,15 +17,15 @@
 
 @section('header-text')
     <section class="header-text">
-        <h1>Gaceta Universitaria</h1>
+        <h1>Gaceta virtual universitaria</h1>
         <p class="text-columns">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam est molestias, nihil placeat quisquam quos ratione repellat reprehenderit. Cum eum hic nobis non repellendus sint temporibus unde veritatis voluptas!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, quas, similique. Ipsum necessitatibus, nobis odit porro ratione vero. Hic incidunt ipsa iusto maiores minima obcaecati placeat quas suscipit tempora totam?
+            La Gaceta  es una publicación mensual de carácter informativo, en cuyo contenido se da cuenta de las actividades sustantivas desplegadas por alumnos, docentes e investigadores, además de la administración central de la Universidad Autónoma del Estado de Morelos (UAEM).
+
         </p>
     </section>
 
     <section class="header-number">
-        <h2 class="text-left">Gaceta No <span class="text-big"> 434 | Feb 2015</span></h2>
+        <h2 class="text-left">Gaceta No <span class="text-big"> 448 | Feb 2015</span></h2>
     </section>
 @endsection
 
@@ -38,15 +38,19 @@
     <section class="main-content">
 
         <div class="fondo-index">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci ducimus illum inventore veniam. Deserunt maxime nobis quibusdam ullam! Consequatur, dignissimos, repellat. Cumque dolor dolorem illum inventore nostrum porro, quos sequi?</p>
-            <a href="#" class="btn ">ver más</a>
+            <p>Esta publicación es realizada por el Departamento de Redacción de la Dirección General de Comunicación, que a su vez depende de la Secretaría de Extensión. La fecha de aparición de Gaceta es el día 15 de cada mes. Se imprimen seis mil ejemplares que son distribuidos entre la comunidad universitaria en todos los campus, sedes regionales, institutos, escuelas y facultades de la institución, e instancias externas.
+            </p>
+         {{--    <a href="#" class="btn ">ver más</a>--}}
         </div>
 
         <div class="large-10 columns">
             <figure class="img-box"><img src="{{ asset('assets/img/imagen-post.jpg') }}" alt="Imagen del post"/></figure>
             <div class="row">
                 <div class="post-title">
-                    <div class="large-3 columns gaceta-title-sub"><span class="gaceta-numero">433</span> Feb 2015</div>
+                    <div class="large-3 columns gaceta-title-sub">
+                        <span class="gaceta-numero">433</span>
+
+                        Feb 2015</div>
                     <div class="large-13 columns"><h2><a href="#">Marcha  UAEM en apoyo a normalistas de Ayotzinapa</a></h2></div>
                 </div>
                 <div class="post-author">Salvador Rivera | Enero 6 2014 | Gaceta No.433</div>

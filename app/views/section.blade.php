@@ -20,19 +20,18 @@
 
 @section('header-text')
     <section class="header-text investigacion row">
-        <h1 class="large-4 columns txt-center">Investigación</h1>
+        <h1 class="large-4 columns txt-center">{{$section->title}}</h1>
         <p class="text-columns large-12 columns">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam est molestias, nihil placeat quisquam quos ratione repellat reprehenderit. Cum eum hic nobis non repellendus sint temporibus unde veritatis voluptas!
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, quas, similique. Ipsum necessitatibus, nobis odit porro ratione vero. Hic incidunt ipsa iusto maiores minima obcaecati placeat quas suscipit tempora totam?
+            {{ $section->body }}
         </p>
     </section>
 @endsection
 
 @section('breadcrumb')
     <ul class="breadcrumb">
-        <li><a href="#">Inicio</a></li>
+        <li><a href="{{ route('home') }}">Inicio</a></li>
         <li>|</li>
-        <li><a href="#">Investigación y Académia</a></li>
+        <li><a href="{{ route('section', $section->slug_url ) }}">{{$section->title}}</a></li>
     </ul>
 @endsection
 
@@ -61,107 +60,27 @@
         </form>
 
         <div class="row post-section">
-            <div class="large-8 columns">
-                <h3>Primer piedra del claustro universitario Miacatlán</h3>
-                <div class="detail-post">
-                    Enero 6 2015 | Gaceta No 433 | Académia e Investigación
-                </div>
-                <div class="row">
-                    <div class="large-8 columns">
-                        <figure>
-                            <img src="{{ asset('assets/img/section-image.jpg') }}" alt=""/>
-                        </figure>
-                    </div>
-                    <div class="large-8 columns">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur distinctio enim est ipsa laborum maxime minus mollitia nam odio quas quo recusandae reiciendis rem rerum saepe tempore vel, voluptas.</p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="large-8 columns">
-                <h3>Primer piedra del claustro universitario Miacatlán</h3>
-                <div class="detail-post">
-                    Enero 6 2015 | Gaceta No 433 | Académia e Investigación
-                </div>
-                <div class="row">
-                    <div class="large-8 columns">
-                        <figure>
-                            <img src="{{ asset('assets/img/section-image.jpg') }}" alt=""/>
-                        </figure>
+            @foreach($posts as $post)
+                <div class="large-8 columns list-section-post">
+                    <a href="{{ route('post', [$section->slug_url, $post->slug_url, $post->id]) }}" title="{{$post->title}}"><h3>{{$post->title}}</h3></a>
+                    <div class="detail-post">
+                        {{ $section->created_at }} | {{ $section->title }}
                     </div>
-                    <div class="large-8 columns">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur distinctio enim est ipsa laborum maxime minus mollitia nam odio quas quo recusandae reiciendis rem rerum saepe tempore vel, voluptas.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="large-8 columns">
-                <h3>Primer piedra del claustro universitario Miacatlán</h3>
-                <div class="detail-post">
-                    Enero 6 2015 | Gaceta No 433 | Académia e Investigación
-                </div>
-                <div class="row">
-                    <div class="large-8 columns">
-                        <figure>
-                            <img src="{{ asset('assets/img/section-image.jpg') }}" alt=""/>
-                        </figure>
-                    </div>
-                    <div class="large-8 columns">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur distinctio enim est ipsa laborum maxime minus mollitia nam odio quas quo recusandae reiciendis rem rerum saepe tempore vel, voluptas.</p>
+                    <div class="row">
+                        @if(!empty($post->image))
+                        <div class="large-8 columns">
+                            <figure>
+                                <img src="uploads/posts/{{ $post->image }}" alt="{{$post->title}}"/>
+                            </figure>
+                        </div>
+                        @endif
+                        <div class="large-8 columns">
+                            <p>{{$post->meta_description}}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="large-8 columns">
-                <h3>Primer piedra del claustro universitario Miacatlán</h3>
-                <div class="detail-post">
-                    Enero 6 2015 | Gaceta No 433 | Académia e Investigación
-                </div>
-                <div class="row">
-                    <div class="large-8 columns">
-                        <figure>
-                            <img src="{{ asset('assets/img/section-image.jpg') }}" alt=""/>
-                        </figure>
-                    </div>
-                    <div class="large-8 columns">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur distinctio enim est ipsa laborum maxime minus mollitia nam odio quas quo recusandae reiciendis rem rerum saepe tempore vel, voluptas.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="large-8 columns">
-                <h3>Primer piedra del claustro universitario Miacatlán</h3>
-                <div class="detail-post">
-                    Enero 6 2015 | Gaceta No 433 | Académia e Investigación
-                </div>
-                <div class="row">
-                    <div class="large-8 columns">
-                        <figure>
-                            <img src="{{ asset('assets/img/section-image.jpg') }}" alt=""/>
-                        </figure>
-                    </div>
-                    <div class="large-8 columns">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur distinctio enim est ipsa laborum maxime minus mollitia nam odio quas quo recusandae reiciendis rem rerum saepe tempore vel, voluptas.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="large-8 columns">
-                <h3>Primer piedra del claustro universitario Miacatlán</h3>
-                <div class="detail-post">
-                    Enero 6 2015 | Gaceta No 433 | Académia e Investigación
-                </div>
-                <div class="row">
-                    <div class="large-8 columns">
-                        <figure>
-                            <img src="{{ asset('assets/img/section-image.jpg') }}" alt=""/>
-                        </figure>
-                    </div>
-                    <div class="large-8 columns">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur distinctio enim est ipsa laborum maxime minus mollitia nam odio quas quo recusandae reiciendis rem rerum saepe tempore vel, voluptas.</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </section>
 

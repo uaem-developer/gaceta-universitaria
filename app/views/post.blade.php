@@ -25,11 +25,11 @@
 
 @section('breadcrumb')
     <ul class="breadcrumb">
-        <li><a href="#">Inicio</a></li>
+        <li><a href="{{route('home')}}">Inicio</a></li>
         <li>|</li>
-        <li><a href="#">Investigación y Académia</a></li>
+        <li><a href="{{ route('section', [$section->slug_url] ) }}">{{ $section->title }}</a></li>
         <li>|</li>
-        <li><a href="#">Marcha UAEM apoyo a estudiantes de Ayotzinapa</a></li>
+        <li><a href="#">{{ $post->title }}</a></li>
     </ul>
 @endsection
 
@@ -40,79 +40,83 @@
        <div class="row">
            <div class="large-13 columns padding-0">
                 <ul class="bxslider ">
-                    <li><img src="{{asset('assets/img/imagen-post-interior.jpg')}}" /></li>
-                    <li><img src="{{asset('assets/img/imagen-post-interior.jpg')}}" /></li>
-                    <li><img src="{{asset('assets/img/imagen-post-interior.jpg')}}" /></li>
+                    @if(! empty($post->image))
+                    <li><img src='uploads/posts/{{$post->image}}' /></li>
+                    @endif
+                    @if(! empty($post->image2))
+                        <li><img src='uploads/posts/{{$post->image2}}' /></li>
+                    @endif
+                    @if(! empty($post->image3))
+                        <li><img src='uploads/posts/{{$post->image3}}' /></li>
+                    @endif
+                    @if(! empty($post->image4))
+                        <li><img src='uploads/posts/{{$post->image4}}' /></li>
+                    @endif
+                    @if(! empty($post->image5))
+                        <li><img src='uploads/posts/{{$post->image5}}' /></li>
+                    @endif
                 </ul>
            </div>
 
             <div id="bx-pager" class="large-3 columns ">
-                <a data-slide-index="0" href=""><img src="{{asset('assets/img/imagen-post-interior-thumb.jpg')}}" /></a>
-                <a data-slide-index="1" href=""><img src="{{asset('assets/img/imagen-post-interior-thumb.jpg')}}" /></a>
-                <a data-slide-index="2" href=""><img src="{{asset('assets/img/imagen-post-interior-thumb.jpg')}}" /></a>
+                @if(! empty($post->image))
+                    <a data-slide-index="0" href=""><img src="uploads/posts/{{ $post->image }}" /></a>
+                @endif
+                @if(! empty($post->image2))
+                    <a data-slide-index="1" href=""><img src="uploads/posts/{{ $post->image2 }}" /></a>
+                @endif
+                @if(! empty($post->image3))
+                    <a data-slide-index="2" href=""><img src="uploads/posts/{{ $post->image3 }}" /></a>
+                @endif
+                @if(! empty($post->image4))
+                    <a data-slide-index="3" href=""><img src="uploads/posts/{{ $post->image4 }}" /></a>
+                @endif
+                @if(! empty($post->image5))
+                    <a data-slide-index="4" href=""><img src="uploads/posts/{{ $post->image5 }}" /></a>
+                @endif
             </div>
        </div>
 
         <div class="title-post">
-            <div class="section-content"> Academia e Investigación</div>
-            <h1>Marcha UAEM en apoyo a normalistas de Ayotzinapa</h1>
+            <div class="section-content"> {{ $section->title  }}</div>
+            <h1>{{ $post->title }}</h1>
         </div>
+
         <div class="post-author">
-            Por Salvador Rivera | Enero 6 de 2015
+            @if(! empty($post->authored_by))  {{ $post->authored_by }} | @endif {{$post->created_at}}
         </div>
 
         <div class="content-post">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto aspernatur dicta dignissimos distinctio dolore eligendi enim est, ex, fugit itaque iure iusto labore natus quia quos ratione sunt suscipit!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci nesciunt perspiciatis placeat. Ab accusamus alias architecto consequuntur, delectus ea hic illum in ipsam laboriosam laborum, laudantium, quaerat quis vero vitae.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur assumenda atque cum, cumque distinctio ducimus ea eius eligendi error est, illum non quo reprehenderit rerum voluptatem? Incidunt quisquam soluta unde.</p>
-
+           {{ $post->body }}
         </div>
     </section>
 
     <section class="main-content">
         <h2>Más leidos</h2>
-        <div class="large-5 columns">
-            <figure class="large-6 columns padding-0">
-                <img src="{{ asset('assets/img/thumb-image-post.jpg') }}" alt=""/>
-            </figure>
-            <div class="large-10 columns padding-0">
-                <h4>Arranca obra del claustro universitario</h4>
-                <div class="post-author">
-                    Por salvador rivera <br/>
-                    Enero 6 2015 | Gaceta no 433 | Gestión
-                    <br/>
-                    <a href="#" class="btn">ver noticia</a>
+
+        @foreach($lastest_posts as $last_post)
+
+            <div class="large-5 columns">
+                @if(! empty($last_post->image))
+                <figure class="large-6 columns padding-0">
+                    <img src="uploads/posts/{{ $last_post->image }}" alt=""/>
+                </figure>
+                @endif
+                <div class="large-10 columns padding-0">
+                    <h4>{{$last_post->title}}</h4>
+                    <div class="post-author">
+                        @if(! empty($last_post->authored_by))
+                         {{ $last_post->authored_by }} <br/>
+                        @endif
+
+                        {{$last_post->created_at }} | {{ $section->title }}
+                        <br/>
+                        <a href="{{ route('post', $section->slug_url, $post->slug_url, $last_post->id) }}" class="btn">ver noticia</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="large-5 columns">
-            <figure class="large-6 columns padding-0">
-                <img src="{{ asset('assets/img/thumb-image-post.jpg') }}" alt=""/>
-            </figure>
-            <div class="large-10 columns padding-0">
-                <h4>Arranca obra del claustro universitario</h4>
-                <div class="post-author">
-                    Por salvador rivera <br/>
-                    Enero 6 2015 | Gaceta no 433 | Gestión
-                    <br/>
-                    <a href="#" class="btn">ver noticia</a>
-                </div>
-            </div>
-        </div>
-        <div class="large-5 columns">
-            <figure class="large-6 columns padding-0">
-                <img src="{{ asset('assets/img/thumb-image-post.jpg') }}" alt=""/>
-            </figure>
-            <div class="large-10 columns padding-0">
-                <h4>Arranca obra del claustro universitario</h4>
-                <div class="post-author">
-                    Por salvador rivera <br/>
-                    Enero 6 2015 | Gaceta no 433 | Gestión
-                    <br/>
-                    <a href="#" class="btn">ver noticia</a>
-                </div>
-            </div>
-        </div>
+        @endforeach
+        
     </section>
 
     @endsection

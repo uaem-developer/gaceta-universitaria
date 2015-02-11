@@ -31,20 +31,21 @@
             {{ Field::textarea('meta_description','',['rows' => '5']); }}
             {{ Field::textarea('body','', ['class' => 'ckeditor']); }}
 
+            {{--
             {{ Field::file('banner') }}
 
             {{ Field::text('banner_url') }}
 
             {{ Field::checkbox('published')  }}
-
+            --}}
             <br />
 
-            <button type="submit" class="btn btn-success btn-block">Guardar</button>
-            {{ Form::close() }}
+    <button type="submit" class="btn btn-success btn-block">Guardar</button>
+    {{ Form::close() }}
 
-        </div><!--Panel Body-->
+</div><!--Panel Body-->
 
-    </div>
+</div>
 
 
 @stop
@@ -54,11 +55,11 @@
 
 @section('script')
 
-    <script type="text/javascript" src="{{ asset('assets/admin/js/ckeditor/ckeditor.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/admin/js/ckeditor/ckeditor.js') }}"></script>
 
-    <script type="text/javascript">
-        jQuery(document).ready(function() {
-            $( "#menu-secciones" ).addClass( "active" );
-        });
-    </script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    $( "#menu-secciones" ).addClass( "active" );
+});
+</script>
 @stop

@@ -19,4 +19,9 @@ class Section extends \Eloquent {
         'authored_by'
     ];
 
+    public function posts()
+    {
+        return  $this->hasMany('Gaceta\Entities\Post');
+    }
+
 }

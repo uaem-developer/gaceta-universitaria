@@ -15,13 +15,20 @@ class Post extends \Eloquent {
         'slug_url',
         'meta_description',
         'body',
-        'icon',
+        'gaceta_number',
         'image',
         'image2',
+        'image3',
+        'image4',
+        'image5',
         'attach_file',
         'published',
         'promoted_front',
         'authored_by'];
 
 
+    public function section(){
+        return $this->belongsTo('Gaceta\Entities\Section');
+
+    }
 }

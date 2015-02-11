@@ -24,7 +24,7 @@ class CreateSectionsTable extends Migration {
 			$table->text('body');
 			$table->string('meta_description')->nullable;
 
-			$table->boolean('published')->default(false);
+			$table->boolean('published')->default(true);
 
 			$table->timestamps();
 			$table->timestamp('published_at');

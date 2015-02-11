@@ -5,12 +5,11 @@
 @stop
 
 @section('pageheader')
-        <h2><i class="fa fa-list-alt"></i>Actividades y Convocatorias</h2>
+        <h2><i class="fa fa-list-alt"></i>Noticias</h2>
         <div class="breadcrumb-wrapper">
             <span class="label">Usted se encuentra en:</span>
             <ol class="breadcrumb">
-                <li><a href="{{ URL::to('frontend/rontend/perfil') }}">Inicio</a></li>
-                <li class="active">Actividades y Convocatorias</li>
+                <li class="active">Noticias</li>
             </ol>
         </div>
 @stop
@@ -25,9 +24,8 @@
                     <thead>
                       <tr>
                         <th>Titulo</th>
-                        <th>Type</th>
-                        <th>Orden</th>
-                        <th>Destacado</th>
+                          <th>Sección</th>
+                          <th>Fecha</th>
                         <th></th>
                       </tr>
                     </thead>
@@ -35,10 +33,8 @@
                         @foreach ($posts as $post)
                           <tr>
                             <td>{{$post['title']}}</td>
-                            <td>{{$post['type']}}</td>
-                            <td>{{$post['orden_num']}}</td>
-                            <td>{{$post['featured']}}</td>
-
+                            <td>{{$post['section']['title']}}</td>
+                            <td>{{$post['created_at']}}</td>
                             <td> <a href="{{ route('admin_post_edit', $post['id']);  }}">Editar <i class="fa fa-arrow-circle-right"></i></a> </td>
                           </tr>
                         @endforeach

@@ -48,6 +48,10 @@ class SectionsController extends \BaseController {
         $data = Input::all();
         $manager = new SectionManager($section, $data);
 
+
+        /*
+         * Comented for less functionality
+
         $date = date('Ymd-hm');
 
         if(Input::file('banner')){
@@ -57,6 +61,7 @@ class SectionsController extends \BaseController {
 
             $section->banner = $path;
         }
+        */
 
         $manager->save();
 
@@ -72,9 +77,17 @@ class SectionsController extends \BaseController {
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show($section_url)
     {
-        //
+        $section = $this->sectionRepo->findBySlug($section_url);
+
+        if($section == NULL)
+            App::abort('404');
+
+        $posts = $section->posts()->get();
+
+        return View::make('section', compact('section', 'posts'));
+
     }
 
     /**
@@ -104,6 +117,10 @@ class SectionsController extends \BaseController {
 
         $data = Input::all();
 
+
+        /*
+         * Comented for less functionality
+
         $date = date('Ymd-hm');
 
         if(Input::file('banner')){
@@ -114,7 +131,7 @@ class SectionsController extends \BaseController {
         }else{
             $data['banner'] = $data["banner_document"];
         }
-
+        */
         $manager = new SectionManager($section, $data);
 
         $manager->save();

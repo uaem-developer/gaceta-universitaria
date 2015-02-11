@@ -22,13 +22,14 @@
 <section class="main-wrapper">
     <nav class="menu">
         <ul>
-            <li><a href="#" title="Home">Home</a></li>
-            <li><a href="#" title="Gestión">Gestión</a></li>
-            <li><a href="#" title="Docencia">Docencia</a></li>
-            <li><a href="#" title="Investigación">Investigación</a></li>
-            <li><a href="#" title="Extensión">Extensión</a></li>
-            <li><a href="#" title="Extensión">Extensión</a></li>
-            <li><a href="#" title="Anuncios">Anuncios</a></li>
+            <li><a href="{{ route('home') }}" title="Home">Home</a></li>
+            <li><a href="{{ route('section', 'gestion') }}" title="Gestión">Gestión</a></li>
+            <li><a href="{{ route('section', 'docencia') }}" title="Docencia">Docencia</a></li>
+            <li><a href="{{ route('section', 'investigacion') }}" title="Investigación">Investigación</a></li>
+            <li><a href="{{ route('section', 'extension') }}" title="Extensión">Extensión</a></li>
+            <li><a href="{{ route('section', 'anuncios') }}" title="Extensión">Anuncios</a></li>
+            <li><a href="{{ route('section', 'colaboraciones') }}" title="Anuncios">Colaboraciones</a></li>
+            <li><a href="{{ route('section', 'galeria-de-fotos') }}" title="Anuncios">Galería de fotos</a></li>
         </ul>
     </nav>
 
@@ -42,7 +43,7 @@
 <footer>
     <div class="row footer-links">
         <div class="large-4 columns">
-            <h4>lorem ipsum</h4>
+            <h4>Gestión</h4>
             <ul class="footer-list">
                 <li>+ Primer piedra del claustro universitario en Miacatlán</li>
                 <li>+ Primer piedra del claustro universitario en Miacatlá</li>
@@ -52,7 +53,7 @@
             </ul>
         </div>
         <div class="large-4 columns">
-            <h4>lorem ipsum</h4>
+            <h4>Docencia</h4>
             <ul class="footer-list">
                 <li>+ Primer piedra del claustro universitario en Miacatlán</li>
                 <li>+ Primer piedra del claustro universitario en Miacatlá</li>
@@ -62,7 +63,7 @@
             </ul>
         </div>
         <div class="large-4 columns">
-            <h4>lorem ipsum</h4>
+            <h4>Investigación</h4>
             <ul class="footer-list">
                 <li>+ Primer piedra del claustro universitario en Miacatlán</li>
                 <li>+ Primer piedra del claustro universitario en Miacatlá</li>
@@ -72,7 +73,7 @@
             </ul>
         </div>
         <div class="large-4 columns">
-            <h4>lorem ipsum</h4>
+            <h4>Extensión</h4>
             <ul class="footer-list">
                 <li>+ Primer piedra del claustro universitario en Miacatlán</li>
                 <li>+ Primer piedra del claustro universitario en Miacatlá</li>
