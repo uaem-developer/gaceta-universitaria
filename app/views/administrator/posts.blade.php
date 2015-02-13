@@ -33,7 +33,7 @@
                         @foreach ($posts as $post)
                           <tr>
                             <td>{{$post['title']}}</td>
-                            <td>{{$post['section']['title']}}</td>
+                            <td>{{$post->section()->first()->title}}</td>
                             <td>{{$post['created_at']}}</td>
                             <td> <a href="{{ route('admin_post_edit', $post['id']);  }}">Editar <i class="fa fa-arrow-circle-right"></i></a> </td>
                           </tr>

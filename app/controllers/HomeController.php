@@ -3,7 +3,8 @@ use Gaceta\Repositories\PostRepo;
 use Gaceta\Repositories\SectionRepo;
 
 
-class HomeController extends \BaseController {
+class HomeController extends \BaseController
+{
 
 	/*
 	|--------------------------------------------------------------------------
@@ -23,15 +24,39 @@ class HomeController extends \BaseController {
 
 	public function __construct(PostRepo $postRepo, SectionRepo $sectionRepo)
 	{
-		$this->postRepo 		= $postRepo;
-		$this->sectionRepo 		= $sectionRepo;
+		$this->postRepo = $postRepo;
+		$this->sectionRepo = $sectionRepo;
 	}
 
+	public function admin()
+	{
+		return View::make('administrator.inicio');
+	}
+	
 	public function index()
 	{
+		$lastest_posts = $this->postRepo->lastestPost(10);
+		$most_views_posts = $this->postRepo->lastestPost(5);
 
+		$investigacion = $this->sectionRepo->findBySlug('investigacion');
+		$extension = $this->sectionRepo->findBySlug('extension');
+		$gestion = $this->sectionRepo->findBySlug('gestion');
 
-		return View::make('home');
+		$investigacion_posts = $this->postRepo->lastestPostBySectionTake($investigacion->id, 2);
+		$extension_posts = $this->postRepo->lastestPostBySectionTake($extension->id, 2);
+		$gestion_posts = $this->postRepo->lastestPostBySectionTake($gestion->id, 2);
+
+		$last_post = $this->postRepo->lastPost();
+
+		return View::make('home', compact('lastest_posts',
+										  'most_views_posts',
+										  'investigacion',
+										  'extension',
+										'gestion',
+										'investigacion_posts',
+										'extension_posts',
+										'gestion_posts',
+										  'last_post'));
 
 	}
 

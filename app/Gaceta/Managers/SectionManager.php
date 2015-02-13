@@ -21,7 +21,7 @@ class SectionManager extends BaseManager {
     public function prepareData($data)
     {
         $data['title'] = strip_tags($data['title']);
-       // $this->entity->slug_url = \Str::slug($this->entity->title);
+        $data['slug_url'] = \Str::slug($data['title']);
 
         return $data;
     }

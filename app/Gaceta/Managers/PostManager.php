@@ -32,7 +32,7 @@ class PostManager extends BaseManager {
 
         $data['slug_url'] = \Str::slug($data['title']);
 
-        if ( empty($data['meta_description']) && ! empty($data['meta_description']))
+        if ( empty($data['meta_description']))
         {
             $meta_description = strip_tags($this->entity->body);
 

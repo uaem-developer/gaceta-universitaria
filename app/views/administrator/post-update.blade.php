@@ -98,8 +98,11 @@
                                     <div class="uneditable-input" >
                                         <i class="glyphicon glyphicon-file fileupload-exists"></i>
                                         <span class="fileupload-preview"><i class="fa fa-file-o"></i> {{ $post->image3 }}</span>
+
                                     </div>
-                                    @if( ! empty($post->image3))
+                                    <span class="fileupload-new">Seleccionar Archivo</span>
+
+                                @if( ! empty($post->image3))
                                         <a href="{{ asset('uploads/posts')."/".$post->image3}}" class="btn btn-primary btn-sm" target="_blank" >Ver Archivo</a>
                                     @endif
                                     <a  class="btn btn-default btn-sm" onClick="$('#image3_document').click()"; > @if( ! empty($post->image3)) Cambiar @else Seleccionar @endif</a>

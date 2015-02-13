@@ -44,32 +44,27 @@
         </div>
 
         <div class="large-10 columns">
-            <figure class="img-box"><img src="{{ asset('assets/img/imagen-post.jpg') }}" alt="Imagen del post"/></figure>
+            @if(! empty($last_post->image))
+            <figure class="img-box"><img src="uploads/posts/{{ $last_post->image }}" alt="{{$last_post->title}}"/></figure>
+            @endif
             <div class="row">
                 <div class="post-title">
-                    <div class="large-3 columns gaceta-title-sub">
-                        <span class="gaceta-numero">433</span>
-
-                        Feb 2015</div>
-                    <div class="large-13 columns"><h2><a href="#">Marcha  UAEM en apoyo a normalistas de Ayotzinapa</a></h2></div>
+                    {{-- <div class="large-3 columns gaceta-title-sub">
+                        {{$last_post->created_at}}</div>
+                    --}}
+                    <div class="large-13 columns">
+                        <h2><a href="{{ route('post', [$last_post->section()->first()->slug_url, $last_post->slug_url, $last_post->id] ) }}">{{$last_post->title}}</a></h2></div>
                 </div>
-                <div class="post-author">Salvador Rivera | Enero 6 2014 | Gaceta No.433</div>
-                <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequatur, doloremque dolorum error eveniet fuga id in iusto, neque nihil odit officia officiis pariatur placeat quas rem, tempora velit voluptatibus.</p>
+                <div class="post-author">@if(! empty($last_post->authored_by)) | @endif {{$last_post->created_at}}</div>
+                <p class="">{{ $last_post->meta_description }}</p>
             </div>
         </div>
         <div class="large-6 columns">
             <h2>Notas</h2>
             <ul class="notas-home-destacadas">
-                <li><a href="#">Arranca obra del claustro universitario en axochiapan</a></li>
-                <li><a href="#">Bolivar Zapata y Rodolfo    Dirzo   recibiran doctorado Honoris Causa</a></li>
-                <li><a href="#">Analizan caso ayotzinapan en foro informativo</a></li>
-                <li><a href="#">Cátedra en memoria de Ignacio Martín Baró</a></li>
-                <li><a href="#">Arranca obra del claustro universitario en axochiapan</a></li>
-                <li><a href="#">Bolivar Zapata y Rodolfo    Dirzo   recibiran doctorado Honoris Causa</a></li>
-                <li><a href="#">Analizan caso ayotzinapan en foro informativo</a></li>
-                <li><a href="#">Cátedra en memoria de Ignacio Martín Baró</a></li>
-                <li><a href="#">Arranca obra del claustro universitario en axochiapan</a></li>
-                <li><a href="#">Bolivar Zapata y Rodolfo    Dirzo   recibiran doctorado Honoris Causa</a></li>
+                @foreach($lastest_posts as $last_post)
+                    <li><a href="{{ route('post', [$last_post->section()->first()->slug_url, $last_post->slug_url, $last_post->id]) }}">{{ $last_post->title }}</a></li>
+                @endforeach
             </ul>
         </div>
     </section>
@@ -101,20 +96,16 @@
             <div >
                 <h2>Más leidos</h2>
                 <ul class="list-masleidos pleca-sombra-276">
-                    <li><a href="#" class="title-post">Arranca la obra del claustro universitario en Axochiapan </a>
-                        <div class="author">Por Salvador Rivera <br/>Enero 6, 2015| Gaceta No 433 Gestión</div>
-                        <a href="#" class="btn">ver noticia</a>
+                    @foreach($most_views_posts as $most_view_post)
+                    <li><a href="{{ route('post', [$most_view_post->section()->first()->slug_url, $most_view_post->slug_url, $most_view_post->id]) }}" class="title-post">{{ $most_view_post->title }} </a>
+                        <div class="author"> {{$most_view_post->authored_by}}<br/> {{ $most_view_post->created_at }}</div>
+                        <a href="{{ route('post', [$most_view_post->section()->first()->slug_url, $most_view_post->slug_url, $most_view_post->id]) }}" class="btn">ver noticia</a>
                     </li>
-                    <li><a href="#" class="title-post">continua la construccion en la Facultad  de Ciencias Químicas e Ingeniería </a>
-                        <div class="author">Por Salvador Rivera <br/>Enero 6, 2015| Gaceta No 433 Gestión</div>
-                        <a href="#" class="btn">ver noticia</a>
-                    </li>
-                    <li><a href="#" class="title-post">Arranca la obra del claustro universitario en Axochiapan </a>
-                        <div class="author">Por Salvador Rivera <br/>Enero 6, 2015| Gaceta No 433 Gestión</div>
-                        <a href="#" class="btn">ver noticia</a>
-                    </li>
+                    @endforeach
+
                 </ul>
             </div>
+            {{--
             <div>
                 <h2>Gacetas anteriores</h2>
                 <ul class="list-masleidos gacetas-anteriores pleca-sombra-276">
@@ -143,9 +134,9 @@
                     </li>
                 </ul>
             </div>
+
             <div class="row pleca-sombra-276" >
                 <h2>Galeria</h2>
-
                 <figure class="large-5 columns"><img src="{{ asset('assets/img/galeria-thumb.jpg') }}" alt=""/></figure>
                 <figure class="large-5 columns"><img src="{{ asset('assets/img/galeria-thumb2.jpg') }}" alt=""/></figure>
                 <figure class="large-5 columns"><img src="{{ asset('assets/img/galeria-thumb.jpg') }}" alt=""/></figure>
@@ -153,71 +144,67 @@
                 <figure class="large-5 columns"><img src="{{ asset('assets/img/galeria-thumb2.jpg') }}" alt=""/></figure>
                 <figure class="large-5 columns"><img src="{{ asset('assets/img/galeria-thumb.jpg') }}" alt=""/></figure>
             </div>
+            --}}
+
         </div>
         <div class="large-10 columns row">
-            <h2 class="title-section aqua"><span class="box-section aqua"></span>Academia e Investigación</h2>
+            <h2 class="title-section aqua"><span class="box-section aqua"></span>{{ $investigacion->title }}</h2>
 
+            @foreach($investigacion_posts as $post)
             <div class="large-8 columns">
-                <h3 class="title-post-section aqua">Primer piedra del claustro universitario en Miacatlán</h3>
-                <div class="fecha-post">Enero 6 2015|Gaceta N o433</div>
-                <figure><img src="{{ asset('assets/img/interiores.jpg') }}" alt=""/></figure>
-                <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, nemo, quisquam. Cumque doloremque fugiat necessitatibus numquam, perspiciatis tenetur ullam veritatis voluptate! A aperiam culpa ducimus error iure natus recusandae temporibus.</p>
+               <a   href="{{ route('post', [$post->section()->first()->slug_url, $post->slug_url, $post->id]) }}"> <h3 class="title-post-section aqua">{{$post->title}}</h3></a>
+                <div class="fecha-post">{{$post->created_at}}</div>
+                @if(! empty($post->image))
+                <figure><img src="uploads/posts/{{ $post->image }}" alt=""/></figure>
+                @endif
+                <p class="post-description">{{$post->meta_description}}</p>
                 <div class="footer-post">
-                    Academia e investigación
-                </div>
-            </div>
-            <div class="large-8 columns">
-                <h3 class="title-post-section aqua">Primer piedra del claustro universitario en Miacatlán</h3>
-                <div class="fecha-post">Enero 6 2015|Gaceta N o433</div>
-                <figure><img src="{{ asset('assets/img/interiores.jpg') }}" alt=""/></figure>
-                <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, nemo, quisquam. Cumque doloremque fugiat necessitatibus numquam, perspiciatis tenetur ullam veritatis voluptate! A aperiam culpa ducimus error iure natus recusandae temporibus.</p>
-                <div class="footer-post">
-                    Academia e investigación
+                    {{ $investigacion->title }}
                 </div>
             </div>
 
-            <div class="clearfix"></div>
-            <h2 class="title-section green"><span class="box-section green"></span>Extención</h2>
-            <div class="large-8 columns">
-                <h3 class="title-post-section green">Primer piedra del claustro universitario en Miacatlán</h3>
-                <div class="fecha-post">Enero 6 2015|Gaceta N o433</div>
-                <figure><img src="{{ asset('assets/img/interiores.jpg') }}" alt=""/></figure>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, nemo, quisquam. Cumque doloremque fugiat necessitatibus numquam, perspiciatis tenetur ullam veritatis voluptate! A aperiam culpa ducimus error iure natus recusandae temporibus.</p>
-                <div class="footer-post">
-                    Extención
-                </div>
-            </div>
-            <div class="large-8 columns">
-                <h3 class="title-post-section green">Primer piedra del claustro universitario en Miacatlán</h3>
-                <div class="fecha-post">Enero 6 2015|Gaceta N o433</div>
-                <figure><img src="{{ asset('assets/img/interiores.jpg') }}" alt=""/></figure>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, nemo, quisquam. Cumque doloremque fugiat necessitatibus numquam, perspiciatis tenetur ullam veritatis voluptate! A aperiam culpa ducimus error iure natus recusandae temporibus.</p>
-                <div class="footer-post">
-                    Extención
-                </div>
-            </div>
+            @endforeach
 
             <div class="clearfix"></div>
 
-            <h2 class="title-section mora"><span class="box-section mora"></span>Gestión</h2>
-            <div class="large-8 columns">
-                <h3 class="title-post-section mora">Primer piedra del claustro universitario en Miacatlán</h3>
-                <div class="fecha-post">Enero 6 2015|Gaceta N o433</div>
-                <figure><img src="{{ asset('assets/img/interiores.jpg') }}" alt=""/></figure>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, nemo, quisquam. Cumque doloremque fugiat necessitatibus numquam, perspiciatis tenetur ullam veritatis voluptate! A aperiam culpa ducimus error iure natus recusandae temporibus.</p>
-                <div class="footer-post">
-                    Gestión
+            <h2 class="title-section green"><span class="box-section green"></span>{{ $extension->title }}</h2>
+
+            @foreach($extension_posts as $post)
+                <div class="large-8 columns">
+                    <a   href="{{ route('post', [$post->section()->first()->slug_url, $post->slug_url, $post->id]) }}"> <h3 class="title-post-section green">{{$post->title}}</h3></a>
+                    <div class="fecha-post">{{$post->created_at}}</div>
+                    @if(! empty($post->image))
+                        <figure><img src="uploads/posts/{{ $post->image }}" alt=""/></figure>
+                    @endif
+                        <p class="post-description">{{$post->meta_description}}</p>
+                        <div class="footer-post">
+                            {{ $extension->title }}
+                        </div>
                 </div>
-            </div>
-            <div class="large-8 columns">
-                <h3 class="title-post-section mora">Primer piedra del claustro universitario en Miacatlán</h3>
-                <div class="fecha-post">Enero 6 2015|Gaceta N o433</div>
-                <figure><img src="{{ asset('assets/img/interiores.jpg') }}" alt=""/></figure>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, nemo, quisquam. Cumque doloremque fugiat necessitatibus numquam, perspiciatis tenetur ullam veritatis voluptate! A aperiam culpa ducimus error iure natus recusandae temporibus.</p>
-                <div class="footer-post">
-                    Gestión
+
+            @endforeach
+
+            <div class="clearfix"></div>
+
+            <h2 class="title-section mora"><span class="box-section mora"></span>{{ $gestion->title }}</h2>
+
+            @foreach($gestion_posts as $post)
+                <div class="large-8 columns">
+                    <a   href="{{ route('post', [$post->section()->first()->slug_url, $post->slug_url, $post->id]) }}"> <h3 class="title-post-section mora">{{$post->title}}</h3></a>
+                    <div class="fecha-post">{{$post->created_at}}</div>
+                    @if(! empty($post->image))
+                        <figure><img src="uploads/posts/{{ $post->image }}" alt=""/></figure>
+                    @endif
+                    <p class="post-description">{{$post->meta_description}}</p>
+                    <div class="footer-post">
+                        {{ $gestion->title }}
+                    </div>
                 </div>
-            </div>
+
+            @endforeach
+
+
+
         </div>
     </section>
 @endsection

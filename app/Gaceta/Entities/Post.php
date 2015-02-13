@@ -28,7 +28,7 @@ class Post extends \Eloquent {
 
 
     public function section(){
-        return $this->belongsTo('Gaceta\Entities\Section');
+        return $this->belongsTo('Gaceta\Entities\Section')->get();
 
     }
 }

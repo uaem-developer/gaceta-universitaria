@@ -1,6 +1,6 @@
 <?php
 
-Route::get('admin/', ['as' => 'admin', 'uses' => 'HomeController@index']);
+Route::get('admin/', ['as' => 'admin', 'uses' => 'HomeController@admin']);
 
 Route::post('admin/login', ['as' => 'login', 'uses' => 'AuthController@login']);
 Route::get('admin/sign-up', ['as' => 'sign_up', 'uses' => 'HomeController@signUp']);
