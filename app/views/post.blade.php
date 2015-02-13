@@ -41,38 +41,38 @@
            <div class="large-13 columns padding-0">
                 <ul class="bxslider ">
                     @if(! empty($post->image))
-                    <li><img src='uploads/posts/{{$post->image}}' /></li>
+                        <li><img src="{{ asset('uploads/posts/'.$post->image) }}" /></li>
                     @endif
                     @if(! empty($post->image2))
-                        <li><img src='uploads/posts/{{$post->image2}}' /></li>
+                        <li><img src="{{ asset('uploads/posts/'.$post->image2) }}" /></li>
                     @endif
                     @if(! empty($post->image3))
-                        <li><img src='uploads/posts/{{$post->image3}}' /></li>
+                        <li><img src="{{ asset('uploads/posts/'.$post->image3) }}" /></li>
                     @endif
                     @if(! empty($post->image4))
-                        <li><img src='uploads/posts/{{$post->image4}}' /></li>
+                        <li><img src="{{ asset('uploads/posts/'.$post->image4) }}" /></li>
                     @endif
                     @if(! empty($post->image5))
-                        <li><img src='uploads/posts/{{$post->image5}}' /></li>
+                        <li><img src="{{ asset('uploads/posts/'.$post->image5) }}" /></li>
                     @endif
                 </ul>
            </div>
 
             <div id="bx-pager" class="large-3 columns ">
                 @if(! empty($post->image))
-                    <a data-slide-index="0" href=""><img src="uploads/posts/{{ $post->image }}" /></a>
+                    <a data-slide-index="0" href=""><img src="{{ asset('uploads/posts/'.$post->image) }}" /></a>
                 @endif
                 @if(! empty($post->image2))
-                    <a data-slide-index="1" href=""><img src="uploads/posts/{{ $post->image2 }}" /></a>
+                    <a data-slide-index="1" href=""><img src="{{ asset('uploads/posts/'.$post->image2) }}" /></a>
                 @endif
                 @if(! empty($post->image3))
-                    <a data-slide-index="2" href=""><img src="uploads/posts/{{ $post->image3 }}" /></a>
+                    <a data-slide-index="2" href=""><img src="{{ asset('uploads/posts/'.$post->image3) }}" /></a>
                 @endif
                 @if(! empty($post->image4))
-                    <a data-slide-index="3" href=""><img src="uploads/posts/{{ $post->image4 }}" /></a>
+                    <a data-slide-index="3" href=""><img src="{{ asset('uploads/posts/'.$post->image4) }}" /></a>
                 @endif
                 @if(! empty($post->image5))
-                    <a data-slide-index="4" href=""><img src="uploads/posts/{{ $post->image5 }}" /></a>
+                    <a data-slide-index="4" href=""><img src="{{ asset('uploads/posts/'.$post->image5) }}" /></a>
                 @endif
             </div>
        </div>

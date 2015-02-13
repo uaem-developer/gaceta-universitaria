@@ -16,8 +16,6 @@
 
       @yield('css')
 
-
-
       <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
       <!--[if lt IE 9]>
       <script src="{{ asset('assets/admin/js/html5shiv.js') }}  "></script>
@@ -37,7 +35,7 @@
       <div class="leftpanel">
 
         <div class="logopanel">
-            <h1><img src="http://multimedia.uaem.mx:8080/uaem-only.png" class="clogo" > </h1>
+            <h3>Gaceta virtual universitaria </h3>
         </div><!-- logopanel -->
 
         <div class="leftpanelinner">
@@ -125,11 +123,8 @@
     <script src="{{ asset('assets/admin/js/jquery-migrate-1.2.1.min.js') }}"></script>
 	<script src="{{ asset('assets/admin/js/jquery-ui-1.10.3.min.js') }}"></script>
 	<script src="{{ asset('assets/admin/js/bootstrap.min.js') }}"></script>
-	<script src="{{ asset('assets/admin/js/jquery.cookies.js') }}"></script>
-	<script src="{{ asset('assets/admin/js/retina.min.js') }}"></script>
 	<script src="{{ asset('assets/admin/js/custom.js') }}"></script>
 	<script src="{{ asset('assets/admin/js/modernizr.min.js') }}"></script>
-	<script src="{{ asset('assets/admin/js/jquery.sparkline.min.js') }}"></script>
 	<script src="{{ asset('assets/admin/js/chosen.jquery.min.js') }}"></script>
     <script src="{{ asset('assets/admin/js/jquery.datatables.min.js') }}"></script>
 

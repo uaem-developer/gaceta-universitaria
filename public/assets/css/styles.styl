@@ -3,6 +3,14 @@
 @import 'fonts'
 @import 'foundation'
 
+color-gestion     = rgb(0, 46, 52)
+color-docencia    = rgb(54, 95, 111)
+color-investigacion = rgb(11, 165, 158)
+color-extension   = rgb(11, 165, 105)
+color-anuncios    = rgb(92, 134, 6)
+color-colaboraciones = rgb(140, 172, 42)
+color-gaceta      = '#9932cc'
+
 body
   font-size 16px
   font-family 'Open Sans'
@@ -34,6 +42,7 @@ img
     li
       display inline-block
       a
+        font-size .8em
         padding 10px 15px
         color #707070
         border-radius 5px
@@ -49,6 +58,7 @@ h1,h2,h3
   
 h4
   margin 5px
+  font-size 14px
   
 a
   text-decoration none
@@ -72,8 +82,10 @@ button
   border 0
   
 footer
-  background url('../img/footer-background.png') bottom no-repeat
+  background url('../img/footer-background.jpg') bottom no-repeat
+  background-size cover
   overflow hidden
+  min-height 500px
   h4
     font-size 14px
     font-weight bold
@@ -85,6 +97,8 @@ footer
   padding 5px 15px
   font-size .8em
   text-decoration none  
+  margin-top 20px
+  margin-bottom 50px
   
 .breadcrumb
   padding 0
@@ -97,8 +111,10 @@ footer
 
 .header-text
   background white
-  padding 30px 20px
+  padding 15px 30px 30px 40px
   margin 30px 0
+  font-size .8em
+  line-height 1.8em
   
 .header-number
   h2
@@ -132,6 +148,7 @@ footer
   border-bottom 1px solid #adadad
   overflow hidden
   margin-bottom 10px
+  
   .gaceta-title-sub
     font-family 'Oswald'
     text-align center
@@ -149,13 +166,14 @@ footer
   color #a38ca3
   text-transform uppercase
   font-size .8em
+  padding 0 10px
 
 .notas-home-destacadas
   padding 0
   background url('../img/pleca-sombra-276.png') no-repeat top center
   li
     padding 10px 0
-    font-size .9em
+    font-size .8em
     border-bottom 1px solid #adadad
     list-style url('../img/list-bullet.png')
     list-style-position inside
@@ -173,6 +191,7 @@ footer
   font-family 'TypewriterForMe'
   color white
   background black
+  margin-bottom 5px
   
 .pleca-sombra-276
     background url('../img/pleca-sombra-276.png') no-repeat top center
@@ -181,6 +200,7 @@ footer
   padding 0
   li
     padding 20px 0
+    font-size .8em
     list-style none
     border-bottom 1px solid #d3d3d3
     overflow hidden
@@ -188,8 +208,9 @@ footer
     font-weight bold
   .author 
     color #a9a9a9
-    font-size .7em
-    text-transform uppercase 
+    font-size .9em
+    text-transform uppercase
+    padding-bottom 20px
 
 .gacetas-anteriores
   font-size .8em
@@ -206,11 +227,11 @@ footer
     display inline-block
     margin-right 15px
     &.aqua
-      border-color #0ba59e
+      border-color color-investigacion
     &.green
-      border-color #999933
+      border-color color-extension
     &.mora
-      border-color #76697d
+      border-color color-gestion
 
 .title-post-section
   background #0ba59e
@@ -218,11 +239,11 @@ footer
   padding 20px
   margin 0
   &.aqua
-    background #0ba59e
+    background color-investigacion
   &.green
-    background #999933
+    background color-extension
   &.mora
-    background #76697d
+    background color-gestion
 
 .fecha-post
   background #333333
@@ -247,6 +268,8 @@ footer
   padding-bottom 20px
   border-bottom 1px solid #d3d3d3
   box-shadow 0px 1px 1px rgba(0,0,0,.3) 
+  h4
+    font-size .8em
 
 .footer-list
   padding 0
@@ -259,14 +282,37 @@ footer
 .padding-0
   padding 0
   
+.gestion
+  background color-gestion
+  
+.docencia
+  background color-docencia
+  
+.extension
+  background color-extension
+  
+.anuncios
+  background color-anuncios
+  
+.colaboraciones
+  background color-colaboraciones
+  
+.gaceta     
+  background color-gaceta
+  
 .investigacion
-  background #8d0060
+  background color-investigacion
+  
+.pleca-seccion
   color white
   h1
     color white
-  
+    
 .txt-center
   text-align center
+
+.txt-right
+  text-align right
   
 .form-inline
   .control  
@@ -288,3 +334,37 @@ footer
   p
     font-size .8em
     margin 0
+    
+.ui-widget
+  font-size 0.8em
+  
+.main-post
+  padding-top 25px
+  .post-title
+    padding-left:0
+    
+.content-post
+  padding 0 10px
+.title-post
+  h1
+    padding 0 10px
+    
+@media (max-width: 960px)
+  header
+    padding-top 0
+  .fondo-index
+    padding 50px 30px
+    height auto
+    
+  .main-content
+    padding 0
+    
+  .busqueda-de-gaceta 
+    .control
+      margin 0
+      
+  .section-mas-leido
+    display none
+  
+  .section-list-sections
+    padding 0

@@ -19,20 +19,14 @@
 @endsection
 
 @section('header-text')
-    <section class="header-text large-16 columns pleca-seccion {{ $section->slug_url }}">
-        <div class="large-4 columns txt-right"><h1>{{$section->title}}</h1></div>
-        <div class=" large-12 columns"><p class="text-columns" >
-            {{ $section->body }}
-            </p>
-        </div>
-    </section>
+
 @endsection
 
 @section('breadcrumb')
     <ul class="breadcrumb">
         <li><a href="{{ route('home') }}">Inicio</a></li>
         <li>|</li>
-        <li><a href="{{ route('section', $section->slug_url ) }}">{{$section->title}}</a></li>
+        <li>Resultados de búsqueda</li>
     </ul>
 @endsection
 
@@ -79,11 +73,11 @@
                     </div>
                     <div class="row">
                         @if(!empty($post->image))
-                        <div class="large-8 columns">
-                            <figure>
-                                <img src="uploads/posts/{{ $post->image }}" alt="{{$post->title}}"/>
-                            </figure>
-                        </div>
+                            <div class="large-8 columns">
+                                <figure>
+                                    <img src="uploads/posts/{{ $post->image }}" alt="{{$post->title}}"/>
+                                </figure>
+                            </div>
                         @endif
                         <div class="large-8 columns">
                             <p>{{$post->meta_description}}</p>

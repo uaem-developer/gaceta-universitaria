@@ -41,5 +41,25 @@ class PostRepo extends BaseRepo {
     {
         return Post::orderBy('created_at', 'desc')->first();
     }
+
+    public function search($data = array())
+    {
+        if(! empty($data['author']))
+            $author = "['authored_by', 'LIKE', '%".$data['author']."%']";
+        else
+            $author = "";
+
+        if(! empty($data['date']))
+            $date = "['created_at', '=', '".$data['date']."']";
+        else
+            $date = "";
+
+        if(! empty($data['section']))
+            $section = ['&&', 'section_id', '=', $data['section']];
+        else
+            $section = "";
+
+        return Post::where('title', 'LIKE', '%'.$data['title'].'%' . $section)->get();
+    }
 }
 

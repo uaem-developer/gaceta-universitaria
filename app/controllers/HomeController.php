@@ -49,15 +49,23 @@ class HomeController extends \BaseController
 		$last_post = $this->postRepo->lastPost();
 
 		return View::make('home', compact('lastest_posts',
-										  'most_views_posts',
-										  'investigacion',
-										  'extension',
-										'gestion',
-										'investigacion_posts',
-										'extension_posts',
-										'gestion_posts',
-										  'last_post'));
+										  	'most_views_posts',
+										  	'investigacion',
+										  	'extension',
+											'gestion',
+											'investigacion_posts',
+											'extension_posts',
+											'gestion_posts',
+											'last_post'));
 
 	}
 
+	public function search(){
+		$data = Input::all();
+
+		$posts = $this->postRepo->search($data);
+
+		return View::make('search', compact('posts'));
+
+	}
 }

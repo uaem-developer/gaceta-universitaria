@@ -3984,6 +3984,7 @@ img {
   display: inline-block;
 }
 .menu ul li a {
+  font-size: 0.8em;
   padding: 10px 15px;
   color: #707070;
   -webkit-border-radius: 5px;
@@ -4003,6 +4004,7 @@ h3 {
 }
 h4 {
   margin: 5px;
+  font-size: 14px;
 }
 a {
   text-decoration: none;
@@ -4029,8 +4031,12 @@ button {
   border: 0;
 }
 footer {
-  background: url("../img/footer-background.png") bottom no-repeat;
+  background: url("../img/footer-background.jpg") bottom no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
   overflow: hidden;
+  min-height: 500px;
 }
 footer h4 {
   font-size: 14px;
@@ -4044,6 +4050,8 @@ footer h4 {
   padding: 5px 15px;
   font-size: 0.8em;
   text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 .breadcrumb {
   padding: 0;
@@ -4059,8 +4067,10 @@ footer h4 {
 }
 .header-text {
   background: #fff;
-  padding: 30px 20px;
+  padding: 15px 30px 30px 40px;
   margin: 30px 0;
+  font-size: 0.8em;
+  line-height: 1.8em;
 }
 .header-number h2 {
   font-family: 'TypewriterForMe';
@@ -4110,6 +4120,7 @@ footer h4 {
   color: #a38ca3;
   text-transform: uppercase;
   font-size: 0.8em;
+  padding: 0 10px;
 }
 .notas-home-destacadas {
   padding: 0;
@@ -4117,7 +4128,7 @@ footer h4 {
 }
 .notas-home-destacadas li {
   padding: 10px 0;
-  font-size: 0.9em;
+  font-size: 0.8em;
   border-bottom: 1px solid #adadad;
   list-style: url("../img/list-bullet.png");
   list-style-position: inside;
@@ -4137,6 +4148,7 @@ footer h4 {
   font-family: 'TypewriterForMe';
   color: #fff;
   background: #000;
+  margin-bottom: 5px;
 }
 .pleca-sombra-276 {
   background: url("../img/pleca-sombra-276.png") no-repeat top center;
@@ -4146,6 +4158,7 @@ footer h4 {
 }
 .list-masleidos li {
   padding: 20px 0;
+  font-size: 0.8em;
   list-style: none;
   border-bottom: 1px solid #d3d3d3;
   overflow: hidden;
@@ -4155,8 +4168,9 @@ footer h4 {
 }
 .list-masleidos .author {
   color: #a9a9a9;
-  font-size: 0.7em;
+  font-size: 0.9em;
   text-transform: uppercase;
+  padding-bottom: 20px;
 }
 .gacetas-anteriores {
   font-size: 0.8em;
@@ -4180,10 +4194,10 @@ footer h4 {
   border-color: #0ba59e;
 }
 .title-section .box-section.green {
-  border-color: #993;
+  border-color: #0ba569;
 }
 .title-section .box-section.mora {
-  border-color: #76697d;
+  border-color: #002e34;
 }
 .title-post-section {
   background: #0ba59e;
@@ -4195,10 +4209,10 @@ footer h4 {
   background: #0ba59e;
 }
 .title-post-section.green {
-  background: #993;
+  background: #0ba569;
 }
 .title-post-section.mora {
-  background: #76697d;
+  background: #002e34;
 }
 .fecha-post {
   background: #333;
@@ -4225,6 +4239,9 @@ footer h4 {
   -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
   box-shadow: 0px 1px 1px rgba(0,0,0,0.3);
 }
+.footer-links h4 {
+  font-size: 0.8em;
+}
 .footer-list {
   padding: 0;
 }
@@ -4237,15 +4254,38 @@ footer h4 {
 .padding-0 {
   padding: 0;
 }
+.gestion {
+  background: #002e34;
+}
+.docencia {
+  background: #365f6f;
+}
+.extension {
+  background: #0ba569;
+}
+.anuncios {
+  background: #5c8606;
+}
+.colaboraciones {
+  background: #8cac2a;
+}
+.gaceta {
+  background: '#9932cc';
+}
 .investigacion {
-  background: #8d0060;
+  background: #0ba59e;
+}
+.pleca-seccion {
   color: #fff;
 }
-.investigacion h1 {
+.pleca-seccion h1 {
   color: #fff;
 }
 .txt-center {
   text-align: center;
+}
+.txt-right {
+  text-align: right;
 }
 .form-inline .control {
   display: inline-block;
@@ -4267,4 +4307,40 @@ footer h4 {
 .post-section p {
   font-size: 0.8em;
   margin: 0;
+}
+.ui-widget {
+  font-size: 0.8em;
+}
+.main-post {
+  padding-top: 25px;
+}
+.main-post .post-title {
+  padding-left: 0;
+}
+.content-post {
+  padding: 0 10px;
+}
+.title-post h1 {
+  padding: 0 10px;
+}
+@media (max-width: 960px) {
+  header {
+    padding-top: 0;
+  }
+  .fondo-index {
+    padding: 50px 30px;
+    height: auto;
+  }
+  .main-content {
+    padding: 0;
+  }
+  .busqueda-de-gaceta .control {
+    margin: 0;
+  }
+  .section-mas-leido {
+    display: none;
+  }
+  .section-list-sections {
+    padding: 0;
+  }
 }
