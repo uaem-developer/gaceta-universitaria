@@ -131,7 +131,7 @@ return array(
             'image5' => 'imagen 5',
             'attach_file' => 'adjuntar archivo',
             'published' => 'publicado',
-            'promoted_front' => 'descatar publicación',
+            'promoted_front' => 'destacar publicación',
             'authored_by' => 'autor'
 
         ),

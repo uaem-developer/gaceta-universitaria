@@ -1,14 +1,16 @@
 <?php
 use Gaceta\Repositories\SectionRepo;
+use Gaceta\Repositories\PostRepo;
 use Gaceta\Managers\SectionManager;
 
 class SectionsController extends \BaseController {
 
-    protected $sectionRepo;
+    protected $sectionRepo, $postRepo;
 
-    public function __construct(SectionRepo $sectionRepo)
+    public function __construct(SectionRepo $sectionRepo, PostRepo $postRepo)
     {
         $this->sectionRepo 		= $sectionRepo;
+        $this->postRepo 		= $postRepo;
     }
 
     /**
@@ -84,8 +86,14 @@ class SectionsController extends \BaseController {
         if($section == NULL)
             App::abort('404');
 
-        $posts = $section->posts()->get();
 
+        if($section->slug_url == 'galeria-de-fotos')
+        {
+            $posts = $this->postRepo->getGallery();
+            return View::make('gallery', compact('section', 'posts'));
+        }
+
+        $posts = $this->postRepo->getListBySection($section->id);
         return View::make('section', compact('section', 'posts'));
 
     }

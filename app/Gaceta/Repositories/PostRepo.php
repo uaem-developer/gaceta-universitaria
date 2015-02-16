@@ -22,9 +22,19 @@ class PostRepo extends BaseRepo {
         return Post::all();
     }
 
+    public function getListBySection($section_id)
+    {
+        return Post::where('section_id', '=', $section_id)->orderBy('order_num', 'DESC')->paginate(20);
+    }
+
+    public function getGallery()
+    {
+        return Post::where('image', '!=', '')->orderBy('order_num', 'DESC')->get();
+    }
+
     public function lastestPostBySection($section_id)
     {
-        return Post::where('section_id', '=', $section_id)->take(2)->orderBy('order_num', 'DESC')->get();
+        return Post::where('section_id', '=', $section_id, 'AND', 'promoted_front', '=', '0')->take(2)->orderBy('order_num', 'DESC')->get();
     }
 
     public function lastestPostBySectionTake($section_id, $take = 2)
@@ -34,12 +44,12 @@ class PostRepo extends BaseRepo {
 
     public function lastestPost($take = 10)
     {
-        return Post::take($take)->orderBy('order_num', 'DESC')->get();
+        return Post::take($take)->orderBy('order_num', 'DESC')->orderBy('promoted_front', 'DESC')->get();
     }
 
     public function lastPost()
     {
-        return Post::orderBy('created_at', 'desc')->orderBy('order_num', 'DESC')->first();
+        return Post::orderBy('created_at', 'desc')->orderBy('promoted_front', 'DESC')->orderBy('order_num', 'DESC')->first();
     }
 
     public function search($data = array())

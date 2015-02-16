@@ -34,9 +34,9 @@ class PostManager extends BaseManager {
 
         if ( empty($data['meta_description']))
         {
-            $meta_description = strip_tags($this->entity->body);
+            $body = strip_tags($data['body']);
 
-            $data['meta_description'] = substr($meta_description, 0, 160) . '...';
+            $data['meta_description'] = substr($body, 0, 160) . '...';
         }
 
         return $data;

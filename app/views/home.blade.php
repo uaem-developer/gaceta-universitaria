@@ -18,7 +18,7 @@
 
 @section('header-text')
     <section class="header-text">
-        <h1>Gaceta UAEM Virtual mensaje rector</h1>
+        <h1>Gaceta UAEM Virtual</h1>
         <p class="text-columns">
 
             A 20 años de creada, la Gaceta UAEM, abre un nuevo espacio que hemos
@@ -68,6 +68,8 @@
     <section class="main-content">
 
         <div class="fondo-index">
+            <h2 class="white">Mensaje del rector</h2>
+
             <p>
                 A casi veinte años del inicio de la Gaceta UAEM, una publicación emblemática
 
@@ -160,7 +162,7 @@
                     <li><a href="{{ route('post', [$most_view_post->section()->first()->slug_url, $most_view_post->slug_url, $most_view_post->id]) }}" class="title-post">{{ $most_view_post->title }} </a>
 
                         <div class="author">
-                            @if(! empty($most_view_post->authored_by)))
+                            @if(! empty($most_view_post->authored_by))
                                 <div>{{$most_view_post->authored_by}} </div>
                             @endif
                                 {{ date('M j, Y', strtotime($most_view_post->created_at)) }}
@@ -224,7 +226,7 @@
                     @if(! empty($post->image))
                         <figure><img src="uploads/posts/{{ $post->image }}" alt=""/></figure>
                     @else
-                        <figure class="img-box"><img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$last_post->title}}"/></figure>
+                        <figure><img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$last_post->title}}"/></figure>
                     @endif
                     <p class="post-description">{{$post->meta_description}}</p>
                     <div class="footer-post">
@@ -244,7 +246,7 @@
                     @if(! empty($post->image))
                         <figure><img src="uploads/posts/{{ $post->image }}" alt=""/></figure>
                     @else
-                        <figure class="img-box"><img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$last_post->title}}"/></figure>
+                        <figure ><img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$last_post->title}}"/></figure>
                     @endif
                     <p class="post-description">{{$post->meta_description}}</p>
                     <div class="footer-post">
@@ -265,7 +267,7 @@
                 @if(! empty($post->image))
                 <figure><img src="uploads/posts/{{ $post->image }}" alt=""/></figure>
                 @else
-                    <figure class="img-box"><img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$last_post->title}}"/></figure>
+                    <figure><img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$last_post->title}}"/></figure>
                 @endif
                 <p class="post-description">{{$post->meta_description}}</p>
                 <div class="footer-post">
@@ -286,7 +288,7 @@
                     @if(! empty($post->image))
                         <figure><img src="uploads/posts/{{ $post->image }}" alt=""/></figure>
                     @else
-                        <figure class="img-box"><img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$last_post->title}}"/></figure>
+                        <figure><img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$last_post->title}}"/></figure>
                     @endif
                         <p class="post-description">{{$post->meta_description}}</p>
                         <div class="footer-post">

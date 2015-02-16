@@ -11,6 +11,7 @@
     <link href="{{ asset('assets/css/jquery.bxslider.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/post.css') }}" rel="stylesheet" />
 
+
 @endsection
 
 @section('banner')
@@ -44,16 +45,16 @@
                         <li><img src="{{ asset('uploads/posts/'.$post->image) }}" /></li>
                     @endif
                     @if(! empty($post->image2))
-                        <li><img src="{{ asset('uploads/posts/'.$post->image2) }}" /></li>
+                        <li class="others-images"><img src="{{ asset('uploads/posts/'.$post->image2) }}" /></li>
                     @endif
                     @if(! empty($post->image3))
-                        <li><img src="{{ asset('uploads/posts/'.$post->image3) }}" /></li>
+                        <li class="others-images"><img src="{{ asset('uploads/posts/'.$post->image3) }}" /></li>
                     @endif
                     @if(! empty($post->image4))
-                        <li><img src="{{ asset('uploads/posts/'.$post->image4) }}" /></li>
+                        <li class="others-images"><img src="{{ asset('uploads/posts/'.$post->image4) }}" /></li>
                     @endif
                     @if(! empty($post->image5))
-                        <li><img src="{{ asset('uploads/posts/'.$post->image5) }}" /></li>
+                        <li class="others-images"><img src="{{ asset('uploads/posts/'.$post->image5) }}" /></li>
                     @endif
                 </ul>
            </div>
@@ -65,19 +66,19 @@
            @else
             <div id="bx-pager" class="large-3 columns ">
                 @if(! empty($post->image))
-                    <a data-slide-index="0" href=""><img src="{{ asset('uploads/posts/'.$post->image) }}" /></a>
+                    <a data-slide-index="0" href="" class="others-images"><img src="{{ asset('uploads/posts/'.$post->image) }}" /></a>
                 @endif
                 @if(! empty($post->image2))
-                    <a data-slide-index="1" href=""><img src="{{ asset('uploads/posts/'.$post->image2) }}" /></a>
+                    <a data-slide-index="1" href="" class="others-images"><img src="{{ asset('uploads/posts/'.$post->image2) }}" /></a>
                 @endif
                 @if(! empty($post->image3))
-                    <a data-slide-index="2" href=""><img src="{{ asset('uploads/posts/'.$post->image3) }}" /></a>
+                    <a data-slide-index="2" href="" class="others-images"><img src="{{ asset('uploads/posts/'.$post->image3) }}" /></a>
                 @endif
                 @if(! empty($post->image4))
-                    <a data-slide-index="3" href=""><img src="{{ asset('uploads/posts/'.$post->image4) }}" /></a>
+                    <a data-slide-index="3" href="" class="others-images"><img src="{{ asset('uploads/posts/'.$post->image4) }}" /></a>
                 @endif
                 @if(! empty($post->image5))
-                    <a data-slide-index="4" href=""><img src="{{ asset('uploads/posts/'.$post->image5) }}" /></a>
+                    <a data-slide-index="4" href="" class="others-images"><img src="{{ asset('uploads/posts/'.$post->image5) }}" /></a>
                 @endif
             </div>
            @endif
@@ -91,13 +92,19 @@
         <div class="post-author">
             @if(! empty($post->authored_by))  {{ $post->authored_by }} | @endif {{$post->created_at}}
         </div>
-
+        @if(! empty($post->attach_file))
+        <div class="attach-file">
+            <a class="btn" target="_black" href="{{ asset('uploads/posts/'.$post->attach_file) }}">Descargar archivo adjunto</a>
+        </div>
+        @endif
         <div class="content-post">
            {{ $post->body }}
         </div>
+
+
     </section>
 
-    <section class="main-content">
+    <section class="main-content mas-leidos-post">
         <h2>Más leidos</h2>
 
         @foreach($lastest_posts as $last_post)
@@ -134,6 +141,7 @@
 @section('scripts')
     <!-- jQuery library (served from Google) -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
     <!-- bxSlider Javascript file -->
     <script src="{{asset('assets/js/jquery.bxslider.min.js')}}"></script>
 
@@ -142,4 +150,6 @@
             pagerCustom: '#bx-pager'
         });
     </script>
+
+
 @endsection

@@ -72,4 +72,9 @@ class HomeController extends \BaseController
 		return View::make('search', compact('posts'));
 
 	}
+
+	public function mensaje()
+	{
+		return View::make('mensaje');
+	}
 }

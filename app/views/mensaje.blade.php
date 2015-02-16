@@ -27,9 +27,7 @@
     <ul class="breadcrumb">
         <li><a href="{{route('home')}}">Inicio</a></li>
         <li>|</li>
-        <li><a href="{{ route('section', [$section->slug_url] ) }}">{{ $section->title }}</a></li>
-        <li>|</li>
-        <li><a href="#">{{ $post->title }}</a></li>
+        <li><a href="#">Mensaje del rector</a></li>
     </ul>
 @endsection
 
@@ -38,7 +36,7 @@
     <section class="main-content">
 
         <div class="title-post">
-            <h1>Gaceta UAEM Virtual mensaje rector</h1>
+            <h1>Mensaje del rector</h1>
         </div>
 
 

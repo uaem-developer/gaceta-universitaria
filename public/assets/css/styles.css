@@ -4092,7 +4092,7 @@ footer h4 {
   background: url("../img/pleca-cita.png") no-repeat;
   height: 320px;
   color: #fff;
-  padding: 100px 200px 100px 100px;
+  padding: 30px 200px 100px 100px;
   margin-top: -35px;
   font-size: 0.9em;
   width: 97%;
@@ -4323,6 +4323,21 @@ footer h4 {
 .title-post h1 {
   padding: 0 10px;
 }
+.white {
+  color: #fff;
+}
+.section-list-sections figure,
+.list-section-post figure,
+.mas-leidos-post figure {
+  background: #ccc;
+}
+.section-list-sections figure img,
+.list-section-post figure img,
+.mas-leidos-post figure img {
+  max-height: 149px;
+  display: block;
+  margin: 0 auto;
+}
 @media (max-width: 960px) {
   header {
     padding-top: 0;
@@ -4342,5 +4357,25 @@ footer h4 {
   }
   .section-list-sections {
     padding: 0;
+  }
+}
+@media print {
+  header {
+    display: none;
+  }
+  footer {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
+  .breadcrumb {
+    display: none;
+  }
+  .others-images {
+    display: none;
+  }
+  .mas-leidos-post {
+    display: none;
   }
 }
