@@ -18,14 +18,44 @@
 
 @section('header-text')
     <section class="header-text">
-        <h1>Gaceta virtual universitaria</h1>
+        <h1>Gaceta UAEM Virtual mensaje rector</h1>
         <p class="text-columns">
-            La Gaceta  es una publicación mensual de carácter informativo, en cuyo contenido se da cuenta de las actividades sustantivas desplegadas por alumnos, docentes e investigadores, además de la administración central de la Universidad Autónoma del Estado de Morelos (UAEM).
+
+            A 20 años de creada, la Gaceta UAEM, abre un nuevo espacio que hemos
+
+            denominado Gaceta Virtual, para difundir las actividades de la comunidad
+
+            universitaria, en el que además de la información que aparece en la versión
+
+            impresa, podrá encontrarse mayor cantidad de notas y fotografías, además de
+
+            reportajes, colaboraciones, galería de imágenes, anuncios de la agenda
+
+            universitaria, así como otros textos que iremos incrementando en los próximos
+
+            números.
+
+            Con esta publicación pretendemos atender la creciente demanda de difusión
+
+            informativa y enriquecer los contenidos de sus páginas, dadas las limitaciones
+
+            de disponibilidad de espacio que presenta la versión impresa. Con ello también
+
+            mantenemos su calidad sin afectar el presupuesto asignado para la misma.
+
+            Les recordamos que la Gaceta continuará a su disposición en formato impreso y
+
+            en PDF en la página www.uaem.mx, mientras que la Gaceta Virtual podrá
+
+            consultarse en:
+
+           <a href="www.uaem.mx/gacetavirtual" >www.uaem.mx/gacetavirtual</a>
+
         </p>
     </section>
 
     <section class="header-number">
-        <h2 class="text-left">Gaceta No <span class="text-big"> 448 | Feb 2015</span></h2>
+        <h2 class="text-left">Gaceta UAEM Virtual  No <span class="text-big"> 1 | Feb 2015</span></h2>
     </section>
 @endsection
 
@@ -38,14 +68,37 @@
     <section class="main-content">
 
         <div class="fondo-index">
-            <p>Esta publicación es realizada por el Departamento de Redacción de la Dirección General de Comunicación, que a su vez depende de la Secretaría de Extensión. La fecha de aparición de Gaceta es el día 15 de cada mes. Se imprimen seis mil ejemplares que son distribuidos entre la comunidad universitaria en todos los campus, sedes regionales, institutos, escuelas y facultades de la institución, e instancias externas.
+            <p>
+                A casi veinte años del inicio de la Gaceta UAEM, una publicación emblemática
+
+                del quehacer cotidiano de la comunidad de la máxima casa de estudios del
+
+                estado, celebro presentar el primer número mensual de la Gaceta UAEM
+
+                Virtual, a través de la cual no sólo habremos de ampliar y enriquecer los
+
+                contenidos de la versión impresa, sino más aún daremos un renovado impulso
+
+                a los procesos comunicativos universitarios, orientados a promover el diálogo
+
+                de saberes, la reflexión crítica, los encuentros interculturales y la apertura
+
+                inclusiva de espacios solidarios y libertarios en los que se expresen las voces
+
+                de las y los jóvenes, tanto como las de las comunidades, pueblos,
+
+                organizaciones sociales y grupos en condiciones de vulnerabilidad y
+
+                marginación...
             </p>
-         {{--    <a href="#" class="btn ">ver más</a>--}}
+            <a class="btn" href="{{ route('mensaje') }}">Ver mas</a>
         </div>
 
         <div class="large-10 columns main-post">
             @if(! empty($last_post->image))
-            <figure class="img-box"><img src="uploads/posts/{{ $last_post->image }}" alt="{{$last_post->title}}"/></figure>
+                <figure class="img-box"><img src="uploads/posts/{{ $last_post->image }}" alt="{{$last_post->title}}"/></figure>
+            @else
+                <figure class="img-box"><img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$last_post->title}}"/></figure>
             @endif
             <div class="row">
                 <div class="post-title">
@@ -161,6 +214,48 @@
 
         </div>
         <div class="large-10 columns row section-list-sections">
+
+            <h2 class="title-section mora"><span class="box-section mora"></span>{{ $gestion->title }}</h2>
+
+            @foreach($gestion_posts as $post)
+                <div class="large-8 columns">
+                    <a   href="{{ route('post', [$post->section()->first()->slug_url, $post->slug_url, $post->id]) }}"> <h3 class="title-post-section mora">{{$post->title}}</h3></a>
+                    <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }}</div>
+                    @if(! empty($post->image))
+                        <figure><img src="uploads/posts/{{ $post->image }}" alt=""/></figure>
+                    @else
+                        <figure class="img-box"><img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$last_post->title}}"/></figure>
+                    @endif
+                    <p class="post-description">{{$post->meta_description}}</p>
+                    <div class="footer-post">
+                        {{ $gestion->title }}
+                    </div>
+                </div>
+            @endforeach
+
+            <div class="clearfix"></div>
+
+            <h2 class="title-section green"><span class="box-section green"></span>{{ $docencia->title }}</h2>
+
+            @foreach($docencia_posts as $post)
+                <div class="large-8 columns">
+                    <a   href="{{ route('post', [$post->section()->first()->slug_url, $post->slug_url, $post->id]) }}"> <h3 class="title-post-section aqua">{{$post->title}}</h3></a>
+                    <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }}</div>
+                    @if(! empty($post->image))
+                        <figure><img src="uploads/posts/{{ $post->image }}" alt=""/></figure>
+                    @else
+                        <figure class="img-box"><img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$last_post->title}}"/></figure>
+                    @endif
+                    <p class="post-description">{{$post->meta_description}}</p>
+                    <div class="footer-post">
+                        {{ $docencia->title }}
+                    </div>
+                </div>
+
+            @endforeach
+
+            <div class="clearfix"></div>
+
             <h2 class="title-section aqua"><span class="box-section aqua"></span>{{ $investigacion->title }}</h2>
 
             @foreach($investigacion_posts as $post)
@@ -169,6 +264,8 @@
                 <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }}</div>
                 @if(! empty($post->image))
                 <figure><img src="uploads/posts/{{ $post->image }}" alt=""/></figure>
+                @else
+                    <figure class="img-box"><img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$last_post->title}}"/></figure>
                 @endif
                 <p class="post-description">{{$post->meta_description}}</p>
                 <div class="footer-post">
@@ -188,6 +285,8 @@
                     <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }}</div>
                     @if(! empty($post->image))
                         <figure><img src="uploads/posts/{{ $post->image }}" alt=""/></figure>
+                    @else
+                        <figure class="img-box"><img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$last_post->title}}"/></figure>
                     @endif
                         <p class="post-description">{{$post->meta_description}}</p>
                         <div class="footer-post">
@@ -199,21 +298,7 @@
 
             <div class="clearfix"></div>
 
-            <h2 class="title-section mora"><span class="box-section mora"></span>{{ $gestion->title }}</h2>
 
-            @foreach($gestion_posts as $post)
-                <div class="large-8 columns">
-                    <a   href="{{ route('post', [$post->section()->first()->slug_url, $post->slug_url, $post->id]) }}"> <h3 class="title-post-section mora">{{$post->title}}</h3></a>
-                    <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }}</div>
-                    @if(! empty($post->image))
-                        <figure><img src="uploads/posts/{{ $post->image }}" alt=""/></figure>
-                    @endif
-                    <p class="post-description">{{$post->meta_description}}</p>
-                    <div class="footer-post">
-                        {{ $gestion->title }}
-                    </div>
-                </div>
-            @endforeach
 
         </div>
     </section>

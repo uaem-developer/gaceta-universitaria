@@ -24,22 +24,22 @@ class PostRepo extends BaseRepo {
 
     public function lastestPostBySection($section_id)
     {
-        return Post::where('section_id', '=', $section_id)->take(3)->get();
+        return Post::where('section_id', '=', $section_id)->take(2)->orderBy('order_num', 'DESC')->get();
     }
 
     public function lastestPostBySectionTake($section_id, $take = 2)
     {
-        return Post::where('section_id', '=', $section_id)->take($take)->get();
+        return Post::where('section_id', '=', $section_id)->orderBy('order_num', 'DESC')->take($take)->get();
     }
 
     public function lastestPost($take = 10)
     {
-        return Post::take($take)->get();
+        return Post::take($take)->orderBy('order_num', 'DESC')->get();
     }
 
     public function lastPost()
     {
-        return Post::orderBy('created_at', 'desc')->first();
+        return Post::orderBy('created_at', 'desc')->orderBy('order_num', 'DESC')->first();
     }
 
     public function search($data = array())

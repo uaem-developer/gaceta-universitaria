@@ -1,8 +1,8 @@
 @extends('layout')
 
 @section('headers')
-    <title>Post - Gaceta Universitaria</title>
-    <meta name="description" value="descripción"/>
+    <title>{{ $section->title }} - Gaceta UAEM Virtual</title>
+    <meta name="description" value="{{ $section->meta_description }}"/>
 @endsection
 
 @section('styles')
@@ -40,35 +40,6 @@
 @section('content')
     <section class="main-content">
 
-        {{ Form::open(['route' => 'search', 'method' => 'POST', 'role' => 'form', 'class' => 'busqueda-de-gaceta form-inline']) }}
-        <div class="control">
-            <label for="no_gaceta">Título</label>
-            {{ Form::text('title'); }}
-        </div>
-        <div class="control">
-            <label for="fecha_evento">Fecha de evento</label>
-            <input type="text" name="fecha_evento"/>
-        </div>
-        <div class="control">
-            <label for="autor">Autor</label>
-            <input type="text" name="no_gaceta"/>
-        </div>
-        <div class="control">
-            <label for="categoria">Categoría</label>
-            <select name="seccion" >
-                <option value="">...</option>
-                <option value="1">Gestión</option>
-                <option value="2">Docencia</option>
-                <option value="3">Investigación</option>
-                <option value="4">Estensión</option>
-                <option value="5">Anuncios</option>
-                <option value="6">Colaboraciones</option>
-                <option value="7">Galería de fotos</option>
-            </select>
-        </div>
-        <div class="control"><button class="btn">Buscar</button></div>
-        {{ Form::close(); }}
-
         <div class="row post-section">
 
             @foreach($posts as $post)
@@ -81,9 +52,14 @@
                         @if(!empty($post->image))
                         <div class="large-8 columns">
                             <figure>
-                                <img src="uploads/posts/{{ $post->image }}" alt="{{$post->title}}"/>
+                                <img src="{{ asset('uploads/posts/'.$post->image) }}" alt="{{$post->title}}"/>
                             </figure>
                         </div>
+                        @else
+                            <div class="large-8 columns">
+
+                            <figure><img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$post->title}}"/></figure>
+                            </div>
                         @endif
                         <div class="large-8 columns">
                             <p>{{$post->meta_description}}</p>

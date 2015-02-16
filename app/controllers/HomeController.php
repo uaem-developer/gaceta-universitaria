@@ -39,12 +39,14 @@ class HomeController extends \BaseController
 		$most_views_posts = $this->postRepo->lastestPost(5);
 
 		$investigacion = $this->sectionRepo->findBySlug('investigacion');
+		$docencia = $this->sectionRepo->findBySlug('docencia');
 		$extension = $this->sectionRepo->findBySlug('extension');
 		$gestion = $this->sectionRepo->findBySlug('gestion');
 
 		$investigacion_posts = $this->postRepo->lastestPostBySectionTake($investigacion->id, 2);
 		$extension_posts = $this->postRepo->lastestPostBySectionTake($extension->id, 2);
 		$gestion_posts = $this->postRepo->lastestPostBySectionTake($gestion->id, 2);
+		$docencia_posts = $this->postRepo->lastestPostBySectionTake($docencia->id, 2);
 
 		$last_post = $this->postRepo->lastPost();
 
@@ -53,9 +55,11 @@ class HomeController extends \BaseController
 										  	'investigacion',
 										  	'extension',
 											'gestion',
+											'docencia',
 											'investigacion_posts',
 											'extension_posts',
 											'gestion_posts',
+											'docencia_posts',
 											'last_post'));
 
 	}

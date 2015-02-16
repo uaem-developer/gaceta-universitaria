@@ -67,9 +67,9 @@
 
             @foreach($posts as $post)
                 <div class="large-8 columns list-section-post">
-                    <a href="{{ route('post', [$section->slug_url, $post->slug_url, $post->id]) }}" title="{{$post->title}}"><h3>{{$post->title}}</h3></a>
+                    <a href="{{ route('post', [$post->section()->first()->slug_url, $post->slug_url, $post->id]) }}" title="{{$post->title}}"><h3>{{$post->title}}</h3></a>
                     <div class="detail-post">
-                        {{ $section->created_at }} | {{ $section->title }}
+                        {{ $post->created_at }} | {{ $post->section()->first()->title }}
                     </div>
                     <div class="row">
                         @if(!empty($post->image))

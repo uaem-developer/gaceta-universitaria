@@ -20,6 +20,7 @@ Route::get('admin/posts/add',     ['as' => 'admin_post_create', 'uses' => 'Posts
 Route::post('admin/posts/add',    ['as' => 'admin_post_store', 'uses' => 'PostsController@store']);
 Route::get('admin/posts/edit/{post_id}',    ['as' => 'admin_post_edit', 'uses' => 'PostsController@edit']);
 Route::put('admin/posts/edit/{post_id}',   ['as' => 'admin_post_update', 'uses' => 'PostsController@update']);
+Route::get('admin/posts/delete/{post_id}',    ['as' => 'admin_post_delete', 'uses' => 'PostsController@destroy']);
 
 /**
  * Sections

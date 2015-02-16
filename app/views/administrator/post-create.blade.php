@@ -29,7 +29,7 @@
 
                     {{ Field::select('section_id', $sections) }}
 
-				    {{-- {{ Field::number('order_num') }} --}}
+				     {{ Field::number('order_num') }}
 
                     {{ Field::text('authored_by') }}
 
@@ -37,7 +37,7 @@
 					{{ Field::textarea('body','', ['class' => 'ckeditor']); }}
 
 
-                {{ Field::file('image') }}
+                    {{ Field::file('image') }}
                     {{ Field::file('image2') }}
                     {{ Field::file('image3') }}
                     {{ Field::file('image4') }}
@@ -47,9 +47,17 @@
 
                     {{--
                     {{ Field::checkbox('published')  }}
-
-					{{ Field::checkbox('promoted_front')  }}
                     --}}
+
+                <div class="form-group  " >
+                    {{ Form::label('promoted_front', 'Descatar publicación',  array('class' => 'col-sm-2 control-label')) }}
+                    <div class="col-sm-10">
+                        {{ Form::checkbox('promoted_front') }}
+                    </div>
+                </div>
+
+
+
                     <br />
 
                     <button type="submit" class="btn btn-success btn-block">Guardar</button>

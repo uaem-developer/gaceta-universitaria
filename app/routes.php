@@ -21,3 +21,7 @@ Route::get('{section_url}', ['as' => 'section', 'uses' => 'SectionsController@sh
 Route::get('{section_url}/{post_url}/{id}', ['as' => 'post', 'uses' => 'PostsController@show']);
 
 Route::post('buscar', ['as' => 'search', 'uses' => 'HomeController@search']);
+
+Route::get('buscar', ['as' => 'search', 'uses' => 'HomeController@search']);
+
+Route::get('mensaje-de-rector', ['as' => 'mensaje', 'uses' => 'HomeController@mensaje']);

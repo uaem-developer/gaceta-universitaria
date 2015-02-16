@@ -1,8 +1,8 @@
 @extends('layout')
 
 @section('headers')
-    <title>Post - Gaceta Universitaria</title>
-    <meta name="description" value="descripción"/>
+    <title>{{ $post->title }} - Gaceta UAEM Virtual</title>
+    <meta name="description" value="{{ $post->meta_description }}"/>
 @endsection
 
 @section('styles')
@@ -38,7 +38,7 @@
     <section class="main-content">
 
        <div class="row">
-           <div class="large-13 columns padding-0">
+           <div class="@if( empty($post->image2) && empty($post->image3) && empty($post->image4) && empty($post->image5)) large-16  @else large-13 @endif columns padding-0">
                 <ul class="bxslider ">
                     @if(! empty($post->image))
                         <li><img src="{{ asset('uploads/posts/'.$post->image) }}" /></li>
@@ -57,7 +57,12 @@
                     @endif
                 </ul>
            </div>
+           @if( empty($post->image2) && empty($post->image3) && empty($post->image4) && empty($post->image5))
 
+
+           <div class="clearfix"></div>
+
+           @else
             <div id="bx-pager" class="large-3 columns ">
                 @if(! empty($post->image))
                     <a data-slide-index="0" href=""><img src="{{ asset('uploads/posts/'.$post->image) }}" /></a>
@@ -75,6 +80,7 @@
                     <a data-slide-index="4" href=""><img src="{{ asset('uploads/posts/'.$post->image5) }}" /></a>
                 @endif
             </div>
+           @endif
        </div>
 
         <div class="title-post">
@@ -96,14 +102,18 @@
 
         @foreach($lastest_posts as $last_post)
 
-            <div class="large-5 columns">
+            <div class="large-8 columns">
                 @if(! empty($last_post->image))
                 <figure class="large-6 columns padding-0">
-                    <img src="uploads/posts/{{ $last_post->image }}" alt=""/>
+                    <img src="{{ asset('uploads/posts/'.$last_post->image) }}" alt=""/>
                 </figure>
+                @else
+                    <figure class="large-6 columns padding-0">
+                        <img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$last_post->title}}"/>
+                    </figure>
                 @endif
                 <div class="large-10 columns padding-0">
-                    <a href="{{ route('post', [$section->slug_url, $post->slug_url, $last_post->id] ) }}"><h4>{{$last_post->title}}</h4></a>
+                    <a href="{{ route('post', [$section->slug_url, $last_post->slug_url, $last_post->id] ) }}"><h4>{{$last_post->title}}</h4></a>
                     <div class="post-author">
                         @if(! empty($last_post->authored_by))
                          {{ $last_post->authored_by }} <br/>
@@ -111,7 +121,7 @@
 
                         {{$last_post->created_at }} | {{ $section->title }}
                         <br/>
-                        <a href="{{ route('post', [$section->slug_url, $post->slug_url, $last_post->id] ) }}" class="btn">ver noticia</a>
+                        <a href="{{ route('post', [$section->slug_url, $last_post->slug_url, $last_post->id] ) }}" class="btn">ver noticia</a>
                     </div>
                 </div>
             </div>

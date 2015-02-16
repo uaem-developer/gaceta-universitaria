@@ -35,7 +35,7 @@
                             <td>{{$post['title']}}</td>
                             <td>{{$post->section()->first()->title}}</td>
                             <td>{{$post['created_at']}}</td>
-                            <td> <a href="{{ route('admin_post_edit', $post['id']);  }}">Editar <i class="fa fa-arrow-circle-right"></i></a> </td>
+                            <td> <a href="{{ route('admin_post_edit', $post['id']);  }}">Editar <i class="fa fa-arrow-circle-right"></i></a> |  <a href="{{ route('admin_post_delete', $post['id']);  }}">Eliminar <i class="fa fa-trash"></i></a> </td>
                           </tr>
                         @endforeach
                     </tbody>

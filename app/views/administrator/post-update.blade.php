@@ -30,7 +30,9 @@
 
                 {{ Field::select('section_id', $sections) }}
 
-                {{-- {{ Field::number('order_num') }} --}}
+                {{ Field::number('order_num') }}
+
+                {{ Field::text('authored_by') }}
 
                 {{ Field::textarea('meta_description', $post->meta_description, ['rows' => '5']); }}
                 {{ Field::textarea('body', $post->body, ['class' => 'ckeditor']); }}
@@ -187,9 +189,14 @@
                 </div>
                 {{--
                 {{ Field::checkbox('published')  }}
-
-                {{ Field::checkbox('promoted_front')  }}
                 --}}
+                <div class="form-group  " >
+                    {{ Form::label('promoted_front', 'Descatar publicación',  array('class' => 'col-sm-2 control-label')) }}
+                    <div class="col-sm-10">
+                        {{ Form::checkbox('promoted_front') }}
+                    </div>
+                </div>
+
                  <button type="submit" class="btn btn-success btn-block">Actualizar</button>
 
             {{ Form::close(); }}
