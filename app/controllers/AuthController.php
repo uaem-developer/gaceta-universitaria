@@ -19,7 +19,7 @@ class AuthController extends BaseController {
     public function logout()
     {
         Auth::logout();
-        return Redirect::route('administrator');
+        return Redirect::route('admin');
     }
 
 } 

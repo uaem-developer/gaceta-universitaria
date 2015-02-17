@@ -132,6 +132,8 @@ return array(
             'attach_file' => 'adjuntar archivo',
             'published' => 'publicado',
             'promoted_front' => 'destacar publicación',
+            'promoted_section' => 'destacar publicacion en sección',
+            'frontpage' => 'destacar en portada',
             'authored_by' => 'autor'
 
         ),

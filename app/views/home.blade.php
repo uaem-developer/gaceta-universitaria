@@ -85,14 +85,9 @@
 
                 de saberes, la reflexión crítica, los encuentros interculturales y la apertura
 
-                inclusiva de espacios solidarios y libertarios en los que se expresen las voces
-
-                de las y los jóvenes, tanto como las de las comunidades, pueblos,
-
-                organizaciones sociales y grupos en condiciones de vulnerabilidad y
-
-                marginación...
+                inclusiva de espacios...
             </p>
+            <br/><br/>
             <a class="btn" href="{{ route('mensaje') }}">Ver mas</a>
         </div>
 
@@ -121,7 +116,7 @@
     </section>
 
     <section class="main-content">
-        <div class="searchbox large-6 columns">
+        <div class="searchbox large-5 columns">
             <h3 class="section-pleca">Búsqueda</h3>
 
             {{ Form::open(['route' => 'search', 'method' => 'POST', 'role' => 'form', 'class' => 'busqueda-de-gaceta']) }}
@@ -215,7 +210,7 @@
             --}}
 
         </div>
-        <div class="large-10 columns row section-list-sections">
+        <div class="large-11 columns row section-list-sections">
 
             <h2 class="title-section mora"><span class="box-section mora"></span>{{ $gestion->title }}</h2>
 

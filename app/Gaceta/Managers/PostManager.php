@@ -20,6 +20,8 @@ class PostManager extends BaseManager {
             'attach_file'       => '',
             'published'         => '',
             'promoted_front'    => '',
+            'promoted_section'  => '',
+            'frontpage'         => '',
             'authored_by'    => ''
         ];
 

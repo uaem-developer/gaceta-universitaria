@@ -52,7 +52,6 @@
                 <h5 class="sidebartitle actitle">Cuenta</h5>
                 <ul class="nav nav-pills nav-stacked nav-bracket mb30">
                     <li><a href="{{ route('admin_profile') }}"><i class="fa fa-user"></i> <span>Perfil</span></a></li>
-                    <li><a href=""><i class="fa fa-question-circle"></i> <span>Ayuda</span></a></li>
                     <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> <span>Cerrar Sesión</span></a></li>
                 </ul>
             </div>
@@ -87,9 +86,8 @@
 										<span class="caret"></span>
 									</button>
 									<ul class="dropdown-menu dropdown-menu-usermenu pull-right">
-										<li><a href="">       <i class="glyphicon glyphicon-user"></i>          Perfil</a></li>
-										<li><a href="">                                       <i class="glyphicon glyphicon-question-sign"></i> Ayuda</a></li>
-										<li><a href="">       <i class="glyphicon glyphicon-log-out"></i>       Cerrar Sesión</a></li>
+										<li><a href="{{ route('admin_profile') }}">       <i class="glyphicon glyphicon-user"></i>          Perfil</a></li>
+										<li><a href="{{ route('logout') }}">       <i class="glyphicon glyphicon-log-out"></i>       Cerrar Sesión</a></li>
 									</ul>
 								</div>
 							</li>

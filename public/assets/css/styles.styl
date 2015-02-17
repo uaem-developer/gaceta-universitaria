@@ -24,7 +24,7 @@ header
   background-position top
 
 .main-wrapper
-  max-width 960px
+  max-width 1000px
   margin 0 auto
 
 figure
@@ -55,6 +55,9 @@ h1,h2,h3
   font-family 'Oswald'
   font-weight 300
   color #333333
+  
+h2
+  margin-bottom 5px
   
 h4
   margin 5px
@@ -101,7 +104,7 @@ footer
   margin-bottom 50px
   
 .breadcrumb
-  padding 0
+  padding  0 0 0 10px
   li
     display inline-block
     font-size .8em
@@ -128,7 +131,7 @@ footer
   font-size 130%
   
 .main-content
-  padding 10px
+  padding 10px 0 60px 0
   background white  
   overflow hidden
   margin-bottom 20px
@@ -138,7 +141,7 @@ footer
   background url('../img/pleca-cita.png') no-repeat
   height 320px
   color white 
-  padding 30px 200px 100px 100px
+  padding  60px 170px 100px 60px
   margin-top -35px
   font-size .9em
   width: 97%;
@@ -166,11 +169,13 @@ footer
   color #a38ca3
   text-transform uppercase
   font-size .8em
-  padding 0 10px
+  padding 15px 0 0 15px
+  margin-bottom -10px
 
 .notas-home-destacadas
-  padding 0
-  background url('../img/pleca-sombra-276.png') no-repeat top center
+  padding 15px 0 0 0
+  margin-top 0px
+  background url('../img/pleca-sombra-276.png') no-repeat top left
   li
     padding 10px 0
     font-size .8em
@@ -194,7 +199,7 @@ footer
   margin-bottom 5px
   
 .pleca-sombra-276
-    background url('../img/pleca-sombra-276.png') no-repeat top center
+    background url('../img/pleca-sombra-276.png') no-repeat top left
 
 .list-masleidos
   padding 0
@@ -232,6 +237,8 @@ footer
       border-color color-extension
     &.mora
       border-color color-gestion
+    &.green-docencia
+      border-color color-docencia
 
 .title-post-section
   background #0ba59e
@@ -244,17 +251,21 @@ footer
     background color-extension
   &.mora
     background color-gestion
+  &.green-docencia
+    background color-docencia
 
 .fecha-post
   background #333333
   color white
-  padding 8px
+  padding 8px 20px
   text-transform uppercase
   font-size .8em
   
 .post-description
   color #6f6f6f
   font-size .8em
+  margin-bottom 35px
+  min-height 120px
 
 .footer-post 
   background #333333
@@ -282,6 +293,8 @@ footer
 .padding-0
   padding 0
   
+
+    
 .gestion
   background color-gestion
   
@@ -342,12 +355,15 @@ footer
   padding-top 25px
   .post-title
     padding-left:0
+  .post-author
+    padding-left 0
     
 .content-post
-  padding 0 10px
+  padding 0 10px 20px 15px
 .title-post
   h1
     padding 0 10px
+    padding-left 5px
     
 .white
   color white
@@ -360,6 +376,85 @@ footer
       display block
       margin 0 auto
       
+.mas-leidos-post
+  h2
+    padding-left 15px
+  .post-mas-leido
+    padding-bottom 30px
+    h4
+      margin 5px 0px
+
+.section-content
+    padding-left 0
+    
+.list-section-post
+  min-height 230px
+
+
+.pagination 
+  display: inline-block
+  padding-left: 0
+  margin: 20px 0
+  border-radius: 4px
+
+.pagination > li 
+  display: inline
+
+.pagination > li > a,
+.pagination > li > span 
+  position: relative
+  float: left
+  padding: 6px 12px
+  margin-left: -1px
+  line-height: 1.42857143
+  color: #428bca
+  text-decoration: none
+  background-color: #fff
+  border: 1px solid #ddd
+
+.pagination > li:first-child > a,
+.pagination > li:first-child > span 
+  margin-left: 0
+  border-top-left-radius: 4px
+  border-bottom-left-radius: 4px
+
+.pagination > li:last-child > a,
+.pagination > li:last-child > span 
+  border-top-right-radius: 4px
+  border-bottom-right-radius: 4px
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus 
+  color: #2a6496
+  background-color: #eee
+  border-color: #ddd
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus 
+  z-index: 2
+  color: #fff
+  cursor: default
+  background-color: #428bca
+  border-color: #428bca
+
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus ,
+  color: #999
+  cursor: not-allowed
+  background-color: #fff
+  border-color: #ddd
+
+
 @media (max-width: 960px)
   header
     padding-top 0
@@ -380,6 +475,21 @@ footer
   .section-list-sections
     padding 0
     
+  .footer-post
+    display none
+    
+  .content-post
+    padding 0 10px 20px 15px
+    
+  .section-content
+    padding-left 10px
+    
+  .post-author
+    margin-bottom 0
+    
+  .section-list-sections figure img, .list-section-post figure img, .mas-leidos-post figure img
+    max-height 250px
+
 @media print
   
   header

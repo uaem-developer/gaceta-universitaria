@@ -39,7 +39,7 @@
     <section class="main-content">
 
        <div class="row">
-           <div class="@if( empty($post->image2) && empty($post->image3) && empty($post->image4) && empty($post->image5)) large-16  @else large-13 @endif columns padding-0">
+           <div class="@if( empty($post->image2) && empty($post->image3) && empty($post->image4) && empty($post->image5)) large-16  @else large-13 @endif columns ">
                 <ul class="bxslider ">
                     @if(! empty($post->image))
                         <li><img src="{{ asset('uploads/posts/'.$post->image) }}" /></li>
@@ -109,7 +109,7 @@
 
         @foreach($lastest_posts as $last_post)
 
-            <div class="large-8 columns">
+            <div class="large-8 columns post-mas-leido">
                 @if(! empty($last_post->image))
                 <figure class="large-6 columns padding-0">
                     <img src="{{ asset('uploads/posts/'.$last_post->image) }}" alt=""/>
@@ -121,9 +121,9 @@
                 @endif
                 <div class="large-10 columns padding-0">
                     <a href="{{ route('post', [$section->slug_url, $last_post->slug_url, $last_post->id] ) }}"><h4>{{$last_post->title}}</h4></a>
-                    <div class="post-author">
+                    <div class="post-author padding-0">
                         @if(! empty($last_post->authored_by))
-                         {{ $last_post->authored_by }} <br/>
+                         {{ $last_post->authored_by }} <br/><br/>
                         @endif
 
                         {{$last_post->created_at }} | {{ $section->title }}

@@ -45,20 +45,16 @@
 
                     {{ Field::file('attach_file') }}
 
-                    {{--
-                    {{ Field::checkbox('published')  }}
-                    --}}
+                    {{ Field::checkbox('promoted_front') }}
 
-                <div class="form-group  " >
-                    {{ Form::label('promoted_front', 'Descatar publicación',  array('class' => 'col-sm-2 control-label')) }}
-                    <div class="col-sm-10">
-                        {{ Form::checkbox('promoted_front') }}
-                    </div>
-                </div>
+                    {{ Field::checkbox('promoted_section') }}
+
+                    {{ Field::checkbox('frontpage') }}
+
+                    {{ Field::checkbox('published') }}
 
 
-
-                    <br />
+                <br />
 
                     <button type="submit" class="btn btn-success btn-block">Guardar</button>
                 {{ Form::close() }}

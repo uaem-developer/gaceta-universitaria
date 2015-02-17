@@ -34,7 +34,7 @@
 <section class="main-wrapper">
     <nav class="menu">
         <ul>
-            <li><a href="{{ route('home') }}" title="Home">Home</a></li>
+            <li><a href="{{ route('home') }}" title="Inicio">Inicio</a></li>
             <li><a href="{{ route('section', 'gestion') }}" title="Gestión">Gestión</a></li>
             <li><a href="{{ route('section', 'docencia') }}" title="Docencia">Docencia</a></li>
             <li><a href="{{ route('section', 'investigacion') }}" title="Investigación">Investigación</a></li>
@@ -55,7 +55,7 @@
 </section>
 <footer>
     <div class="row footer-links">
-        <div class="large-2 columns"><h4><a href="{{ route('home') }}" title="Home">Home</a></h4></div>
+        <div class="large-2 columns"><h4><a href="{{ route('home') }}" title="Inicio">Inicio</a></h4></div>
         <div class="large-2 columns"><h4><a href="{{ route('section', 'gestion') }}" title="Gestión">Gestión</a></h4></div>
         <div class="large-2 columns"><h4><a href="{{ route('section', 'docencia') }}" title="Docencia">Docencia</a></h4></div>
         <div class="large-2 columns"><h4><a href="{{ route('section', 'investigacion') }}" title="Investigación">Investigación</a></h4></div>

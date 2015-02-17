@@ -187,17 +187,20 @@
                         </div>
                     </div>
                 </div>
-                {{--
-                {{ Field::checkbox('published')  }}
-                --}}
-                <div class="form-group  " >
-                    {{ Form::label('promoted_front', 'Descatar publicación',  array('class' => 'col-sm-2 control-label')) }}
-                    <div class="col-sm-10">
-                        {{ Form::checkbox('promoted_front') }}
-                    </div>
-                </div>
 
-                 <button type="submit" class="btn btn-success btn-block">Actualizar</button>
+                {{ Form::hidden('promoted_front', false) }}
+                {{ Field::checkbox('promoted_front') }}
+
+                {{ Form::hidden('promoted_section', false) }}
+                {{ Field::checkbox('promoted_section') }}
+
+                {{ Form::hidden('frontpage', false) }}
+                {{ Field::checkbox('frontpage') }}
+
+                {{ Form::hidden('published', false) }}
+                {{ Field::checkbox('published') }}
+
+                <button type="submit" class="btn btn-success btn-block">Actualizar</button>
 
             {{ Form::close(); }}
             <hr>

@@ -68,8 +68,10 @@
                 </div>
             @endforeach
 
-            {{ $post->links(); }}
         </div>
+        <div class="clearfix"></div>
+        {{ $posts->links(); }}
+
     </section>
 
 @endsection

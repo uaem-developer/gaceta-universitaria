@@ -65,7 +65,7 @@
                                         </div>
 
                                         <button type="submit" name="iniciarsesion" id="iniciarsesion" class="btn btn-final pull-right" >Iniciar Sesión</button><br/>
-                                        <a href="" data-toggle="modal" data-target=".bs-example-modal-lg">Registrarse</a>
+                                      {{--   <a href="" data-toggle="modal" data-target=".bs-example-modal-lg">Registrarse</a>--}}
 
                                     {{ Form::close() }}
 
@@ -77,6 +77,8 @@
 			</div><!-- row -->
 
 		</div><!-- sigin -->
+
+        {{--
         <!--modal-->
           <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
@@ -108,7 +110,7 @@
 
             </div>
           </div><!--modal-->
-
+        --}}
 
 
 <script src="{{ asset('assets/admin/js/jquery-1.10.2.min.js') }}"></script>
