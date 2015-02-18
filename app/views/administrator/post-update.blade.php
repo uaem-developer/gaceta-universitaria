@@ -29,6 +29,7 @@
                 {{ Field::text('title') }}
 
                 {{ Field::select('section_id', $sections) }}
+                {{ Field::select('gaceta_number', $gaceta_numbers) }}
 
                 {{ Field::number('order_num') }}
 

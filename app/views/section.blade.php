@@ -43,22 +43,25 @@
         <div class="row post-section">
 
             @foreach($posts as $post)
-                <div class="large-8 columns list-section-post">
+                <div class="medium-8 columns list-section-post">
                     <a href="{{ route('post', [$section->slug_url, $post->slug_url, $post->id]) }}" title="{{$post->title}}"><h3>{{$post->title}}</h3></a>
                         <div class="detail-post">
-                            {{ $section->created_at }} | {{ $section->title }}
+                            {{ date('M j, Y', strtotime($post->created_at)) }} | {{ $section->title }}
                         </div>
                     <div class="row">
                         @if(!empty($post->image))
-                        <div class="large-8 columns">
-                            <figure>
-                                <img src="{{ asset('uploads/posts/'.$post->image) }}" alt="{{$post->title}}"/>
-                            </figure>
-                        </div>
+                            <div class="large-8 columns">
+                                <a href="{{ route('post', [$section->slug_url, $post->slug_url, $post->id]) }}" title="{{$post->title}}">
+                                    <figure>
+                                        <img src="{{ asset('uploads/posts/'.$post->image) }}" alt="{{$post->title}}"/>
+                                    </figure>
+                                </a>
+                            </div>
                         @else
                             <div class="large-8 columns">
-
-                            <figure><img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$post->title}}"/></figure>
+                                <a href="{{ route('post', [$section->slug_url, $post->slug_url, $post->id]) }}" title="{{$post->title}}">
+                                    <figure><img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$post->title}}"/></figure>
+                                </a>
                             </div>
                         @endif
                         <div class="large-8 columns">

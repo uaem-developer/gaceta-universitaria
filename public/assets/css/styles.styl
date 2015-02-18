@@ -173,7 +173,7 @@ footer
   margin-bottom -10px
 
 .notas-home-destacadas
-  padding 15px 0 0 0
+  padding 25px 0 40px 0
   margin-top 0px
   background url('../img/pleca-sombra-276.png') no-repeat top left
   li
@@ -202,7 +202,7 @@ footer
     background url('../img/pleca-sombra-276.png') no-repeat top left
 
 .list-masleidos
-  padding 0
+  padding 15px 0 0 0
   li
     padding 20px 0
     font-size .8em
@@ -227,18 +227,31 @@ footer
   margin 20px 0 0 5px
   &:first-child
     margin-top 10px
+    
+.box-section
+  border 13px solid 
+  display inline-block
+  margin-right 15px
+  &.aqua
+    border-color color-investigacion
+  &.green
+    border-color color-extension
+  &.mora
+    border-color color-gestion
+  &.green-docencia
+    border-color color-docencia
+
+.section-content
+  margin 0 15px
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #666;
+  font-weight: bold;
+  vertical-align: top;
+  
   .box-section
-    border 13px solid 
-    display inline-block
-    margin-right 15px
-    &.aqua
-      border-color color-investigacion
-    &.green
-      border-color color-extension
-    &.mora
-      border-color color-gestion
-    &.green-docencia
-      border-color color-docencia
+    border: 10px solid #0ba569;
+    margin-top: -1px;
 
 .title-post-section
   background #0ba59e
@@ -362,8 +375,7 @@ footer
   padding 0 10px 20px 15px
 .title-post
   h1
-    padding 0 10px
-    padding-left 5px
+    padding 0 15px
     
 .white
   color white
@@ -386,6 +398,7 @@ footer
 
 .section-content
     padding-left 0
+    margin-top 10px
     
 .list-section-post
   min-height 230px
@@ -454,10 +467,20 @@ footer
   background-color: #fff
   border-color: #ddd
 
+.attach-file
+  margin 15px
 
-@media (max-width: 960px)
+@media (max-width: 1280px)
   header
     padding-top 0
+    background none
+
+@media (max-width: 1025px)
+  .searchbox
+    .author
+      padding-left 0
+      
+@media (max-width: 768px)
   .fondo-index
     padding 50px 30px
     height auto
@@ -482,13 +505,20 @@ footer
     padding 0 10px 20px 15px
     
   .section-content
-    padding-left 10px
+    padding-left 00px
+   
     
   .post-author
     margin-bottom 0
     
   .section-list-sections figure img, .list-section-post figure img, .mas-leidos-post figure img
     max-height 250px
+      
+  .post-mostview-info
+    padding 0
+  
+  #bx-pager
+    display none
 
 @media print
   

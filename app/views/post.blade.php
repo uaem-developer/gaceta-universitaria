@@ -39,7 +39,7 @@
     <section class="main-content">
 
        <div class="row">
-           <div class="@if( empty($post->image2) && empty($post->image3) && empty($post->image4) && empty($post->image5)) large-16  @else large-13 @endif columns ">
+           <div class="@if( empty($post->image2) && empty($post->image3) && empty($post->image4) && empty($post->image5)) large-16  @else medium-13 @endif columns ">
                 <ul class="bxslider ">
                     @if(! empty($post->image))
                         <li><img src="{{ asset('uploads/posts/'.$post->image) }}" /></li>
@@ -64,7 +64,7 @@
            <div class="clearfix"></div>
 
            @else
-            <div id="bx-pager" class="large-3 columns ">
+            <div id="bx-pager" class="medium-3 small-16 columns ">
                 @if(! empty($post->image))
                     <a data-slide-index="0" href="" class="others-images"><img src="{{ asset('uploads/posts/'.$post->image) }}" /></a>
                 @endif
@@ -85,12 +85,12 @@
        </div>
 
         <div class="title-post">
-            <div class="section-content"> {{ $section->title  }}</div>
+            <div class="section-content"> <span class="box-section green"></span> {{ $section->title  }}</div>
             <h1>{{ $post->title }}</h1>
         </div>
 
         <div class="post-author">
-            @if(! empty($post->authored_by))  {{ $post->authored_by }} | @endif {{$post->created_at}}
+            @if(! empty($post->authored_by))  {{ $post->authored_by }} | @endif {{ date('M j, Y', strtotime($post->created_at)) }}
         </div>
         @if(! empty($post->attach_file))
         <div class="attach-file">
@@ -105,6 +105,7 @@
     </section>
 
     <section class="main-content mas-leidos-post">
+
         <h2>Más leidos</h2>
 
         @foreach($lastest_posts as $last_post)
@@ -119,14 +120,14 @@
                         <img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$last_post->title}}"/>
                     </figure>
                 @endif
-                <div class="large-10 columns padding-0">
+                <div class="large-10 columns post-mostview-info">
                     <a href="{{ route('post', [$section->slug_url, $last_post->slug_url, $last_post->id] ) }}"><h4>{{$last_post->title}}</h4></a>
                     <div class="post-author padding-0">
                         @if(! empty($last_post->authored_by))
                          {{ $last_post->authored_by }} <br/><br/>
                         @endif
 
-                        {{$last_post->created_at }} | {{ $section->title }}
+                        {{ date('M j, Y', strtotime($last_post->created_at)) }}  | {{ $section->title }}
                         <br/>
                         <a href="{{ route('post', [$section->slug_url, $last_post->slug_url, $last_post->id] ) }}" class="btn">ver noticia</a>
                     </div>
@@ -147,7 +148,8 @@
 
     <script type="text/javascript">
         $('.bxslider').bxSlider({
-            pagerCustom: '#bx-pager'
+            pagerCustom: '#bx-pager',
+            adaptiveHeight: true
         });
     </script>
 

@@ -63,7 +63,6 @@
 
 @endsection
 
-
 @section('content')
     <section class="main-content">
 
@@ -88,7 +87,7 @@
                 inclusiva de espacios...
             </p>
             <br/><br/>
-            <a class="btn" href="{{ route('mensaje') }}">Ver mas</a>
+            <a class="btn" href="{{ route('mensaje') }}">Ver más</a>
         </div>
 
         <div class="large-10 columns main-post">
@@ -106,7 +105,7 @@
             </div>
         </div>
         <div class="large-6 columns">
-            <h2>Notas</h2>
+            <h2>Notas destacadas</h2>
             <ul class="notas-home-destacadas">
                 @foreach($lastest_posts as $last_post)
                     <li><a href="{{ route('post', [$last_post->section()->first()->slug_url, $last_post->slug_url, $last_post->id]) }}">{{ $last_post->title }}</a></li>
@@ -129,7 +128,7 @@
                     <label for="fecha_evento">Fecha del evento</label>
                     <input type="text" placeholder="dd-mm-yyyy" name="date"  class="datepicker"/>
                 </div>
-                <div class="large-8 columns ">
+                <div class="large-8 columns author">
                     <label for="autor">Autor</label>
                     {{ Form::text('author'); }}
                 </div>
@@ -294,8 +293,6 @@
             @endforeach
 
             <div class="clearfix"></div>
-
-
 
         </div>
     </section>

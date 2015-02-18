@@ -134,7 +134,8 @@ return array(
             'promoted_front' => 'destacar publicación',
             'promoted_section' => 'destacar publicacion en sección',
             'frontpage' => 'destacar en portada',
-            'authored_by' => 'autor'
+            'authored_by' => 'autor',
+            'gaceta_number' => 'número de gaceta'
 
         ),
 );

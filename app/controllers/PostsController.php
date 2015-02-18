@@ -30,8 +30,9 @@ class PostsController extends \BaseController {
     {
         $sections  = $this->sectionRepo->getList();
 
+        $gaceta_numbers = \Lang::get('utils.gaceta_numbers');
 
-        return View::make('administrator.post-create', compact('sections'));
+        return View::make('administrator.post-create', compact('sections','gaceta_numbers'));
     }
 
     /**
@@ -124,10 +125,10 @@ class PostsController extends \BaseController {
     public function edit($id)
     {
         $post = $this->postRepo->find($id);
-       // $post_types = \Lang::get('utils.type_posts');
+        $gaceta_numbers = \Lang::get('utils.gaceta_numbers');
         $sections  = $this->sectionRepo->getList();
 
-        return View::make('administrator/post-update', compact('post','sections'));
+        return View::make('administrator/post-update', compact('post','sections','gaceta_numbers'));
     }
 
     /**

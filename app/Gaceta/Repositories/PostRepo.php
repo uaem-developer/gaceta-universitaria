@@ -29,7 +29,7 @@ class PostRepo extends BaseRepo {
 
     public function getGallery()
     {
-        return Post::where('image', '!=', '')->orderBy('order_num', 'DESC')->get();
+        return Post::where('image', '!=', '')->orderBy('order_num', 'DESC')->paginate(20);
     }
 
     public function lastestPostBySection($section_id)

@@ -29,7 +29,8 @@
 
                     {{ Field::select('section_id', $sections) }}
 
-				     {{ Field::number('order_num') }}
+                    {{ Field::select('gaceta_number', $gaceta_numbers) }}
+                    {{ Field::number('order_num') }}
 
                     {{ Field::text('authored_by') }}
 

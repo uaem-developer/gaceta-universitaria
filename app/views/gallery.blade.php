@@ -43,7 +43,6 @@
     <section class="main-content">
 
         <div class="row post-section">
-
             @foreach($posts as $post)
                 <div class="large-8 columns list-section-post">
                     <a href="{{ route('post', [$section->slug_url, $post->slug_url, $post->id]) }}" title="{{$post->title}}"><h3>{{$post->title}}</h3></a>
@@ -62,6 +61,8 @@
                 </div>
             @endforeach
         </div>
+        <div class="clearfix"></div>
+        {{ $posts->links(); }}
     </section>
 
 @endsection
