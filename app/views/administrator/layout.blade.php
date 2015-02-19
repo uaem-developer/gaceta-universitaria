@@ -125,6 +125,7 @@
 	<script src="{{ asset('assets/admin/js/modernizr.min.js') }}"></script>
 	<script src="{{ asset('assets/admin/js/chosen.jquery.min.js') }}"></script>
     <script src="{{ asset('assets/admin/js/jquery.datatables.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/bootstrap-fileupload.min.js') }}"></script>
 
     <script type="text/javascript">
         $("select").chosen();

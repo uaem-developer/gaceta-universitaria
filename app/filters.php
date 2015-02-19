@@ -88,3 +88,7 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+// Register the dedicated class as the handler
+// of the 'posts.view_throttle' filter.
+Route::filter('posts.view_throttle', 'Gaceta\Filters\ViewThrottleFilter');

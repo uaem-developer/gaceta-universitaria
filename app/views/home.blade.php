@@ -214,7 +214,7 @@
             <h2 class="title-section mora"><span class="box-section mora"></span>{{ $gestion->title }}</h2>
 
             @foreach($gestion_posts as $post)
-                <div class="large-8 columns">
+                <div class="medium-8 columns">
                     <a   href="{{ route('post', [$post->section()->first()->slug_url, $post->slug_url, $post->id]) }}"> <h3 class="title-post-section mora">{{$post->title}}</h3></a>
                     <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }}</div>
                     @if(! empty($post->image))
@@ -234,7 +234,7 @@
             <h2 class="title-section green"><span class="box-section green"></span>{{ $docencia->title }}</h2>
 
             @foreach($docencia_posts as $post)
-                <div class="large-8 columns">
+                <div class="medium-8 columns">
                     <a   href="{{ route('post', [$post->section()->first()->slug_url, $post->slug_url, $post->id]) }}"> <h3 class="title-post-section aqua">{{$post->title}}</h3></a>
                     <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }}</div>
                     @if(! empty($post->image))
@@ -255,7 +255,7 @@
             <h2 class="title-section aqua"><span class="box-section aqua"></span>{{ $investigacion->title }}</h2>
 
             @foreach($investigacion_posts as $post)
-            <div class="large-8 columns">
+            <div class="medium-8 columns">
                <a   href="{{ route('post', [$post->section()->first()->slug_url, $post->slug_url, $post->id]) }}"> <h3 class="title-post-section aqua">{{$post->title}}</h3></a>
                 <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }}</div>
                 @if(! empty($post->image))
@@ -276,7 +276,7 @@
             <h2 class="title-section green"><span class="box-section green"></span>{{ $extension->title }}</h2>
 
             @foreach($extension_posts as $post)
-                <div class="large-8 columns">
+                <div class="medium-8 columns">
                     <a   href="{{ route('post', [$post->section()->first()->slug_url, $post->slug_url, $post->id]) }}"> <h3 class="title-post-section green">{{$post->title}}</h3></a>
                     <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }}</div>
                     @if(! empty($post->image))

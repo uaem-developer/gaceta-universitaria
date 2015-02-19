@@ -83,4 +83,11 @@ App::down(function()
 |
 */
 
+/*
+ *
+ * Event Handlers
+ */
+Event::listen('posts.views', 'Gaceta\Events\ViewPostHandler');
+
+
 require app_path().'/filters.php';

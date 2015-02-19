@@ -10,7 +10,7 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
+Route::when('*', 'posts.view_throttle');
 
 require(__DIR__ . '/routes/administrator.php');
 

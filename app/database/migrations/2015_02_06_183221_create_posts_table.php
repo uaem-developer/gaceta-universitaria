@@ -32,12 +32,14 @@ class CreatePostsTable extends Migration {
 			$table->string('image5');
 			$table->string('attach_file');
 
-			$table->boolean('published')->default(true);
-			$table->boolean('promoted_front')->default(false);
+			$table->string('published')->default('on');
+			$table->string('promoted_front');
+			$table->string('promoted_section');
+			$table->string('frontpage');
 
 			$table->string('authored_by');
+			$table->string('photographer');
 			$table->timestamps();
-			$table->timestamp('published_at');
 			$table->softDeletes();
 		});
 	}

@@ -74,6 +74,8 @@ class FieldBuilder {
                 return $this->form->checkbox($name, $value);
             case 'textarea':
                 return $this->form->textarea($name, $value, $attributes);
+            case 'file':
+                return $this->form->file($name, $value, $attributes);
             default:
                 return $this->form->input($type, $name, $value, $attributes);
         }
@@ -96,7 +98,7 @@ class FieldBuilder {
 
     public function buildTemplate($type)
     {
-        if (\File::exists('app/views/fields/' . $type . '.blade.php'))
+        if (\File::exists(app_path().'/views/fields/' . $type . '.blade.php'))
         {
             return 'fields/' . $type;
         }
@@ -125,7 +127,10 @@ class FieldBuilder {
         return $this->input('select', $name, $value, $attributes, $options);
     }
 
-
+    public function file($name, $value = null, $attributes = array())
+    {
+        return $this->input('file', $name, $value, $attributes);
+    }
 
     public function __call($method, $params)
     {

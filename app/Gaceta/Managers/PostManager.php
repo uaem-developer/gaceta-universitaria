@@ -22,7 +22,8 @@ class PostManager extends BaseManager {
             'promoted_front'    => '',
             'promoted_section'  => '',
             'frontpage'         => '',
-            'authored_by'    => ''
+            'authored_by'       => '',
+            'photographer'      => ''
         ];
 
         return $rules;

@@ -113,6 +113,8 @@ class PostsController extends \BaseController {
 
         $lastest_posts = $this->postRepo->lastestPostBySection($section->id);
 
+        \Event::fire('posts.views', $post);
+
         return View::make('post', compact('post', 'section', 'lastest_posts'));
     }
 

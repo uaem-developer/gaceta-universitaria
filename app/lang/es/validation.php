@@ -135,7 +135,12 @@ return array(
             'promoted_section' => 'destacar publicacion en sección',
             'frontpage' => 'destacar en portada',
             'authored_by' => 'autor',
-            'gaceta_number' => 'número de gaceta'
+            'gaceta_number' => 'número de gaceta',
+            'photographer'  => 'fotógrafo',
+            'photographer2' => 'fotógrafo',
+            'photographer3' => 'fotógrafo',
+            'photographer4' => 'fotógrafo',
+            'photographer5' => 'fotógrafo'
 
         ),
 );

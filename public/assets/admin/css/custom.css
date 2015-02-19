@@ -107,19 +107,7 @@
 	border-color: #F73C3C;
 }
 
-/*boton primario rojo*/
-.btn-primary {
-	background-color: #F73C3C;
-	border-color: #F73C3C;
-	color: #FFF;
-}
 
-.btn-primary:focus,
-.btn-primary:hover {
-	background-color: #B9282B;
-	border-color: #B9282B;
-	color: #FFF;
-}
 
 /*boton final verde*/
 .btn-final {

@@ -103,7 +103,6 @@
                                         <span class="fileupload-preview"><i class="fa fa-file-o"></i> {{ $post->image3 }}</span>
 
                                     </div>
-                                    <span class="fileupload-new">Seleccionar Archivo</span>
 
                                 @if( ! empty($post->image3))
                                         <a href="{{ asset('uploads/posts')."/".$post->image3}}" class="btn btn-primary btn-sm" target="_blank" >Ver Archivo</a>
@@ -188,6 +187,9 @@
                         </div>
                     </div>
                 </div>
+
+
+                {{ Field::text('photographer') }}
 
                 {{ Form::hidden('promoted_front', false) }}
                 {{ Field::checkbox('promoted_front') }}

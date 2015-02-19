@@ -38,13 +38,41 @@
 					{{ Field::textarea('body','', ['class' => 'ckeditor']); }}
 
 
-                    {{ Field::file('image') }}
-                    {{ Field::file('image2') }}
-                    {{ Field::file('image3') }}
-                    {{ Field::file('image4') }}
-                    {{ Field::file('image5') }}
+                    <div class="col-md-2">
+                        Galería de imagenes
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            {{ Field::file('image') }}
+                            <div class="col-md-8">{{ Field::text('photographer') }}</div>
+                        </div>
+                        <div class="row">
+                            {{ Field::file('image2') }}
+                            <div class="col-md-8">{{ Field::text('photographer2') }}</div>
+                        </div>
+                        <div class="row">
+                            {{ Field::file('image3') }}
+                            <div class="col-md-8">{{ Field::text('photographer3') }}</div>
+                        </div>
+                        <div class="row">
+                            {{ Field::file('image4') }}
+                            <div class="col-md-8">{{ Field::text('photographer4') }}</div>
+                        </div>
+                        <div class="row">
+                            {{ Field::file('image5') }}
+                            <div class="col-md-8">{{ Field::text('photographer5') }}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        Archivo adjunto
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row">
+                            {{ Field::file('attach_file') }}
+                        </div>
+                    </div>
 
-                    {{ Field::file('attach_file') }}
+
 
                     {{ Field::checkbox('promoted_front') }}
 
@@ -78,5 +106,8 @@
         jQuery(document).ready(function() {
             $( "#menu-posts" ).addClass( "active" );
         });
+
+
+        $('.fileinput').fileinput()
     </script>
 @stop

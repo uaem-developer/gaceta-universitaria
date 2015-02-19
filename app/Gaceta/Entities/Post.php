@@ -26,7 +26,8 @@ class Post extends \Eloquent {
         'promoted_front',
         'promoted_section',
         'frontpage',
-        'authored_by'];
+        'authored_by',
+        'photographer'];
 
 
     public function section(){

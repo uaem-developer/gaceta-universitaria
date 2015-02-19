@@ -42,7 +42,7 @@
            <div class="@if( empty($post->image2) && empty($post->image3) && empty($post->image4) && empty($post->image5)) large-16  @else medium-13 @endif columns ">
                 <ul class="bxslider ">
                     @if(! empty($post->image))
-                        <li><img src="{{ asset('uploads/posts/'.$post->image) }}" /></li>
+                        <li><img src="{{ asset('uploads/posts/'.$post->image) }}"  @if(! empty($post->photographer)) title="Foto: {{ $post->photographer }}" @endif/></li>
                     @endif
                     @if(! empty($post->image2))
                         <li class="others-images"><img src="{{ asset('uploads/posts/'.$post->image2) }}" /></li>
@@ -117,7 +117,7 @@
                 </figure>
                 @else
                     <figure class="large-6 columns padding-0">
-                        <img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$last_post->title}}"/>
+                        <img src="{{ asset('assets/img/uaem-logo.jpg') }}" alt="{{$last_post->title}}" />
                     </figure>
                 @endif
                 <div class="large-10 columns post-mostview-info">
@@ -149,7 +149,8 @@
     <script type="text/javascript">
         $('.bxslider').bxSlider({
             pagerCustom: '#bx-pager',
-            adaptiveHeight: true
+            adaptiveHeight: true,
+            captions: true
         });
     </script>
 
