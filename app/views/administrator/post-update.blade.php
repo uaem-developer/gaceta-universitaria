@@ -46,150 +46,117 @@
                 {{ Form::text('attach_file_document', $post->attach_file, ['hidden']) }}
 
 
-                <div class="form-group">
-                    <label class="col-sm-2">Imagen</label>
-                    <div class="col-sm-10">
-                        <div class="form-group">
-                            <div class="fileupload fileupload-new" data-provides="fileupload">
-                                <div class="input-append">
-                                    <div class="uneditable-input" >
-                                        <i class="glyphicon glyphicon-file fileupload-exists"></i>
-                                        <span class="fileupload-preview"><i class="fa fa-file-o"></i> {{ $post->image }}</span>
-                                    </div>
-                                    @if( ! empty($post->image))
-                                    <a href="{{ asset('uploads/posts')."/".$post->image}}" class="btn btn-primary btn-sm" target="_blank" >Ver Archivo</a>
-                                    @endif
-                                    <a  class="btn btn-default btn-sm" onClick="$('#image_document').click()"; > @if( ! empty($post->image)) Cambiar @else Seleccionar @endif</a>
-                                    <div style="display:none">
-                                        {{ Form::file('image', ['id' => 'image_document']) }}
-                                    </div>
+                <div class="col-md-2">
+                    Galería de imagenes
+                </div>
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <div class="fileinput @if(! empty($post->image)) fileinput-exists @else fileinput-new @endif" data-provides="fileinput">
+                                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 250px; height: 120px;">
+                                    @if(! empty($post->image)) <img src="{{ asset('uploads/posts/'.$post->image) }}" > @endif
+                                </div>
+                                <div>
+                                <span class="btn btn-default btn-file "><span class="fileinput-new">Seleccionar archivo</span> <span class="fileinput-exists">Cambiar</span>
+                                    <input type="file" name="image"  @if(! empty($post->image)) value="{{ $post->image }}"  @endif />
+                                </span>
+                                    <a target="_blank" href="{{ asset('uploads/posts/'.$post->image) }}" class="btn btn-default fileinput-exists" >Ver</a>
+                                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Quitar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">{{ Field::text('photographer') }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <div class="fileinput @if(! empty($post->image2)) fileinput-exists @else fileinput-new @endif" data-provides="fileinput">
+                                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 250px; height: 120px;">
+                                    @if(! empty($post->image2)) <img src="{{ asset('uploads/posts/'.$post->image2) }}" > @endif
+                                </div>
+                                <div>
+                                <span class="btn btn-default btn-file"><span class="fileinput-new">Seleccionar archivo</span><span class="fileinput-exists">Cambiar</span>
+                                    <input type="file" name="image2"/>
+                                </span>
+                                    <a target="_blank" href="{{ asset('uploads/posts/'.$post->image2) }}" class="btn btn-default fileinput-exists" >Ver</a>
+                                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Quitar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">{{ Field::text('photographer2') }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <div class="fileinput @if(! empty($post->image3)) fileinput-exists @else fileinput-new @endif" data-provides="fileinput">
+                                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 250px; height: 120px;">
+                                    @if(! empty($post->image3)) <img src="{{ asset('uploads/posts/'.$post->image3) }}" > @endif
+                                </div>
+                                <div>
+                                <span class="btn btn-default btn-file"><span class="fileinput-new">Seleccionar archivo</span><span class="fileinput-exists">Cambiar</span>
+                                    <input type="file" name="image3"/>
+                                </span>
+                                    <a target="_blank" href="{{ asset('uploads/posts/'.$post->image3) }}" class="btn btn-default fileinput-exists" >Ver</a>
+                                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Quitar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">{{ Field::text('photographer3') }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <div class="fileinput @if(! empty($post->image4)) fileinput-exists @else fileinput-new @endif" data-provides="fileinput">
+                                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 250px; height: 120px;">
+                                    @if(! empty($post->image4)) <img src="{{ asset('uploads/posts/'.$post->image4) }}" > @endif
+                                </div>
+                                <div>
+                                <span class="btn btn-default btn-file"><span class="fileinput-new">Seleccionar archivo</span><span class="fileinput-exists">Cambiar</span>
+                                    <input type="file" name="image4"/>
+                                </span>
+                                    <a target="_blank" href="{{ asset('uploads/posts/'.$post->image4) }}" class="btn btn-default fileinput-exists" >Ver</a>
+                                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Quitar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">{{ Field::text('photographer4') }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <div class="fileinput @if(! empty($post->image5)) fileinput-exists @else fileinput-new @endif" data-provides="fileinput">
+                                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 250px; height: 120px;">
+                                    @if(! empty($post->image5)) <img src="{{ asset('uploads/posts/'.$post->image5) }}" > @endif
+                                </div>
+                                <div>
+                                <span class="btn btn-default btn-file"><span class="fileinput-new">Seleccionar archivo</span><span class="fileinput-exists">Cambiar</span>
+                                    <input type="file" name="image5"/>
+                                </span>
+                                    <a target="_blank" href="{{ asset('uploads/posts/'.$post->image5) }}" class="btn btn-default fileinput-exists" >Ver</a>
+                                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Quitar</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">{{ Field::text('photographer5') }}</div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    Archivo adjunto
+                </div>
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <div class="fileinput @if(! empty($post->attach_file)) fileinput-exists @else fileinput-new @endif" data-provides="fileinput">
+                                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 250px; height: 120px;">
+                                    @if(! empty($post->attach_file)) {{ asset('uploads/posts/'.$post->attach_file) }} @endif
+                                </div>
+                                <div>
+                                <span class="btn btn-default btn-file"><span class="fileinput-new">Seleccionar archivo</span><span class="fileinput-exists">Cambiar</span>
+                                    <input type="file" name="attach_file"/>
+                                </span>
+                                    <a target="_blank" href="{{ asset('uploads/posts/'.$post->attach_file) }}" class="btn btn-default fileinput-exists" >Ver</a>
+                                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Quitar</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2">Imagen 2</label>
-                    <div class="col-sm-10">
-                        <div class="form-group">
-                            <div class="fileupload fileupload-new" data-provides="fileupload">
-                                <div class="input-append">
-                                    <div class="uneditable-input" >
-                                        <i class="glyphicon glyphicon-file fileupload-exists"></i>
-                                        <span class="fileupload-preview"><i class="fa fa-file-o"></i> {{ $post->image2 }}</span>
-                                    </div>
-                                    @if( ! empty($post->image2))
-                                        <a href="{{ asset('uploads/posts')."/".$post->image2}}" class="btn btn-primary btn-sm" target="_blank" >Ver Archivo</a>
-                                    @endif
-                                    <a  class="btn btn-default btn-sm" onClick="$('#image2_document').click()"; > @if( ! empty($post->image2)) Cambiar @else Seleccionar @endif</a>
-                                    <div style="display:none">
-                                        {{ Form::file('image2', ['id' => 'image2_document']) }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2">Imagen 3</label>
-                    <div class="col-sm-10">
-                        <div class="form-group">
-                            <div class="fileupload fileupload-new" data-provides="fileupload">
-                                <div class="input-append">
-                                    <div class="uneditable-input" >
-                                        <i class="glyphicon glyphicon-file fileupload-exists"></i>
-                                        <span class="fileupload-preview"><i class="fa fa-file-o"></i> {{ $post->image3 }}</span>
-
-                                    </div>
-
-                                @if( ! empty($post->image3))
-                                        <a href="{{ asset('uploads/posts')."/".$post->image3}}" class="btn btn-primary btn-sm" target="_blank" >Ver Archivo</a>
-                                    @endif
-                                    <a  class="btn btn-default btn-sm" onClick="$('#image3_document').click()"; > @if( ! empty($post->image3)) Cambiar @else Seleccionar @endif</a>
-                                    <div style="display:none">
-                                        {{ Form::file('image3', ['id' => 'image3_document']) }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2">Imagen 4</label>
-                    <div class="col-sm-10">
-                        <div class="form-group">
-                            <div class="fileupload fileupload-new" data-provides="fileupload">
-                                <div class="input-append">
-                                    <div class="uneditable-input" >
-                                        <i class="glyphicon glyphicon-file fileupload-exists"></i>
-                                        <span class="fileupload-preview"><i class="fa fa-file-o"></i> {{ $post->image4 }}</span>
-                                    </div>
-                                    @if( ! empty($post->image4))
-                                        <a href="{{ asset('uploads/posts')."/".$post->image4}}" class="btn btn-primary btn-sm" target="_blank" >Ver Archivo</a>
-                                    @endif
-                                    <a  class="btn btn-default btn-sm" onClick="$('#image4_document').click()"; > @if( ! empty($post->image4)) Cambiar @else Seleccionar @endif</a>
-                                    <div style="display:none">
-                                        {{ Form::file('image4', ['id' => 'image4_document']) }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2">Imagen 5</label>
-                    <div class="col-sm-10">
-                        <div class="form-group">
-                            <div class="fileupload fileupload-new" data-provides="fileupload">
-                                <div class="input-append">
-                                    <div class="uneditable-input" >
-                                        <i class="glyphicon glyphicon-file fileupload-exists"></i>
-                                        <span class="fileupload-preview"><i class="fa fa-file-o"></i> {{ $post->image5 }}</span>
-                                    </div>
-                                    @if( ! empty($post->image5))
-                                        <a href="{{ asset('uploads/posts')."/".$post->image5}}" class="btn btn-primary btn-sm" target="_blank" >Ver Archivo</a>
-                                    @endif
-                                    <a  class="btn btn-default btn-sm" onClick="$('#image5_document').click()"; > @if( ! empty($post->image5)) Cambiar @else Seleccionar @endif</a>
-
-                                    <div style="display:none">
-                                        {{ Form::file('image5', ['id' => 'image5_document']) }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2">Adjuntar archivo</label>
-                    <div class="col-sm-10">
-                        <div class="form-group">
-                            <div class="fileupload fileupload-new" data-provides="fileupload">
-                                <div class="input-append">
-                                    <div class="uneditable-input" >
-                                        <i class="glyphicon glyphicon-file fileupload-exists"></i>
-                                        <span class="fileupload-preview"><i class="fa fa-file-o"></i> {{ $post->attach_file }}</span>
-                                    </div>
-                                    @if( ! empty($post->attach_file))
-                                        <a href="{{ asset('uploads/posts')."/".$post->attach_file}}" class="btn btn-primary btn-sm" target="_blank" >Ver Archivo</a>
-                                    @endif
-                                    <a  class="btn btn-default btn-sm" onClick="$('#attach_file_document').click()"; > @if( ! empty($post->attach_file)) Cambiar @else Seleccionar @endif</a>
-
-                                    <div style="display:none">
-                                        {{ Form::file('attach_file', ['id' => 'attach_file_document']) }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                {{ Field::text('photographer') }}
 
                 {{ Form::hidden('promoted_front', false) }}
                 {{ Field::checkbox('promoted_front') }}

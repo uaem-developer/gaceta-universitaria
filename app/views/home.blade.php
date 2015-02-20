@@ -100,7 +100,7 @@
                 <div class="post-title">
                     <h2><a href="{{ route('post', [$last_post->section()->first()->slug_url, $last_post->slug_url, $last_post->id] ) }}">{{$last_post->title}}</a></h2>
                 </div>
-                <div class="post-author">@if(! empty($last_post->authored_by)) | @endif   {{ date('M j, Y', strtotime($last_post->created_at)) }} </div>
+                <div class="post-author">@if(! empty($last_post->authored_by)) | @endif   {{ date('M j, Y', strtotime($last_post->created_at)) }} | {{ $last_post->gaceta_number }}</div>
                 <p class="">{{ $last_post->meta_description }}</p>
             </div>
         </div>
@@ -159,8 +159,8 @@
                             @if(! empty($most_view_post->authored_by))
                                 <div>{{$most_view_post->authored_by}} </div>
                             @endif
-                                {{ date('M j, Y', strtotime($most_view_post->created_at)) }}
-                        </div>
+                                {{ date('M j, Y', strtotime($most_view_post->created_at)) }} |  {{ $most_view_post->gaceta_number }}
+                         </div>
                         <a href="{{ route('post', [$most_view_post->section()->first()->slug_url, $most_view_post->slug_url, $most_view_post->id]) }}" class="btn">ver noticia</a>
                     </li>
                     @endforeach
@@ -216,7 +216,7 @@
             @foreach($gestion_posts as $post)
                 <div class="medium-8 columns">
                     <a   href="{{ route('post', [$post->section()->first()->slug_url, $post->slug_url, $post->id]) }}"> <h3 class="title-post-section mora">{{$post->title}}</h3></a>
-                    <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }}</div>
+                    <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }} |  {{ $post->gaceta_number }}</div>
                     @if(! empty($post->image))
                         <figure><img src="uploads/posts/{{ $post->image }}" alt=""/></figure>
                     @else
@@ -236,7 +236,7 @@
             @foreach($docencia_posts as $post)
                 <div class="medium-8 columns">
                     <a   href="{{ route('post', [$post->section()->first()->slug_url, $post->slug_url, $post->id]) }}"> <h3 class="title-post-section aqua">{{$post->title}}</h3></a>
-                    <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }}</div>
+                    <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }} |  {{ $post->gaceta_number }}</div>
                     @if(! empty($post->image))
                         <figure><img src="uploads/posts/{{ $post->image }}" alt=""/></figure>
                     @else
@@ -257,7 +257,7 @@
             @foreach($investigacion_posts as $post)
             <div class="medium-8 columns">
                <a   href="{{ route('post', [$post->section()->first()->slug_url, $post->slug_url, $post->id]) }}"> <h3 class="title-post-section aqua">{{$post->title}}</h3></a>
-                <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }}</div>
+                <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }} |  {{ $post->gaceta_number }}</div>
                 @if(! empty($post->image))
                 <figure><img src="uploads/posts/{{ $post->image }}" alt=""/></figure>
                 @else
@@ -278,7 +278,7 @@
             @foreach($extension_posts as $post)
                 <div class="medium-8 columns">
                     <a   href="{{ route('post', [$post->section()->first()->slug_url, $post->slug_url, $post->id]) }}"> <h3 class="title-post-section green">{{$post->title}}</h3></a>
-                    <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }}</div>
+                    <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }} |  {{ $post->gaceta_number }}</div>
                     @if(! empty($post->image))
                         <figure><img src="uploads/posts/{{ $post->image }}" alt=""/></figure>
                     @else

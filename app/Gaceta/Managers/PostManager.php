@@ -23,7 +23,11 @@ class PostManager extends BaseManager {
             'promoted_section'  => '',
             'frontpage'         => '',
             'authored_by'       => '',
-            'photographer'      => ''
+            'photographer'      => '',
+            'photographer2'      => '',
+            'photographer3'      => '',
+            'photographer4'      => '',
+            'photographer5'      => ''
         ];
 
         return $rules;
