@@ -132,6 +132,12 @@ class FieldBuilder {
         return $this->input('file', $name, $value, $attributes);
     }
 
+    public function checkbox($name, $value = null, $attributes = array())
+    {
+        return $this->input('checkbox', $name, $value, $attributes);
+    }
+
+
     public function __call($method, $params)
     {
         array_unshift($params, $method);

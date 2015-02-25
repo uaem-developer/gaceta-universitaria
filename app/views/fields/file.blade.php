@@ -1,4 +1,4 @@
-<div class="form-group col-md-4">
+<div class="form-group col-md-4  @if ($error) has-error @endif">
         <div class="fileinput fileinput-new" data-provides="fileinput">
             <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 250px; height: 120px;"></div>
             <div>

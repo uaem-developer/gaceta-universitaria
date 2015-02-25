@@ -7,7 +7,7 @@
     @yield('headers')
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300,700|Open+Sans"/>
-
+    <link rel="stylesheet" href="{{ asset('assets/css/jquery.sidr.dark.css') }}"/>
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}"/>
 
     @yield('styles')
@@ -24,27 +24,34 @@
     </script>
 </head>
 <body>
+
 <header>
+    @yield('top-icons')
+
+    <div id="mobile-header">
+        <a id="responsive-menu-button" href="#sidr-main">Menú</a>
+    </div>
+
     <section class="main-wrapper">
-
         @yield('banner')
-
     </section>
 </header>
 <section class="main-wrapper">
-    <nav class="menu">
-        <ul>
-            <li><a href="{{ route('home') }}" title="Inicio">Inicio</a></li>
-            <li><a href="{{ route('section', 'gestion') }}" title="Gestión">Gestión</a></li>
-            <li><a href="{{ route('section', 'docencia') }}" title="Docencia">Docencia</a></li>
-            <li><a href="{{ route('section', 'investigacion') }}" title="Investigación">Investigación</a></li>
-            <li><a href="{{ route('section', 'extension') }}" title="Extensión">Extensión</a></li>
-            <li><a href="{{ route('section', 'anuncios') }}" title="Extensión">Anuncios</a></li>
-            <li><a href="{{ route('section', 'colaboraciones') }}" title="Anuncios">Colaboraciones</a></li>
-            <li><a href="{{ route('section', 'galeria-de-fotos') }}" title="Anuncios">Galería de fotos</a></li>
-            <li><a href="{{ route('section', 'gaceta') }}" title="Anuncios">Gaceta</a></li>
-        </ul>
-    </nav>
+    <div id="navigation">
+        <nav class="menu nav">
+            <ul>
+                <li><a href="{{ route('home') }}" title="Inicio">Inicio</a></li>
+                <li><a href="{{ route('section', 'gestion') }}" title="Gestión">Gestión</a></li>
+                <li><a href="{{ route('section', 'docencia') }}" title="Docencia">Docencia</a></li>
+                <li><a href="{{ route('section', 'investigacion') }}" title="Investigación">Investigación</a></li>
+                <li><a href="{{ route('section', 'extension') }}" title="Extensión">Extensión</a></li>
+                <li><a href="{{ route('section', 'anuncios') }}" title="Extensión">Anuncios</a></li>
+                <li><a href="{{ route('section', 'colaboraciones') }}" title="Anuncios">Colaboraciones</a></li>
+                <li><a href="{{ route('section', 'galeria-de-fotos') }}" title="Anuncios">Galería de fotos</a></li>
+                <li><a href="{{ route('section', 'gaceta') }}" title="Anuncios">Gaceta</a></li>
+            </ul>
+        </nav>
+    </div>
 
     @yield('header-text')
 
@@ -66,6 +73,16 @@
     </div>
 </footer>
 
+<!-- jQuery library (served from Google) -->
+<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+
+<script src="{{ asset('assets/js/jquery.sidr.min.js') }}"></script>
+<script type="text/javascript">
+    $('#responsive-menu-button').sidr({
+        name: 'sidr-main',
+        source: '#navigation'
+    });
+</script>
 @yield('scripts')
 
 </body>

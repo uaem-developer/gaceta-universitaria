@@ -14,8 +14,10 @@ Route::when('*', 'posts.view_throttle');
 
 require(__DIR__ . '/routes/administrator.php');
 
-
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+
+
+Route::get('sitemap', ['as' => 'sitemap', 'uses' => 'SitemapController@sitemapGenerator']);
 
 Route::get('mensaje-de-rector', ['as' => 'mensaje', 'uses' => 'HomeController@mensaje']);
 

@@ -80,8 +80,6 @@
 
                     {{ Field::checkbox('frontpage') }}
 
-                    {{ Field::checkbox('published') }}
-
 
                 <br />
 

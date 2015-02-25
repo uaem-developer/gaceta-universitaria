@@ -122,6 +122,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
+		'Roumen\Sitemap\SitemapServiceProvider',
+		'Intervention\Image\ImageServiceProvider',
 		// Custom
 		'Gaceta\Components\FieldServiceProvider'
 
@@ -192,7 +194,8 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
-		'Field'          	=> 'Gaceta\Components\Field'
+		'Field'          	=> 'Gaceta\Components\Field',
+		'Image' 			=> 'Intervention\Image\Facades\Image'
 
 	),
 

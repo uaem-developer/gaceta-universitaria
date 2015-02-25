@@ -3,6 +3,15 @@
 @section('headers')
     <title>Gaceta UAEM Virtual mensaje rector</title>
     <meta name="description" value="A casi veinte años del inicio de la Gaceta UAEM, una publicación emblemática del quehacer cotidiano de la comunidad de la máxima casa de estudios del estado, celebro presentar el primer número mensual de la Gaceta UAEM"/>
+
+    <!-- FACEBOOK OPEN GRAPH -->
+    <meta property="og:title" content="Gaceta UAEM Virtual mensaje rector" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ route('mensaje') }}" />
+    <meta property="og:image" content="http://www.uaem.mx/gacetavirtual/assets/img/banner.jpg" />
+    <meta property="og:site_name" content="Gaceta virtual universitaria" />
+    <meta property="og:description"
+          content="A casi veinte años del inicio de la Gaceta UAEM, una publicación emblemática del quehacer cotidiano de la comunidad de la máxima casa de estudios del estado, celebro presentar el primer número mensual de la Gaceta UAEM"/>
 @endsection
 
 @section('styles')
@@ -137,14 +146,5 @@
 @endsection
 
 @section('scripts')
-    <!-- jQuery library (served from Google) -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <!-- bxSlider Javascript file -->
-    <script src="{{asset('assets/js/jquery.bxslider.min.js')}}"></script>
 
-    <script type="text/javascript">
-        $('.bxslider').bxSlider({
-            pagerCustom: '#bx-pager'
-        });
-    </script>
 @endsection

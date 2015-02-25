@@ -2,15 +2,32 @@
 
 @section('headers')
     <title>Gaceta virtual universitaria</title>
-    <meta name="description" value="descripción"/>
+    <meta name="description" value="descripción" value="A 20 años de creada, la Gaceta UAEM, abre un nuevo espacio que hemos denominado Gaceta Virtual, para difundir las actividades de la comunidad universitaria..."/>
+
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+
+    <!-- FACEBOOK OPEN GRAPH -->
+    <meta property="og:title" content="Gaceta virtual universitaria" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ route('home') }}" />
+    <meta property="og:image" content="http://www.uaem.mx/gacetavirtual/assets/img/banner.jpg" />
+    <meta property="og:site_name" content="Gaceta virtual universitaria" />
+    <meta property="og:description"
+          content="A 20 años de creada, la Gaceta UAEM, abre un nuevo espacio que hemos denominado Gaceta Virtual, para difundir las actividades de la comunidad universitaria..."/>
 
 @endsection
 
-@section('headers')
+@section('top-icons')
+   <div class="main-wrapper top-icons">
+        <div class="right">
+            <img src="{{ asset('assets/img/uaem-logo.png') }}" width="136" alt=""/>
+            <img src="{{ asset('assets/img/distintivo-empresa-incluyente.png') }}" width="107" alt=""/>
+        </div>
+   </div>
 @endsection
 
 @section('banner')
+
     <figure>
         <img src="{{ asset('assets/img/banner.jpg') }}" alt="Gaceta Universitaria"/>
     </figure>
@@ -57,6 +74,8 @@
     <section class="header-number">
         <h2 class="text-left">Gaceta UAEM Virtual  No <span class="text-big"> 1 | Feb 2015</span></h2>
     </section>
+
+
 @endsection
 
 @section('breadcrumb')
@@ -89,6 +108,37 @@
             <br/><br/>
             <a class="btn" href="{{ route('mensaje') }}">Ver más</a>
         </div>
+
+        <section class="suscribete">
+            <!-- Begin MailChimp Signup Form -->
+            <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+            <style type="text/css">
+                #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+                /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+            </style>
+            <div id="mc_embed_signup">
+                <form action="//uaem.us10.list-manage.com/subscribe/post?u=59d2270f7f63084860858fe92&amp;id=51c97697dc" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+                        <h2>Suscríbete al Boletín Electrónico UAEM</h2>
+                        <div class="indicates-required"><span class="asterisk">*</span> Campo obligatorio</div>
+                        <div class="mc-field-group">
+                            <label for="mce-EMAIL">Correo electrónico   <span class="asterisk">*</span>
+                            </label>
+                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                        </div>
+                        <div id="mce-responses" class="clear">
+                            <div class="response" id="mce-error-response" style="display:none"></div>
+                            <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;"><input type="text" name="b_59d2270f7f63084860858fe92_51c97697dc" tabindex="-1" value=""></div>
+                        <div class="clear"><input type="submit" value="Suscríbete" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                    </div>
+                </form>
+            </div>
+            <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+            <!--End mc_embed_signup-->
+        </section>
 
         <div class="large-10 columns main-post">
             @if(! empty($last_post->image))
@@ -231,11 +281,11 @@
 
             <div class="clearfix"></div>
 
-            <h2 class="title-section green"><span class="box-section green"></span>{{ $docencia->title }}</h2>
+            <h2 class="title-section green"><span class="box-section green-docencia"></span>{{ $docencia->title }}</h2>
 
             @foreach($docencia_posts as $post)
                 <div class="medium-8 columns">
-                    <a   href="{{ route('post', [$post->section()->first()->slug_url, $post->slug_url, $post->id]) }}"> <h3 class="title-post-section aqua">{{$post->title}}</h3></a>
+                    <a   href="{{ route('post', [$post->section()->first()->slug_url, $post->slug_url, $post->id]) }}"> <h3 class="title-post-section green-docencia">{{$post->title}}</h3></a>
                     <div class="fecha-post"> {{ date('M j, Y', strtotime($post->created_at)) }} |  {{ $post->gaceta_number }}</div>
                     @if(! empty($post->image))
                         <figure><img src="uploads/posts/{{ $post->image }}" alt=""/></figure>

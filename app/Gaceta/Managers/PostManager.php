@@ -35,7 +35,7 @@ class PostManager extends BaseManager {
 
     public function prepareData($data)
     {
-        $data['title'] = strip_tags($data['title']);
+        //$data['title'] = strip_tags($data['title']);
 
         $data['slug_url'] = \Str::slug($data['title']);
 

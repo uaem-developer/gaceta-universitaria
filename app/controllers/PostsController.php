@@ -2,6 +2,7 @@
 use Gaceta\Repositories\PostRepo;
 use Gaceta\Repositories\SectionRepo;
 use Gaceta\Managers\PostManager;
+use Gaceta\Components\ImageResizer;
 
 
 class PostsController extends \BaseController {
@@ -44,48 +45,38 @@ class PostsController extends \BaseController {
     {
         $post = $this->postRepo->newPost();
 
-        $data = Input::all();
+        $image = new ImageResizer();
 
-        $date = date('Ymd-hm');
+        $data = Input::all();
 
         if(Input::file('image')){
             $file = Input::file('image');
-            $path = $date.$file->getClientOriginalName();
-            $file->move("uploads/posts/",$path);
-            $data['image'] = $path;
+            $data['image'] = $image->processImage($file);
         }
 
         if(Input::file('image2')){
             $file = Input::file('image2');
-            $path = $date.$file->getClientOriginalName();
-            $file->move("uploads/posts/",$path);
-            $data['image2'] = $path;
+            $data['image2'] = $image->processImage($file);
         }
 
         if(Input::file('image3')){
             $file = Input::file('image3');
-            $path = $date.$file->getClientOriginalName();
-            $file->move("uploads/posts/",$path);
-            $data['image3'] = $path;
+            $data['image3'] = $image->processImage($file);
         }
 
         if(Input::file('image4')){
             $file = Input::file('image4');
-            $path = $date.$file->getClientOriginalName();
-            $file->move("uploads/posts/",$path);
-            $data['image4'] = $path;
+            $data['image4'] = $image->processImage($file);
         }
 
         if(Input::file('image5')){
             $file = Input::file('image5');
-            $path = $date.$file->getClientOriginalName();
-            $file->move("uploads/posts/",$path);
-            $data['image5'] = $path;
+            $data['image5'] = $image->processImage($file);
         }
 
         if(Input::file('attach_file')){
             $file = Input::file('attach_file');
-            $path = $date.$file->getClientOriginalName();
+            $path = \Str::slug($file->getClientOriginalName());
             $file->move("uploads/posts/",$path);
             $data['attach_file'] = $path;
         }
@@ -143,58 +134,48 @@ class PostsController extends \BaseController {
     {
         $post = $this->postRepo->find($id);
 
-        $data = Input::all();
+        $image = new ImageResizer();
 
-        $date = date('Ymd-hm');
+        $data = Input::all();
 
         if(Input::file('image')){
             $file = Input::file('image');
-            $path = $date.$file->getClientOriginalName();
-            $file->move("uploads/posts/",$path);
-            $data['image'] = $path;
+            $data['image'] = $image->processImage($file);
         }else{
             $data['image'] = $data["image_document"];
         }
 
         if(Input::file('image2')){
             $file = Input::file('image2');
-            $path = $date.$file->getClientOriginalName();
-            $file->move("uploads/posts/",$path);
-            $data['image2'] = $path;
+            $data['image2'] = $image->processImage($file);
         }else{
             $data['image2'] = $data["image2_document"];
         }
 
         if(Input::file('image3')){
             $file = Input::file('image3');
-            $path = $date.$file->getClientOriginalName();
-            $file->move("uploads/posts/",$path);
-            $data['image3'] = $path;
+            $data['image3'] = $image->processImage($file);
         }else{
             $data['image3'] = $data["image3_document"];
         }
 
         if(Input::file('image4')){
             $file = Input::file('image4');
-            $path = $date.$file->getClientOriginalName();
-            $file->move("uploads/posts/",$path);
-            $data['image4'] = $path;
+            $data['image4'] = $image->processImage($file);
         }else{
             $data['image4'] = $data["image4_document"];
         }
 
         if(Input::file('image5')){
             $file = Input::file('image5');
-            $path = $date.$file->getClientOriginalName();
-            $file->move("uploads/posts/",$path);
-            $data['image5'] = $path;
+            $data['image5'] = $image->processImage($file);
         }else{
             $data['image5'] = $data["image5_document"];
         }
 
         if(Input::file('attach_file')){
             $file = Input::file('attach_file');
-            $path = $date.$file->getClientOriginalName();
+            $path = \Str::slug($file->getClientOriginalName());
             $file->move("uploads/posts/",$path);
             $data['attach_file'] = $path;
         }else{
@@ -221,7 +202,6 @@ class PostsController extends \BaseController {
         $post->delete();
 
         return Redirect::back();
-
     }
 
 }

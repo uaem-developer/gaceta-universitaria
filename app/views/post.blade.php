@@ -3,6 +3,16 @@
 @section('headers')
     <title>{{ $post->title }} - Gaceta UAEM Virtual</title>
     <meta name="description" value="{{ $post->meta_description }}"/>
+
+    <!-- FACEBOOK OPEN GRAPH -->
+    <meta property="og:title" content="{{ $post->title }} - Gaceta UAEM Virtual" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ route('post', [$section->slug_url, $post->slug_url, $post->id]) }}" />
+    <meta property="og:image" content="{{ asset('uploads/posts/'.$post->image) }}" />
+    <meta property="og:site_name" content="Gaceta virtual universitaria" />
+    <meta property="og:description"
+          content="{{ $post->meta_description }}"/>
+
 @endsection
 
 @section('styles')
@@ -140,8 +150,6 @@
     @endsection
 
 @section('scripts')
-    <!-- jQuery library (served from Google) -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
     <!-- bxSlider Javascript file -->
     <script src="{{asset('assets/js/jquery.bxslider.min.js')}}"></script>
