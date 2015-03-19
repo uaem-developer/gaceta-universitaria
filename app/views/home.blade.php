@@ -34,45 +34,9 @@
 @endsection
 
 @section('header-text')
-    <section class="header-text">
-        <h1>Gaceta UAEM Virtual</h1>
-        <p class="text-columns">
-
-            A 20 años de creada, la Gaceta UAEM, abre un nuevo espacio que hemos
-
-            denominado Gaceta Virtual, para difundir las actividades de la comunidad
-
-            universitaria, en el que además de la información que aparece en la versión
-
-            impresa, podrá encontrarse mayor cantidad de notas y fotografías, además de
-
-            reportajes, colaboraciones, galería de imágenes, anuncios de la agenda
-
-            universitaria, así como otros textos que iremos incrementando en los próximos
-
-            números.
-
-            Con esta publicación pretendemos atender la creciente demanda de difusión
-
-            informativa y enriquecer los contenidos de sus páginas, dadas las limitaciones
-
-            de disponibilidad de espacio que presenta la versión impresa. Con ello también
-
-            mantenemos su calidad sin afectar el presupuesto asignado para la misma.
-
-            Les recordamos que la Gaceta continuará a su disposición en formato impreso y
-
-            en PDF en la página www.uaem.mx, mientras que la Gaceta Virtual podrá
-
-            consultarse en:
-
-           <a href="www.uaem.mx/gacetavirtual" >www.uaem.mx/gacetavirtual</a>
-
-        </p>
-    </section>
 
     <section class="header-number">
-        <h2 class="text-left">Gaceta UAEM Virtual  No <span class="text-big"> 1 | Feb 2015</span></h2>
+        <h2 class="text-left">Gaceta UAEM Virtual  No <span class="text-big"> 2 | Mar 2015</span></h2>
     </section>
 
 
@@ -86,27 +50,41 @@
     <section class="main-content">
 
         <div class="fondo-index">
-            <h2 class="white">Mensaje del rector</h2>
+            <h2 class="white">Gaceta UAEM Virtual</h2>
 
             <p>
-                A casi veinte años del inicio de la Gaceta UAEM, una publicación emblemática
+                A 20 años de creada, la Gaceta UAEM, abre un nuevo espacio que hemos
 
-                del quehacer cotidiano de la comunidad de la máxima casa de estudios del
+                denominado Gaceta Virtual, para difundir las actividades de la comunidad
 
-                estado, celebro presentar el primer número mensual de la Gaceta UAEM
+                universitaria, en el que además de la información que aparece en la versión
 
-                Virtual, a través de la cual no sólo habremos de ampliar y enriquecer los
+                impresa, podrá encontrarse mayor cantidad de notas y fotografías, además de
 
-                contenidos de la versión impresa, sino más aún daremos un renovado impulso
+                reportajes, colaboraciones, galería de imágenes, anuncios de la agenda
 
-                a los procesos comunicativos universitarios, orientados a promover el diálogo
+                universitaria, así como otros textos que iremos incrementando en los próximos
 
-                de saberes, la reflexión crítica, los encuentros interculturales y la apertura
+                números.
 
-                inclusiva de espacios...
+                Con esta publicación pretendemos atender la creciente demanda de difusión
+
+                informativa y enriquecer los contenidos de sus páginas, dadas las limitaciones
+
+                de disponibilidad de espacio que presenta la versión impresa. Con ello también
+
+                mantenemos su calidad sin afectar el presupuesto asignado para la misma.
+
+                Les recordamos que la Gaceta continuará a su disposición en formato impreso y
+
+                en PDF en la página www.uaem.mx, mientras que la Gaceta Virtual podrá
+
+                consultarse en:
+
+                <a href="www.uaem.mx/gacetavirtual" class="white" >www.uaem.mx/gacetavirtual</a>
+
             </p>
-            <br/><br/>
-            <a class="btn" href="{{ route('mensaje') }}">Ver más</a>
+
         </div>
 
         <section class="suscribete">

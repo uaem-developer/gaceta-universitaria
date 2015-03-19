@@ -55,16 +55,16 @@
                         <li><img src="{{ asset('uploads/posts/'.$post->image) }}"  @if(! empty($post->photographer)) title="Foto: {{ $post->photographer }}" @endif/></li>
                     @endif
                     @if(! empty($post->image2))
-                        <li class="others-images"><img src="{{ asset('uploads/posts/'.$post->image2) }}" /></li>
+                        <li class="others-images"><img src="{{ asset('uploads/posts/'.$post->image2) }}" @if(! empty($post->photographer2)) title="Foto: {{ $post->photographer2 }}" @endif/></li>
                     @endif
                     @if(! empty($post->image3))
-                        <li class="others-images"><img src="{{ asset('uploads/posts/'.$post->image3) }}" /></li>
+                        <li class="others-images"><img src="{{ asset('uploads/posts/'.$post->image3) }}" @if(! empty($post->photographer3)) title="Foto: {{ $post->photographer3 }}" @endif/></li>
                     @endif
                     @if(! empty($post->image4))
-                        <li class="others-images"><img src="{{ asset('uploads/posts/'.$post->image4) }}" /></li>
+                        <li class="others-images"><img src="{{ asset('uploads/posts/'.$post->image4) }}" @if(! empty($post->photographer4)) title="Foto: {{ $post->photographer4 }}" @endif/></li>
                     @endif
                     @if(! empty($post->image5))
-                        <li class="others-images"><img src="{{ asset('uploads/posts/'.$post->image5) }}" /></li>
+                        <li class="others-images"><img src="{{ asset('uploads/posts/'.$post->image5) }}" @if(! empty($post->photographer5)) title="Foto: {{ $post->photographer5 }}" @endif/></li>
                     @endif
                 </ul>
            </div>
@@ -100,7 +100,7 @@
         </div>
 
         <div class="post-author">
-            @if(! empty($post->authored_by))  {{ $post->authored_by }} | @endif {{ date('M j, Y', strtotime($post->created_at)) }}
+            @if(! empty($post->authored_by))  {{ $post->authored_by }} | @endif {{ date('M j, Y', strtotime($post->created_at)) }} | {{$post->gaceta_number}}
         </div>
         @if(! empty($post->attach_file))
         <div class="attach-file">

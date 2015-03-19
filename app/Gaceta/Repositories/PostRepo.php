@@ -24,32 +24,32 @@ class PostRepo extends BaseRepo {
 
     public function getListBySection($section_id)
     {
-        return Post::where('section_id', '=', $section_id)->orderBy('order_num', 'DESC')->paginate(20);
+        return Post::where('section_id', '=', $section_id)->orderBy('order_num', 'DESC')->orderBy('created_at', 'DESC')->paginate(20);
     }
 
     public function getGallery()
     {
-        return Post::where('image', '!=', '')->orderBy('order_num', 'DESC')->paginate(20);
+        return Post::where('image', '!=', '')->orderBy('order_num', 'DESC')->orderBy('created_at', 'DESC')->paginate(20);
     }
 
     public function lastestPostBySection($section_id)
     {
-        return Post::where('section_id', '=', $section_id)->take(2)->orderBy('order_num', 'DESC')->orderBy('promoted_front', 'ASC')->get();
+        return Post::where('section_id', '=', $section_id)->take(2)->orderBy('promoted_section', 'DESC')->orderBy('order_num', 'DESC')->orderBy('created_at', 'DESC')->get();
     }
 
     public function lastestPostBySectionTake($section_id, $take = 2)
     {
-        return Post::where('section_id', '=', $section_id)->orderBy('order_num', 'DESC')->orderBy('promoted_front', 'ASC')->take($take)->get();
+        return Post::where('section_id', '=', $section_id)->orderBy('promoted_section', 'DESC')->orderBy('order_num', 'DESC')->orderBy('created_at', 'DESC')->take($take)->get();
     }
 
     public function lastestPost($take = 10)
     {
-        return Post::take($take)->orderBy('frontpage', 'ASC')->orderBy('promoted_front', 'DESC')->orderBy('order_num', 'DESC')->get();
+        return Post::take($take)->orderBy('promoted_front', 'DESC')->orderBy('order_num', 'DESC')->orderBy('created_at', 'DESC')->get();
     }
 
     public function lastPost()
     {
-        return Post::orderBy('frontpage', 'DESC')->orderBy('promoted_front', 'DESC')->orderBy('order_num', 'DESC')->first();
+        return Post::orderBy('frontpage', 'DESC')->orderBy('promoted_front', 'DESC')->orderBy('order_num', 'DESC')->orderBy('created_at', 'DESC')->first();
     }
 
     public function search($data = array())

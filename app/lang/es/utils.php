@@ -7,7 +7,8 @@ return [
         'Fundamentación juridica'       => 'Fundamentación juridica'
     ],
     'gaceta_numbers' => [
-        'Gaceta Virtual 1' => 'Gaceta Virtual 1'
+        'Gaceta Virtual 1' => 'Gaceta Virtual 1',
+        'Gaceta Virtual 2' => 'Gaceta Virtual 2'
     ],
 
   ];

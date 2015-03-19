@@ -7,8 +7,9 @@ class ImageResizer{
     {
         $maxWidthImage = 1000;
         $mediumWidthImage = 500;
+
         $filename = substr($fileImage->getClientOriginalName(), 0, -3);
-        $path = \Str::slug($filename).'.jpg';
+        $path = \Str::slug($filename."-".uniqid()).'.jpg';
 
         $watermark = \Image::make(app_path().'/views/uaem-watermark.png');
         $image = \Image::make($fileImage);

@@ -55,7 +55,7 @@
                 <div class="medium-8 columns list-section-post">
                     <a href="{{ route('post', [$section->slug_url, $post->slug_url, $post->id]) }}" title="{{$post->title}}"><h3>{{$post->title}}</h3></a>
                         <div class="detail-post">
-                            {{ date('M j, Y', strtotime($post->created_at)) }} | {{ $section->title }}
+                            {{ date('M j, Y', strtotime($post->created_at)) }} | {{ $section->title }} | {{ $post->gaceta_number }}
                         </div>
                     <div class="row">
                         @if(!empty($post->image))
